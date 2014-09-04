@@ -14,6 +14,14 @@ Right now the 256 color scheme is still hybrid.
 Screenshots
 ===========
 
-JavaScript
+### JavaScript
 
 ![JavaScript](screenshots/javascript.png)
+
+### CSS
+
+![CSS](screenshots/css.png)
+
+### HTML
+
+![HTML](screenshots/html.png)
