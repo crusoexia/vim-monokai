@@ -1,19 +1,15 @@
-" File:       hybrid.vim
-" Maintainer: Andrew Wong (w0ng)
-" URL:        https://github.com/w0ng/vim-hybrid
-" Modified:   27 Jan 2013 07:33 AM AEST
+" File:       monokai.vim
+" Maintainer: Crusoe Xia (crusoexia)
+" URL:        https://github.com/crusoexia/vim-monokai
 " License:    MIT
 
 " Description:"{{{
 " ----------------------------------------------------------------------------
-" The RGB colour palette is taken from Tomorrow-Night.vim:
-" https://github.com/chriskempson/vim-tomorrow-theme
+" The RGB colour palette is taken from colourlovers:
+" http://www.colourlovers.com/
 "
-" The syntax highlighting scheme is taken from jellybeans.vim:
-" https://github.com/nanotech/jellybeans.vim
-"
-" The code taken from solarized.vim
-" https://github.com/altercation/vim-colors-solarized
+" The syntax highlighting scheme and the code are taken from hybrid.vim:
+" https://github.com/w0ng/vim-hybrid
 
 "}}}
 " Requirements And Recommendations:"{{{
@@ -35,7 +31,7 @@
 "
 " 2.  Use Xresources colours by setting in ~/.vimrc:
 "
-"       let g:hybrid_use_Xresources = 1
+"       let g:monokai_use_Xresources = 1
 "       colorscheme hybrid
 "
 " For iTerm2 users:
@@ -45,7 +41,7 @@
 "
 " 2. Use iTerm colours by setting in ~/.vimrc:
 "
-"       let g:hybrid_use_iTerm_colors = 1
+"       let g:monokai_use_iTerm_colors = 1
 "       colorscheme hybrid
 "
 
@@ -56,12 +52,12 @@ if !has("gui_running") && &t_Co < 256
   finish
 endif
 
-if !exists("g:hybrid_use_Xresources")
-  let g:hybrid_use_Xresources = 0
+if !exists("g:monokai_use_Xresources")
+  let g:monokai_use_Xresources = 0
 endif
 
-if !exists("g:hybrid_use_iTerm_colors")
-  let g:hybrid_use_iTerm_colors = 0
+if !exists("g:monokai_use_iTerm_colors")
+  let g:monokai_use_iTerm_colors = 0
 endif
 
 set background=dark
@@ -113,7 +109,7 @@ else
   let s:darkcyan   = "24"
   let s:darkred    = "52"
   let s:darkpurple = "53"
-  if g:hybrid_use_Xresources == 1
+  if g:monokai_use_Xresources == 1
     let s:foreground = "15"   " White
     let s:selection  = "8"    " DarkGrey
     let s:line       = "0"    " Black
@@ -125,7 +121,7 @@ else
     let s:aqua       = "14"   " LightCyan
     let s:blue       = "12"   " LightBlue
     let s:purple     = "13"   " LightMagenta
-  elseif g:hybrid_use_iTerm_colors == 1
+  elseif g:monokai_use_iTerm_colors == 1
     let s:background = "NONE"
     let s:foreground = "7"
     let s:selection  = "0"
@@ -326,7 +322,7 @@ exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
 "		WildMenu"
 
 " Use Xresources for background colour
-if has('gui_running') || (g:hybrid_use_Xresources != 1 && g:hybrid_use_iTerm_colors != 1)
+if has('gui_running') || (g:monokai_use_Xresources != 1 && g:monokai_use_iTerm_colors != 1)
   exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
 else
   exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
@@ -414,6 +410,7 @@ hi! link diffAdded Special
 " Copyright (c) 2011 Ethan Schoonover
 " Copyright (c) 2009-2012 NanoTech
 " Copyright (c) 2012 w0ng
+" Copyright (c) 2014 Crusoe Xia
 "
 " Permission is hereby granted, free of charge, to any per‐
 " son obtaining a copy of this software and associated doc‐
