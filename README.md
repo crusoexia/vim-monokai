@@ -7,12 +7,19 @@ A vim monokai color scheme for _Web developers_.
 * The Syntax highlighting and the code are taken from [hybrid.vim](https://github.com/w0ng/vim-hybrid).
 * Terminal supported.
 
-Installation
+Install
 ===========
 
 ### Vundle
 
     Plugin 'crusoexia/vim-monokai'
+
+Usage
+===========
+
+Type below command in your vim or save it in your vimrc:
+
+    colorscheme monokai
 
 Recommend plugins
 ===========
@@ -24,7 +31,6 @@ Below plugins can make it works better for JavaScript and Html, install them wit
     Plugin 'pangloss/vim-javascript'
     Plugin 'othree/javascript-libraries-syntax.vim'     " javascript library high light
     Plugin 'othree/html5-syntax.vim'                    " html5 tag and properties high light
-    Plugin 'mustache/vim-mustache-handlebars'           " html template library high light
 
 Screenshots
 ===========
