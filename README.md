@@ -11,6 +11,13 @@ Terminal
 
 Right now the 256 color scheme is still hybrid.
 
+Installation
+===========
+
+### Vundle
+
+    Plugin 'crusoexia/vim-monokai'
+
 Screenshots
 ===========
 
