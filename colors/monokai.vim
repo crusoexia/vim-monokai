@@ -141,11 +141,11 @@ else
     let s:comment    = "243"
     let s:red        = "167"
     let s:orange     = "173"
-    let s:yellow     = "221"
-    let s:green      = "143"
-    let s:aqua       = "109"
-    let s:blue       = "110"
-    let s:purple     = "139"
+    let s:yellow     = "186"
+    let s:green      = "148"
+    let s:aqua       = "110"
+    let s:blue       = "81"
+    let s:purple     = "197"
   endif
 endif
 
