@@ -27,8 +27,8 @@ Recommend plugins
 Below plugins can make it works better for JavaScript and Html, install them with Vundle.
 
     Plugin 'groenewege/vim-less'                        " less syntax high light
-    Plugin 'jelera/vim-javascript-syntax'               " javascript syntax high light
-    Plugin 'pangloss/vim-javascript'
+    Plugin 'pangloss/vim-javascript'                    " javascript syntax and indent
+    Plugin 'jelera/vim-javascript-syntax'               " javascript enhanced syntax high light
     Plugin 'othree/javascript-libraries-syntax.vim'     " javascript library high light
     Plugin 'othree/html5-syntax.vim'                    " html5 tag and properties high light
 
