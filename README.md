@@ -26,11 +26,15 @@ Recommend plugins
 
 Below plugins can make it works better for JavaScript and Html, install them with Vundle.
 
-    Plugin 'groenewege/vim-less'                        " less syntax high light
+    Plugin 'scrooloose/syntastic'                       " general language syntax highlight
+    Plugin 'groenewege/vim-less'                        " less syntax highlight
     Plugin 'pangloss/vim-javascript'                    " javascript syntax and indent
-    Plugin 'jelera/vim-javascript-syntax'               " javascript enhanced syntax high light
-    Plugin 'othree/javascript-libraries-syntax.vim'     " javascript library high light
-    Plugin 'othree/html5-syntax.vim'                    " html5 tag and properties high light
+    Plugin 'jelera/vim-javascript-syntax'               " javascript enhanced syntax highlight
+    Plugin 'othree/javascript-libraries-syntax.vim'     " javascript library highlight
+    Plugin 'othree/html5-syntax.vim'                    " html5 tag and properties highlight
+
+___Note___: please keep the plugins' order as the same as the above list in your `.vimrc` to make sure your
+highlight will look the same as the screenshots.
 
 Screenshots
 ===========
