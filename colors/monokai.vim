@@ -139,13 +139,13 @@ else
     let s:selection  = "237"
     let s:line       = "235"
     let s:comment    = "243"
-    let s:red        = "124"
+    let s:red        = "160"
     let s:orange     = "172"
     let s:yellow     = "186"
-    let s:green      = "154"
+    let s:green      = "10"
     let s:aqua       = "74"
     let s:blue       = "38"
-    let s:purple     = "161"
+    let s:purple     = "13"
   endif
 endif
 
