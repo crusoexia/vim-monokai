@@ -145,7 +145,7 @@ else
     let s:green      = "10"
     let s:aqua       = "74"
     let s:blue       = "38"
-    let s:purple     = "13"
+    let s:purple     = "198"
   endif
 endif
 
