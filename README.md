@@ -1,7 +1,7 @@
 vim-monokai
 ===========
 
-A vim monokai color scheme for _Web developers_.
+A monokai color scheme for Vim.
 
 * The RGB colour palette is taken from [colourlovers](http://www.colourlovers.com/). 
 * The Syntax highlighting and the code are taken from [hybrid.vim](https://github.com/w0ng/vim-hybrid).
@@ -21,23 +21,20 @@ Type below command in your vim or save it in your vimrc:
 
     colorscheme monokai
 
-Recommend plugins
+v1.0
 ===========
 
-Below plugins can make it works better for JavaScript and Html, install them with Vundle.
+If you like the original green strings, checkout the v1.0 version:
 
-    Plugin 'scrooloose/syntastic'                       " general language syntax highlight
-    Plugin 'groenewege/vim-less'                        " less syntax highlight
-    Plugin 'pangloss/vim-javascript'                    " javascript syntax and indent
-    Plugin 'jelera/vim-javascript-syntax'               " javascript enhanced syntax highlight
-    Plugin 'othree/javascript-libraries-syntax.vim'     " javascript library highlight
-    Plugin 'othree/html5-syntax.vim'                    " html5 tag and properties highlight
-
-___Note___: please keep the plugins' order as the same as the above list in your `.vimrc` to make sure your
-highlight will look the same as the screenshots.
+    cd ~/.vim/bundle/vim-monokai
+    git checkout v1.0
 
 Screenshots
 ===========
+
+### NERDTree
+
+![NERDTree](screenshots/NERDTree.png)
 
 ### JavaScript
 
@@ -50,3 +47,7 @@ Screenshots
 ### HTML
 
 ![HTML](screenshots/html.png)
+
+### Markdown
+
+![Markdown](screenshots/markdown.png)
