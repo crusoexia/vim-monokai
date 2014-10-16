@@ -145,7 +145,7 @@ else
     let s:red        = "160"
     let s:orange     = "172"
     let s:yellow     = "186"
-    let s:darkyellow = "186"   
+    let s:darkyellow = "228"   
     let s:green      = "10"
     let s:aqua       = "74"
     let s:blue       = "38"
