@@ -82,6 +82,7 @@ if has("gui_running")
   let s:red        = "#e73c50"
   let s:orange     = "#fba44f"
   let s:yellow     = "#fcfcc4"
+  let s:darkyellow = "#e6db74"
   let s:green      = "#9ad74c"
   let s:aqua       = "#6bb6c9"
   let s:blue       = "#3fb8cd"
@@ -117,6 +118,7 @@ else
     let s:red        = "9"    " LightRed
     let s:orange     = "3"    " DarkYellow
     let s:yellow     = "11"   " LightYellow
+    let s:darkyellow = "11"   " DarkYellow
     let s:green      = "10"   " LightGreen
     let s:aqua       = "14"   " LightCyan
     let s:blue       = "12"   " LightBlue
@@ -130,6 +132,7 @@ else
     let s:red        = "1"
     let s:orange     = "11"
     let s:yellow     = "3"
+    let s:darkyellow = "3"   
     let s:green      = "2"
     let s:aqua       = "6"
     let s:blue       = "4"
@@ -142,6 +145,7 @@ else
     let s:red        = "160"
     let s:orange     = "172"
     let s:yellow     = "186"
+    let s:darkyellow = "186"   
     let s:green      = "10"
     let s:aqua       = "74"
     let s:blue       = "38"
@@ -174,6 +178,7 @@ exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
 exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
 exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
 exe "let s:bg_yellow     = ' ".s:vmode."bg=".s:yellow    ."'"
+exe "let s:bg_darkyellow = ' ".s:vmode."bg=".s:darkyellow."'"
 exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
 exe "let s:bg_blue       = ' ".s:vmode."bg=".s:blue      ."'"
@@ -198,6 +203,7 @@ exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
 exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
 exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
+exe "let s:fg_darkyellow = ' ".s:vmode."fg=".s:darkyellow."'"
 exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
 exe "let s:fg_blue       = ' ".s:vmode."fg=".s:blue      ."'"
@@ -235,6 +241,7 @@ if has("gui_running")
   exe "let s:sp_red        = ' guisp=".s:red       ."'"
   exe "let s:sp_orange     = ' guisp=".s:orange    ."'"
   exe "let s:sp_yellow     = ' guisp=".s:yellow    ."'"
+  exe "let s:sp_darkyellow = ' guisp=".s:darkyellow."'"
   exe "let s:sp_green      = ' guisp=".s:green     ."'"
   exe "let s:sp_aqua       = ' guisp=".s:aqua      ."'"
   exe "let s:sp_blue       = ' guisp=".s:blue      ."'"
@@ -296,14 +303,14 @@ exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
 exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
-exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! ModeMsg"       .s:fg_darkyellow  .s:bg_none        .s:fmt_none
+exe "hi! MoreMsg"       .s:fg_darkyellow  .s:bg_none        .s:fmt_none
 exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
 exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 "		PmenuSbar"
 "		PmenuThumb"
-exe "hi! Question"      .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Question"      .s:fg_darkyellow  .s:bg_none        .s:fmt_none
 exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
@@ -334,14 +341,14 @@ endif
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 
 exe "hi! Constant"        .s:fg_red         .s:bg_none        .s:fmt_none
-exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! String"          .s:fg_darkyellow  .s:bg_none        .s:fmt_none
 "		Character"
 "		Number"
 "		Boolean"
 "		Float"
 
 exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
 "		Conditional"
@@ -357,7 +364,7 @@ exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		Macro"
 "		PreCondit"
 
-exe "hi! Type"            .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_green       .s:bg_none        .s:fmt_none
 "		StorageClass"
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		Typedef"
