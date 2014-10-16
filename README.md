@@ -26,8 +26,7 @@ v1.0
 
 If you like the original green strings, checkout the v1.0 version:
 
-    cd ~/.vim/bundle/vim-monokai
-    git checkout v1.0
+    cd ~/.vim/bundle/vim-monokai && git checkout v1.0
 
 Screenshots
 ===========
@@ -35,6 +34,10 @@ Screenshots
 ### NERDTree
 
 ![NERDTree](screenshots/NERDTree.png)
+
+### C
+
+![C](screenshots/c.png)
 
 ### JavaScript
 
@@ -47,7 +50,3 @@ Screenshots
 ### HTML
 
 ![HTML](screenshots/html.png)
-
-### Markdown
-
-![Markdown](screenshots/markdown.png)
