@@ -4,7 +4,7 @@ vim-monokai
 A monokai color scheme for Vim.
 
 * The RGB colour palette is taken from [colourlovers](http://www.colourlovers.com/). 
-* The Syntax highlighting and the code are taken from [hybrid.vim](https://github.com/w0ng/vim-hybrid).
+* The code from [hybrid.vim](https://github.com/w0ng/vim-hybrid).
 * Terminal supported.
 
 Install
