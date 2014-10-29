@@ -233,14 +233,14 @@ exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
 exe "hi! MatchParen"    .s:fg_background  .s:bg_changebg    .s:fmt_none
-exe "hi! ModeMsg"       .s:fg_darkyellow  .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"       .s:fg_darkyellow  .s:bg_none        .s:fmt_none
+exe "hi! ModeMsg"       .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! MoreMsg"       .s:fg_orange      .s:bg_none        .s:fmt_none
 exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
 exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 "		PmenuSbar"
 "		PmenuThumb"
-exe "hi! Question"      .s:fg_darkyellow  .s:bg_none        .s:fmt_none
+exe "hi! Question"      .s:fg_orange      .s:bg_none        .s:fmt_none
 exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
 exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
@@ -252,7 +252,7 @@ exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
 "		TabLineFill"
 "		TabLineSel"
-exe "hi! Title"         .s:fg_darkyellow  .s:bg_none        .s:fmt_none
+exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_bold
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "		VisualNos"
 exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
