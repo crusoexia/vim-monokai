@@ -81,7 +81,7 @@ else
   let s:green      = "10"
   let s:aqua       = "74"
   let s:blue       = "38"
-  let s:purple     = "13"
+  let s:purple     = "141"
   let s:pink       = "13"
 endif
 
@@ -273,14 +273,14 @@ endif
 "}}}
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Constant"        .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 "		Character"
 "		Number"
 "		Boolean"
 "		Float"
 
-exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
