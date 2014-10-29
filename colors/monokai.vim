@@ -198,7 +198,7 @@ exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
 "		TabLineFill"
 "		TabLineSel"
-exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_bold
+exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 "		VisualNos"
 exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
@@ -240,7 +240,7 @@ exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 "		Macro"
 "		PreCondit"
 
-exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_ital
+exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
 "       SpecialKey
 "		SpecialChar"
 "		Tag"
@@ -284,19 +284,19 @@ exe "hi! javaScriptRailsFunction"   .s:fg_orange       .s:bg_none          .s:fm
 exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fmt_none
 
 " Html:
-exe "hi! htmlTag"           .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! htmlEndTag"        .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! htmlTagName"       .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! htmlArg"           .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! htmlSpecialChar"   .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! htmlTag"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! htmlEndTag"                .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
 
 " CSS:
-exe "hi! cssURL"            .s:fg_orange       .s:bg_none          .s:fmt_ital
+exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_ital
 
-exe "hi! cssFunctionName"   .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! cssColor"          .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssPseudoClassId"  .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssClassName"      .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! cssValueLength"    .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssCommonAttr"     .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! cssBraces"         .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! cssFunctionName"           .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! cssColor"                  .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! cssPseudoClassId"          .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! cssClassName"              .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! cssValueLength"            .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! cssCommonAttr"             .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! cssBraces"                 .s:fg_none         .s:bg_none          .s:fmt_none

@@ -1,10 +1,10 @@
 vim-monokai
 ===========
 
-A monokai color scheme for Vim.
+Another monokai color scheme for Vim.
 
 * The colour palette from [colourlovers](http://www.colourlovers.com/). 
-* The code from [hybrid.vim](https://github.com/w0ng/vim-hybrid).
+* The original code is from [hybrid.vim](https://github.com/w0ng/vim-hybrid).
 * Terminal supported.
 
 Install
@@ -24,29 +24,11 @@ Type below command in your vim or save it in your vimrc:
 v1.0
 ===========
 
-If you like the original green strings, checkout the v1.0 version:
+There is an early version with a little different colors, checkout the v1.0 if you want to try it:
 
     cd ~/.vim/bundle/vim-monokai && git checkout v1.0
 
 Screenshots
 ===========
 
-### NERDTree
-
-![NERDTree](screenshots/NERDTree.png)
-
-### C
-
-![C](screenshots/c.png)
-
-### JavaScript
-
-![JavaScript](screenshots/javascript.png)
-
-### CSS
-
-![CSS](screenshots/css.png)
-
-### HTML
-
-![HTML](screenshots/html.png)
+![screenshot](screenshots/capture.png)
