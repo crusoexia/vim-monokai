@@ -41,7 +41,6 @@ if has("gui_running")
   let s:red        = "#e73c50"
   let s:orange     = "#fd971f"
   let s:yellow     = "#e6db74"
-  let s:darkyellow = "#fbfca4"
   let s:green      = "#a6e22e"
   let s:aqua       = "#66d9ef"
   let s:blue       = "#3fb8cd"
@@ -77,7 +76,6 @@ else
   let s:red        = "196"
   let s:orange     = "208"
   let s:yellow     = "186"
-  let s:darkyellow = "228"   
   let s:green      = "148"
   let s:aqua       = "81"
   let s:blue       = "38"
@@ -110,7 +108,6 @@ exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
 exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
 exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
 exe "let s:bg_yellow     = ' ".s:vmode."bg=".s:yellow    ."'"
-exe "let s:bg_darkyellow = ' ".s:vmode."bg=".s:darkyellow."'"
 exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
 exe "let s:bg_blue       = ' ".s:vmode."bg=".s:blue      ."'"
@@ -136,7 +133,6 @@ exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
 exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
 exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
-exe "let s:fg_darkyellow = ' ".s:vmode."fg=".s:darkyellow."'"
 exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
 exe "let s:fg_blue       = ' ".s:vmode."fg=".s:blue      ."'"
@@ -175,7 +171,6 @@ if has("gui_running")
   exe "let s:sp_red        = ' guisp=".s:red       ."'"
   exe "let s:sp_orange     = ' guisp=".s:orange    ."'"
   exe "let s:sp_yellow     = ' guisp=".s:yellow    ."'"
-  exe "let s:sp_darkyellow = ' guisp=".s:darkyellow."'"
   exe "let s:sp_green      = ' guisp=".s:green     ."'"
   exe "let s:sp_aqua       = ' guisp=".s:aqua      ."'"
   exe "let s:sp_blue       = ' guisp=".s:blue      ."'"
@@ -272,7 +267,6 @@ endif
 
 "}}}
 " Generic Syntax Highlighting: (see :help group-name)"{{{
-" ----------------------------------------------------------------------------
 exe "hi! Constant"        .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
@@ -344,34 +338,3 @@ hi! link diffAdded Special
 "		diffComment
 
 "}}}
-" Legal:"{{{
-" ----------------------------------------------------------------------------
-" Copyright (c) 2011 Ethan Schoonover
-" Copyright (c) 2009-2012 NanoTech
-" Copyright (c) 2012 w0ng
-" Copyright (c) 2014 Crusoe Xia
-"
-" Permission is hereby granted, free of charge, to any per‐
-" son obtaining a copy of this software and associated doc‐
-" umentation files (the “Software”), to deal in the Soft‐
-" ware without restriction, including without limitation
-" the rights to use, copy, modify, merge, publish, distrib‐
-" ute, sublicense, and/or sell copies of the Software, and
-" to permit persons to whom the Software is furnished to do
-" so, subject to the following conditions:
-"
-" The above copyright notice and this permission notice
-" shall be included in all copies or substantial portions
-" of the Software.
-"
-" THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY
-" KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO
-" THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICU‐
-" LAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-" AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-" DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CON‐
-" TRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CON‐
-" NECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-" THE SOFTWARE.
-
-" }}}
