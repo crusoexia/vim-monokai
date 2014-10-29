@@ -281,7 +281,7 @@ exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 "		Float"
 
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Conditional"
@@ -291,7 +291,7 @@ exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Keyword"
 "		Exception"
 
-exe "hi! PreProc"         .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 "		Include"
 "		Define"
 "		Macro"
