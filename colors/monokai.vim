@@ -12,52 +12,11 @@
 " https://github.com/w0ng/vim-hybrid
 
 "}}}
-" Requirements And Recommendations:"{{{
-" ----------------------------------------------------------------------------
-" This colourscheme is intended for use on:
-"   - gVim 7.3 for Linux, Mac and Windows.
-"   - Vim 7.3 for Linux, using a 256 colour enabled terminal.
-"
-" By default, Vim will use the closest matching cterm equivalent of the RGB
-" colours.
-"
-" However, Due to the limited 256 palette, colours in Vim and gVim will still
-" be noticeably different. In order to get a uniform appearance and the way
-" that this colourscheme was intended, it is HIGHLY recommended that you:
-"
-" 1.  Add these colours to ~/.Xresources:
-"
-"       https://gist.github.com/3278077
-"
-" 2.  Use Xresources colours by setting in ~/.vimrc:
-"
-"       let g:monokai_use_Xresources = 1
-"       colorscheme hybrid
-"
-" For iTerm2 users:
-" 1.  Install this color preset on your iTerm2:
-"
-"       https://gist.github.com/luan/6362811
-"
-" 2. Use iTerm colours by setting in ~/.vimrc:
-"
-"       let g:monokai_use_iTerm_colors = 1
-"       colorscheme hybrid
-"
 
-"}}}
 " Initialisation:"{{{
 " ----------------------------------------------------------------------------
 if !has("gui_running") && &t_Co < 256
   finish
-endif
-
-if !exists("g:monokai_use_Xresources")
-  let g:monokai_use_Xresources = 0
-endif
-
-if !exists("g:monokai_use_iTerm_colors")
-  let g:monokai_use_iTerm_colors = 0
 endif
 
 set background=dark
@@ -74,19 +33,20 @@ let colors_name = "monokai"
 " ----------------------------------------------------------------------------
 if has("gui_running")
   let s:vmode      = "gui"
-  let s:background = "#292429"
+  let s:background = "#272822"
   let s:foreground = "#d5d8d6"
   let s:selection  = "#575b61"
   let s:line       = "#383a3e"
   let s:comment    = "#808890"
   let s:red        = "#e73c50"
-  let s:orange     = "#fd971f"
-  let s:yellow     = "#fcfcc4"
+  let s:orange     = "#FD971F"
+  let s:yellow     = "#E6DB74"
   let s:darkyellow = "#fbfca4"
-  let s:green      = "#9ad74c"
-  let s:aqua       = "#6bb6c9"
+  let s:green      = "#A6E22E"
+  let s:aqua       = "#66D9EF"
   let s:blue       = "#3fb8cd"
-  let s:purple     = "#ee5e91"
+  let s:purple     = "#AE81FF"
+  let s:pink       = "#F92672"
   let s:window     = "#505050"
   let s:darkcolumn = "#2c2c2c"
   let s:addbg      = "#5f875f"
@@ -110,46 +70,19 @@ else
   let s:darkcyan   = "24"
   let s:darkred    = "52"
   let s:darkpurple = "53"
-  if g:monokai_use_Xresources == 1
-    let s:foreground = "15"   " White
-    let s:selection  = "8"    " DarkGrey
-    let s:line       = "0"    " Black
-    let s:comment    = "7"    " LightGrey
-    let s:red        = "9"    " LightRed
-    let s:orange     = "3"    " DarkYellow
-    let s:yellow     = "11"   " LightYellow
-    let s:darkyellow = "11"   " DarkYellow
-    let s:green      = "10"   " LightGreen
-    let s:aqua       = "14"   " LightCyan
-    let s:blue       = "12"   " LightBlue
-    let s:purple     = "13"   " LightMagenta
-  elseif g:monokai_use_iTerm_colors == 1
-    let s:background = "NONE"
-    let s:foreground = "7"
-    let s:selection  = "0"
-    let s:line       = "0"
-    let s:comment    = "15"
-    let s:red        = "1"
-    let s:orange     = "11"
-    let s:yellow     = "3"
-    let s:darkyellow = "3"   
-    let s:green      = "2"
-    let s:aqua       = "6"
-    let s:blue       = "4"
-    let s:purple     = "5"
-  else
-    let s:foreground = "250"
-    let s:selection  = "237"
-    let s:line       = "235"
-    let s:comment    = "243"
-    let s:red        = "196"
-    let s:orange     = "172"
-    let s:yellow     = "186"
-    let s:darkyellow = "228"   
-    let s:green      = "10"
-    let s:aqua       = "74"
-    let s:blue       = "38"
-    let s:purple     = "13"
+  let s:foreground = "250"
+  let s:selection  = "237"
+  let s:line       = "235"
+  let s:comment    = "243"
+  let s:red        = "196"
+  let s:orange     = "172"
+  let s:yellow     = "186"
+  let s:darkyellow = "228"   
+  let s:green      = "10"
+  let s:aqua       = "74"
+  let s:blue       = "38"
+  let s:purple     = "13"
+  let s:pink       = "13"
   endif
 endif
 
@@ -183,6 +116,7 @@ exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
 exe "let s:bg_blue       = ' ".s:vmode."bg=".s:blue      ."'"
 exe "let s:bg_purple     = ' ".s:vmode."bg=".s:purple    ."'"
+exe "let s:bg_pink       = ' ".s:vmode."bg=".s:pink      ."'"
 exe "let s:bg_window     = ' ".s:vmode."bg=".s:window    ."'"
 exe "let s:bg_darkcolumn = ' ".s:vmode."bg=".s:darkcolumn."'"
 exe "let s:bg_addbg      = ' ".s:vmode."bg=".s:addbg     ."'"
@@ -208,6 +142,7 @@ exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
 exe "let s:fg_blue       = ' ".s:vmode."fg=".s:blue      ."'"
 exe "let s:fg_purple     = ' ".s:vmode."fg=".s:purple    ."'"
+exe "let s:fg_pink       = ' ".s:vmode."fg=".s:pink      ."'"
 exe "let s:fg_window     = ' ".s:vmode."fg=".s:window    ."'"
 exe "let s:fg_darkcolumn = ' ".s:vmode."fg=".s:darkcolumn."'"
 exe "let s:fg_addbg      = ' ".s:vmode."fg=".s:addbg     ."'"
@@ -246,6 +181,7 @@ if has("gui_running")
   exe "let s:sp_aqua       = ' guisp=".s:aqua      ."'"
   exe "let s:sp_blue       = ' guisp=".s:blue      ."'"
   exe "let s:sp_purple     = ' guisp=".s:purple    ."'"
+  exe "let s:sp_pink       = ' guisp=".s:pink      ."'"
   exe "let s:sp_window     = ' guisp=".s:window    ."'"
   exe "let s:sp_addbg      = ' guisp=".s:addbg     ."'"
   exe "let s:sp_addfg      = ' guisp=".s:addfg     ."'"
@@ -329,7 +265,7 @@ exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
 "		WildMenu"
 
 " Use Xresources for background colour
-if has('gui_running') || (g:monokai_use_Xresources != 1 && g:monokai_use_iTerm_colors != 1)
+if has('gui_running')
   exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
 else
   exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
@@ -338,57 +274,54 @@ endif
 "}}}
 " Generic Syntax Highlighting: (see :help group-name)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
-
-exe "hi! Constant"        .s:fg_red         .s:bg_none        .s:fmt_none
-exe "hi! String"          .s:fg_darkyellow  .s:bg_none        .s:fmt_none
+exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 "		Character"
 "		Number"
 "		Boolean"
 "		Float"
 
-exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
-exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
+exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Conditional"
 "		Repeat"
 "		Label"
-exe "hi! Operator"        .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Keyword"
 "		Exception"
 
-exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_orange      .s:bg_none        .s:fmt_none
 "		Include"
 "		Define"
 "		Macro"
 "		PreCondit"
 
-exe "hi! Type"            .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		StorageClass"
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		Typedef"
 
-exe "hi! Special"         .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
 "		SpecialChar"
 "		Tag"
 "		Delimiter"
 "		SpecialComment"
 "		Debug"
 "
-exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
-
-exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-
-exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
-
-exe "hi! Todo"            .s:fg_addfg       .s:bg_none        .s:fmt_none
 
 " Quickfix window highlighting
 exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 "   qfFileName"
 "   qfLineNr"
 "   qfError"
+"
+exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
+exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
+exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
+exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 
 "}}}
 " Diff Syntax Highlighting:"{{{
