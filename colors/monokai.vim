@@ -230,11 +230,15 @@ exe "hi! Constant"        .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Boolean"         .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Character"       .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
-"		Character"
 
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
+"		StorageClass"
+exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+"		Typedef"
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Conditional"
@@ -250,26 +254,20 @@ exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 "		Macro"
 "		PreCondit"
 
-exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
-"		StorageClass"
-exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
-"		Typedef"
-
 exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
 "		SpecialChar"
 "		Tag"
 "		Delimiter"
 "		SpecialComment"
 "		Debug"
-"
 
 " Quickfix window highlighting
 exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 "   qfFileName"
 "   qfLineNr"
 "   qfError"
-"
-exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
+
+exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
 exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
