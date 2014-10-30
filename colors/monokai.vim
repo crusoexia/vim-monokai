@@ -225,6 +225,7 @@ exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		StorageClass"
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 "		Typedef"
+exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 "		Conditional"
@@ -279,9 +280,11 @@ hi! link diffAdded Special
 "		diffComment
 
 " Javascript
-exe "hi! javaScriptFunction"        .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! javaScriptRailsFunction"   .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! javaScriptFunction"        .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! javaScriptFuncName"        .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! javaScriptRailsFunction"   .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! javaScriptArgument"        .s:fg_orange       .s:bg_none          .s:fmt_none
 
 " Html
 exe "hi! htmlTag"                   .s:fg_none         .s:bg_none          .s:fmt_none
