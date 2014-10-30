@@ -278,19 +278,25 @@ hi! link diffAdded Special
 "		diffSubname
 "		diffComment
 
-" Javascript:
+" Javascript
 exe "hi! javaScriptFunction"        .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! javaScriptRailsFunction"   .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fmt_none
 
-" Html:
+" Html
 exe "hi! htmlTag"                   .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! htmlEndTag"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
 
-" CSS:
+" Xml
+hi! link xmlTag     htmlTag
+hi! link xmlEndTag  htmlEndTag
+hi! link xmlTagName htmlTagName
+hi! link xmlArg     htmlArg
+
+" CSS
 exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_ital
 exe "hi! cssFunctionName"           .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! cssColor"                  .s:fg_purple       .s:bg_none          .s:fmt_none
