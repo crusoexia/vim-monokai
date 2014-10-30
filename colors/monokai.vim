@@ -284,8 +284,8 @@ exe "hi! javaScriptRailsFunction"   .s:fg_orange       .s:bg_none          .s:fm
 exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fmt_none
 
 " Html:
-exe "hi! htmlTag"                   .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! htmlEndTag"                .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! htmlTag"                   .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! htmlEndTag"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
