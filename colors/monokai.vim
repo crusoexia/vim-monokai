@@ -3,13 +3,10 @@
 " URL:        https://github.com/crusoexia/vim-monokai
 " License:    MIT
 "
-" The RGB colour palette is taken from colourlovers:
-" http://www.colourlovers.com/
-"
-" The syntax highlighting scheme and the code are taken from hybrid.vim:
-" https://github.com/w0ng/vim-hybrid
+" The colour palette is from http://www.colourlovers.com/
+" The original code is from https://github.com/w0ng/vim-hybrid
 
-" Initialisation:
+" Initialisation
 if !has("gui_running") && &t_Co < 256
   finish
 endif
@@ -23,7 +20,7 @@ endif
 
 let colors_name = "monokai"
 
-" GUI And Cterm Palettes:
+" GUI And Cterm Palettes
 if has("gui_running")
   let s:vmode      = "gui"
 
@@ -84,7 +81,7 @@ else
   let s:red        = "196"
 endif
 
-" Formatting Options:
+" Formatting Options
 let s:none   = "NONE"
 let s:t_none = "NONE"
 let s:n      = "NONE"
@@ -95,7 +92,7 @@ let s:b      = ",bold"
 let s:u      = ",underline"
 let s:i      = ",italic"
 
-" Highlighting Primitives:
+" Highlighting Primitives
 exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
 exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
@@ -158,7 +155,7 @@ exe "let s:fmt_stnd      = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s    ."'
 exe "let s:fmt_revr      = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r    ."'"
 exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
 
-" Vim Highlighting: (see :help highlight-groups)
+" Vim Highlighting (see :help highlight-groups)
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 "		Conceal"
 "		Cursor"
@@ -211,35 +208,35 @@ else
   exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
 endif
 
-" Generic Syntax Highlighting: (see :help group-name)
+" Generic Syntax Highlighting
 exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Boolean"         .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Character"       .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
+
 exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
-"		StorageClass"
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
-"		Typedef"
-exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
+"		 StorageClass"
+"		 Typedef"
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
-"		Conditional"
-"		Repeat"
-"		Label"
 exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
-"		Keyword"
-"		Exception"
+exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
+"		 Conditional"
+"		 Repeat"
+"		 Keyword"
+"		 Exception"
 
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
-"		Include"
-"		Define"
-"		Macro"
-"		PreCondit"
+"		 Include"
+"		 Define"
+"		 Macro"
+"		 PreCondit"
 
 exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
 "       SpecialKey
@@ -249,35 +246,22 @@ exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
 "		SpecialComment"
 "		Debug"
 
-" Quickfix window highlighting
-exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
-"   qfFileName"
-"   qfLineNr"
-"   qfError"
-
 exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
+
 exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
+
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 
-" Diff Syntax Highlighting:
-"		diffOldFile
-"		diffNewFile
-"		diffFile
-"		diffOnly
-"		diffIdentical
-"		diffDiffer
-"		diffBDiffer
-"		diffIsA
-"		diffNoEOL
-"		diffCommon
-hi! link diffRemoved Constant
-"		diffChanged
-hi! link diffAdded Special
-"		diffLine
-"		diffSubname
-"		diffComment
+exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
+
+exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
+
+" Quickfix window highlighting
+exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+
+" Diff 
+hi! link diffRemoved    Constant
+hi! link diffAdded      Special
 
 " Javascript
 exe "hi! javaScriptFunction"        .s:fg_aqua         .s:bg_none          .s:fmt_none
