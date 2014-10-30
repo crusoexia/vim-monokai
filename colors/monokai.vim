@@ -279,7 +279,7 @@ hi! link diffAdded Special
 "		diffComment
 
 " Javascript:
-exe "hi! javaScriptFunction"        .s:fg_orange       .s:bg_none          .s:fmt_ital
+exe "hi! javaScriptFunction"        .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! javaScriptRailsFunction"   .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fmt_none
 
@@ -292,7 +292,6 @@ exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fm
 
 " CSS:
 exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_ital
-
 exe "hi! cssFunctionName"           .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! cssColor"                  .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! cssPseudoClassId"          .s:fg_purple       .s:bg_none          .s:fmt_none
