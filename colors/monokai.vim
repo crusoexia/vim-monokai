@@ -7,6 +7,7 @@
 " The original code is from https://github.com/w0ng/vim-hybrid
 
 " Initialisation
+" --------------
 if !has("gui_running") && &t_Co < 256
   finish
 endif
@@ -21,6 +22,7 @@ endif
 let colors_name = "monokai"
 
 " GUI And Cterm Palettes
+" ----------------------
 if has("gui_running")
   let s:vmode      = "gui"
 
@@ -82,6 +84,7 @@ else
 endif
 
 " Formatting Options
+" ------------------
 let s:none   = "NONE"
 let s:t_none = "NONE"
 let s:n      = "NONE"
@@ -93,6 +96,7 @@ let s:u      = ",underline"
 let s:i      = ",italic"
 
 " Highlighting Primitives
+" -----------------------
 exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
 exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
@@ -155,7 +159,9 @@ exe "let s:fmt_stnd      = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s    ."'
 exe "let s:fmt_revr      = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r    ."'"
 exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
 
-" Vim Highlighting (see :help highlight-groups)
+" Vim Highlighting 
+" ----------------
+" (see :help highlight-groups)
 exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
 "		Conceal"
 "		Cursor"
@@ -209,6 +215,7 @@ else
 endif
 
 " Generic Syntax Highlighting
+" ---------------------------
 exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
@@ -263,6 +270,8 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 hi! link diffRemoved    Constant
 hi! link diffAdded      Special
 
+" Language highlight
+" ------------------
 " Javascript
 exe "hi! javaScriptFunction"        .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! javaScriptFuncName"        .s:fg_orange       .s:bg_none          .s:fmt_none
