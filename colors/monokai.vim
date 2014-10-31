@@ -8,6 +8,7 @@
 
 " Initialisation
 " --------------
+
 if !has("gui_running") && &t_Co < 256
   finish
 endif
@@ -21,8 +22,9 @@ endif
 
 let colors_name = "monokai"
 
-" GUI And Cterm Palettes
-" ----------------------
+" Palettes
+" --------
+
 if has("gui_running")
   let s:vmode      = "gui"
 
@@ -85,6 +87,7 @@ endif
 
 " Formatting Options
 " ------------------
+
 let s:none   = "NONE"
 let s:t_none = "NONE"
 let s:n      = "NONE"
@@ -97,6 +100,7 @@ let s:i      = ",italic"
 
 " Highlighting Primitives
 " -----------------------
+
 exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
 exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
@@ -159,53 +163,8 @@ exe "let s:fmt_stnd      = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s    ."'
 exe "let s:fmt_revr      = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r    ."'"
 exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
 
-" Vim Highlighting 
+" Highlighting 
 " ----------------
-" (see :help highlight-groups)
-exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
-"		Conceal"
-"		Cursor"
-"		CursorIM"
-exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! Directory"     .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
-exe "hi! DiffDelete"    .s:fg_background  .s:bg_red         .s:fmt_none
-exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
-exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
-exe "hi! VertSplit"     .s:fg_window      .s:bg_window      .s:fmt_none
-exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-"		Incsearch"
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
-exe "hi! MatchParen"    .s:fg_background  .s:bg_aqua        .s:fmt_none
-exe "hi! ModeMsg"       .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"       .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
-exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
-"		PmenuSbar"
-"		PmenuThumb"
-exe "hi! Question"      .s:fg_orange      .s:bg_none        .s:fmt_none
-exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
-exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
-exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_darkcyan    .s:fmt_undr
-exe "hi! SpellBad"      .s:fg_red         .s:bg_darkred     .s:fmt_undr
-exe "hi! SpellRare"     .s:fg_purple      .s:bg_darkpurple  .s:fmt_undr
-exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
-exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
-exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
-"		TabLineFill"
-"		TabLineSel"
-exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
-"		VisualNos"
-exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
-"		WildMenu"
 
 " Use Xresources for background colour
 if has('gui_running')
@@ -214,8 +173,58 @@ else
   exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
 endif
 
+" editor
+exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
+exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
+exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
+exe "hi! MatchParen"    .s:fg_background  .s:bg_aqua        .s:fmt_none
+exe "hi! Question"      .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! VertSplit"     .s:fg_window      .s:bg_window      .s:fmt_none
+exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
+exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
+exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
+exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
+exe "hi! ModeMsg"       .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! MoreMsg"       .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
+
+" misc
+exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! Directory"     .s:fg_aqua        .s:bg_none        .s:fmt_none
+
+" diff
+exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
+exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
+exe "hi! DiffDelete"    .s:fg_background  .s:bg_red         .s:fmt_none
+exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
+
+" fold
+exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
+exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+"		Incsearch"
+
+" popup menu
+exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
+exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
+"		PmenuSbar"
+"		PmenuThumb"
+
+" spell
+exe "hi! SpellCap"      .s:fg_blue        .s:bg_darkblue    .s:fmt_undr
+exe "hi! SpellLocal"    .s:fg_aqua        .s:bg_darkcyan    .s:fmt_undr
+exe "hi! SpellBad"      .s:fg_red         .s:bg_darkred     .s:fmt_undr
+exe "hi! SpellRare"     .s:fg_purple      .s:bg_darkpurple  .s:fmt_undr
+
 " Generic Syntax Highlighting
 " ---------------------------
+
 exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
@@ -254,13 +263,9 @@ exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
 "		Debug"
 
 exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
-
 exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
-
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
-
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-
 exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
 
 " Quickfix window highlighting
