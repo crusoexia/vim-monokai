@@ -158,47 +158,47 @@ else
 endif
 
 " editor
-exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorColumn"  .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_bold
-exe "hi! VertSplit"     .s:fg_window      .s:bg_window      .s:fmt_none
-exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SignColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
-exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
-exe "hi! TabLine"       .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
-exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
-exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
-exe "hi! MatchParen"    .s:fg_background  .s:bg_aqua        .s:fmt_none
-exe "hi! Question"      .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! ModeMsg"       .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"       .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
-exe "hi! WarningMsg"    .s:fg_red         .s:bg_none        .s:fmt_none
+exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
+exe "hi! VertSplit"       .s:fg_window      .s:bg_window      .s:fmt_none
+exe "hi! NonText"         .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+exe "hi! LineNr"          .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! StatusLine"      .s:fg_comment     .s:bg_background  .s:fmt_revr
+exe "hi! StatusLineNC"    .s:fg_window      .s:bg_comment     .s:fmt_revr
+exe "hi! TabLine"         .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
+exe "hi! Visual"          .s:fg_none        .s:bg_selection   .s:fmt_none
+exe "hi! Search"          .s:fg_background  .s:bg_yellow      .s:fmt_none
+exe "hi! MatchParen"      .s:fg_background  .s:bg_aqua        .s:fmt_none
+exe "hi! Question"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! ModeMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! MoreMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! ErrorMsg"        .s:fg_background  .s:bg_red         .s:fmt_stnd
+exe "hi! WarningMsg"      .s:fg_red         .s:bg_none        .s:fmt_none
 
 " misc
-exe "hi! SpecialKey"    .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! Title"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Directory"     .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! SpecialKey"      .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! Title"           .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! Directory"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " diff
-exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffDelete"    .s:fg_background  .s:bg_delbg       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
-exe "hi! DiffText"      .s:fg_background  .s:bg_aqua        .s:fmt_none
+exe "hi! DiffAdd"         .s:fg_addfg       .s:bg_addbg       .s:fmt_none
+exe "hi! DiffDelete"      .s:fg_background  .s:bg_delbg       .s:fmt_none
+exe "hi! DiffChange"      .s:fg_changefg    .s:bg_changebg    .s:fmt_none
+exe "hi! DiffText"        .s:fg_background  .s:bg_aqua        .s:fmt_none
 
 " fold
-exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-"		Incsearch"
+exe "hi! Folded"          .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
+exe "hi! FoldColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+"        Incsearch"
 
 " popup menu
-exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
-exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
-"		PmenuSbar"
-"		PmenuThumb"
+exe "hi! Pmenu"           .s:fg_foreground  .s:bg_selection   .s:fmt_none
+exe "hi! PmenuSel"        .s:fg_foreground  .s:bg_selection   .s:fmt_revr
+"        PmenuSbar"
+"        PmenuThumb"
 
 " Generic Syntax Highlighting
 " ---------------------------
@@ -215,30 +215,30 @@ exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
 
 exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
-"		 StorageClass"
-"		 Typedef"
+"        StorageClass"
+"        Typedef"
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
-"		 Conditional"
-"		 Repeat"
-"		 Keyword"
-"		 Exception"
+"        Conditional"
+"        Repeat"
+"        Keyword"
+"        Exception"
 
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
-"		 Include"
-"		 Define"
-"		 Macro"
-"		 PreCondit"
+"        Include"
+"        Define"
+"        Macro"
+"        PreCondit"
 
 exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
-"       SpecialKey
-"		SpecialChar"
-"		Tag"
-"		Delimiter"
-"		SpecialComment"
-"		Debug"
+"        SpecialKey
+"        SpecialChar"
+"        Tag"
+"        Delimiter"
+"        SpecialComment"
+"        Debug"
 
 exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
