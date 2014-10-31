@@ -34,6 +34,7 @@ if has("gui_running")
   let s:darkcolumn = "#2c2c2c"
   let s:selection  = "#575b61"
   let s:comment    = "#808890"
+  let s:error      = "#5f0000"
   
   let s:pink       = "#f92672"
   let s:green      = "#a6e22e"
@@ -41,14 +42,13 @@ if has("gui_running")
   let s:yellow     = "#e6db74"
   let s:orange     = "#fd971f"
   let s:purple     = "#ae81ff"
-  let s:blue       = "#3fb8cd"
   let s:red        = "#e73c50"
-  let s:darkred    = "#5f0000"
 
-  let s:addbg      = "#46830c"
-  let s:addfg      = "#f8f8f2"
-  let s:changebg   = "#5f5f87"
+  let s:addfg      = "#d7ffaf"
+  let s:addbg      = "#5f875f"
+  let s:delbg      = "#f75f5f"
   let s:changefg   = "#d7d7ff"
+  let s:changebg   = "#5f5f87"
 else
   let s:vmode      = "cterm"
   let s:background = "234"
@@ -58,6 +58,7 @@ else
   let s:darkcolumn = "234"
   let s:selection  = "238"
   let s:comment    = "243"
+  let s:error      = "52"
   
   let s:pink       = "197"
   let s:green      = "148"
@@ -65,14 +66,13 @@ else
   let s:yellow     = "186"
   let s:orange     = "208"
   let s:purple     = "141"
-  let s:blue       = "38"
   let s:red        = "196"
-  let s:darkred    = "52"
 
-  let s:addbg      = "65"
   let s:addfg      = "193"
-  let s:changebg   = "60"
+  let s:addbg      = "65"
+  let s:delbg      = "167"
   let s:changefg   = "189"
+  let s:changebg   = "60"
 endif
 
 " Formatting Options
@@ -102,16 +102,16 @@ exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
 exe "let s:bg_yellow     = ' ".s:vmode."bg=".s:yellow    ."'"
 exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
 exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
-exe "let s:bg_blue       = ' ".s:vmode."bg=".s:blue      ."'"
 exe "let s:bg_purple     = ' ".s:vmode."bg=".s:purple    ."'"
 exe "let s:bg_pink       = ' ".s:vmode."bg=".s:pink      ."'"
 exe "let s:bg_window     = ' ".s:vmode."bg=".s:window    ."'"
 exe "let s:bg_darkcolumn = ' ".s:vmode."bg=".s:darkcolumn."'"
 exe "let s:bg_addbg      = ' ".s:vmode."bg=".s:addbg     ."'"
 exe "let s:bg_addfg      = ' ".s:vmode."bg=".s:addfg     ."'"
+exe "let s:bg_delbg      = ' ".s:vmode."bg=".s:delbg     ."'"
 exe "let s:bg_changebg   = ' ".s:vmode."bg=".s:changebg  ."'"
 exe "let s:bg_changefg   = ' ".s:vmode."bg=".s:changefg  ."'"
-exe "let s:bg_darkred    = ' ".s:vmode."bg=".s:darkred   ."'"
+exe "let s:bg_error      = ' ".s:vmode."bg=".s:error     ."'"
 
 exe "let s:fg_none       = ' ".s:vmode."fg=".s:none      ."'"
 exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
@@ -124,16 +124,16 @@ exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
 exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
 exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
 exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
-exe "let s:fg_blue       = ' ".s:vmode."fg=".s:blue      ."'"
 exe "let s:fg_purple     = ' ".s:vmode."fg=".s:purple    ."'"
 exe "let s:fg_pink       = ' ".s:vmode."fg=".s:pink      ."'"
 exe "let s:fg_window     = ' ".s:vmode."fg=".s:window    ."'"
 exe "let s:fg_darkcolumn = ' ".s:vmode."fg=".s:darkcolumn."'"
 exe "let s:fg_addbg      = ' ".s:vmode."fg=".s:addbg     ."'"
 exe "let s:fg_addfg      = ' ".s:vmode."fg=".s:addfg     ."'"
+exe "let s:fg_delbg      = ' ".s:vmode."fg=".s:delbg     ."'"
 exe "let s:fg_changebg   = ' ".s:vmode."fg=".s:changebg  ."'"
 exe "let s:fg_changefg   = ' ".s:vmode."fg=".s:changefg  ."'"
-exe "let s:fg_darkred    = ' ".s:vmode."fg=".s:darkred   ."'"
+exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
 
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
@@ -185,9 +185,9 @@ exe "hi! Directory"     .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " diff
 exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffDelete"    .s:fg_background  .s:bg_red         .s:fmt_none
+exe "hi! DiffDelete"    .s:fg_background  .s:bg_delbg       .s:fmt_none
 exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
-exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
+exe "hi! DiffText"      .s:fg_background  .s:bg_aqua        .s:fmt_none
 
 " fold
 exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
@@ -244,14 +244,10 @@ exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
+exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_undr
 
 " Quickfix window highlighting
 exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
-
-" Diff 
-hi! link diffRemoved    Constant
-hi! link diffAdded      Special
 
 " Language highlight
 " ------------------
