@@ -182,7 +182,7 @@ exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! Visual"        .s:fg_none        .s:bg_selection   .s:fmt_none
 exe "hi! Search"        .s:fg_background  .s:bg_yellow      .s:fmt_none
 exe "hi! MatchParen"    .s:fg_background  .s:bg_aqua        .s:fmt_none
-exe "hi! Question"      .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Question"      .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! VertSplit"     .s:fg_window      .s:bg_window      .s:fmt_none
 exe "hi! StatusLine"    .s:fg_comment     .s:bg_background  .s:fmt_revr
 exe "hi! StatusLineNC"  .s:fg_window      .s:bg_comment     .s:fmt_revr
@@ -289,8 +289,8 @@ exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fm
 exe "hi! javaScriptArgument"        .s:fg_orange       .s:bg_none          .s:fmt_none
 
 " Html
-exe "hi! htmlTag"                   .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! htmlEndTag"                .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! htmlTag"                   .s:fg_foreground   .s:bg_none          .s:fmt_none
+exe "hi! htmlEndTag"                .s:fg_foreground   .s:bg_none          .s:fmt_none
 exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
@@ -299,7 +299,7 @@ exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fm
 hi! link xmlTag     htmlTag
 hi! link xmlEndTag  htmlEndTag
 hi! link xmlTagName htmlTagName
-hi! link xmlArg     htmlArg
+hi! link xmlAttrib  htmlArg
 
 " CSS
 exe "hi! cssURL"                    .s:fg_orange       .s:bg_none          .s:fmt_ital
