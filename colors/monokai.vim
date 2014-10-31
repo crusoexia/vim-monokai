@@ -272,6 +272,10 @@ hi! link diffAdded      Special
 
 " Language highlight
 " ------------------
+
+" Vim command
+exe "hi! vimCommand"                .s:fg_pink         .s:bg_none          .s:fmt_none
+
 " Javascript
 exe "hi! javaScriptFunction"        .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! javaScriptFuncName"        .s:fg_orange       .s:bg_none          .s:fmt_none
