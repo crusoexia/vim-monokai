@@ -27,7 +27,6 @@ let colors_name = "monokai"
 
 if has("gui_running")
   let s:vmode      = "gui"
-
   let s:background = "#272822"
   let s:foreground = "#d5d8d6"
   let s:window     = "#505050"
@@ -36,16 +35,6 @@ if has("gui_running")
   let s:selection  = "#575b61"
   let s:comment    = "#808890"
   
-  let s:addbg      = "#5f875f"
-  let s:addfg      = "#d7ffaf"
-  let s:changebg   = "#5f5f87"
-  let s:changefg   = "#d7d7ff"
-
-  let s:darkblue   = "#00005f"
-  let s:darkcyan   = "#005f5f"
-  let s:darkred    = "#5f0000"
-  let s:darkpurple = "#5f005f"
-
   let s:pink       = "#f92672"
   let s:green      = "#a6e22e"
   let s:aqua       = "#66d9ef"
@@ -54,9 +43,14 @@ if has("gui_running")
   let s:purple     = "#ae81ff"
   let s:blue       = "#3fb8cd"
   let s:red        = "#e73c50"
+  let s:darkred    = "#5f0000"
+
+  let s:addbg      = "#46830c"
+  let s:addfg      = "#f8f8f2"
+  let s:changebg   = "#5f5f87"
+  let s:changefg   = "#d7d7ff"
 else
   let s:vmode      = "cterm"
-
   let s:background = "234"
   let s:foreground = "250"
   let s:window     = "236"
@@ -65,16 +59,6 @@ else
   let s:selection  = "238"
   let s:comment    = "243"
   
-  let s:addbg      = "65"
-  let s:addfg      = "193"
-  let s:changebg   = "60"
-  let s:changefg   = "189"
-
-  let s:darkblue   = "17"
-  let s:darkcyan   = "24"
-  let s:darkred    = "52"
-  let s:darkpurple = "53"
-
   let s:pink       = "197"
   let s:green      = "148"
   let s:aqua       = "81"
@@ -83,6 +67,12 @@ else
   let s:purple     = "141"
   let s:blue       = "38"
   let s:red        = "196"
+  let s:darkred    = "52"
+
+  let s:addbg      = "65"
+  let s:addfg      = "193"
+  let s:changebg   = "60"
+  let s:changefg   = "189"
 endif
 
 " Formatting Options
@@ -121,10 +111,7 @@ exe "let s:bg_addbg      = ' ".s:vmode."bg=".s:addbg     ."'"
 exe "let s:bg_addfg      = ' ".s:vmode."bg=".s:addfg     ."'"
 exe "let s:bg_changebg   = ' ".s:vmode."bg=".s:changebg  ."'"
 exe "let s:bg_changefg   = ' ".s:vmode."bg=".s:changefg  ."'"
-exe "let s:bg_darkblue   = ' ".s:vmode."bg=".s:darkblue  ."'"
-exe "let s:bg_darkcyan   = ' ".s:vmode."bg=".s:darkcyan  ."'"
 exe "let s:bg_darkred    = ' ".s:vmode."bg=".s:darkred   ."'"
-exe "let s:bg_darkpurple = ' ".s:vmode."bg=".s:darkpurple."'"
 
 exe "let s:fg_none       = ' ".s:vmode."fg=".s:none      ."'"
 exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
@@ -146,10 +133,7 @@ exe "let s:fg_addbg      = ' ".s:vmode."fg=".s:addbg     ."'"
 exe "let s:fg_addfg      = ' ".s:vmode."fg=".s:addfg     ."'"
 exe "let s:fg_changebg   = ' ".s:vmode."fg=".s:changebg  ."'"
 exe "let s:fg_changefg   = ' ".s:vmode."fg=".s:changefg  ."'"
-exe "let s:fg_darkblue   = ' ".s:vmode."fg=".s:darkblue  ."'"
-exe "let s:fg_darkcyan   = ' ".s:vmode."fg=".s:darkcyan  ."'"
 exe "let s:fg_darkred    = ' ".s:vmode."fg=".s:darkred   ."'"
-exe "let s:fg_darkpurple = ' ".s:vmode."fg=".s:darkpurple."'"
 
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
@@ -201,8 +185,8 @@ exe "hi! Directory"     .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " diff
 exe "hi! DiffAdd"       .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
 exe "hi! DiffDelete"    .s:fg_background  .s:bg_red         .s:fmt_none
+exe "hi! DiffChange"    .s:fg_changefg    .s:bg_changebg    .s:fmt_none
 exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
 
 " fold
