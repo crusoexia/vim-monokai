@@ -284,3 +284,31 @@ exe "hi! cssClassName"              .s:fg_green        .s:bg_none          .s:fm
 exe "hi! cssValueLength"            .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! cssCommonAttr"             .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! cssBraces"                 .s:fg_none         .s:bg_none          .s:fmt_none
+
+" ruby
+exe "hi! rubyClass"                     .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyFunction"                  .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! rubyInterpolationDelimiter"    .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! rubySymbol"                    .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! rubyStringDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
+exe "hi! rubyBlockParameter"            .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! rubyInstanceVariable"          .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! rubyInclude"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyGlobalVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! rubyRegexp"                    .s:fg_yellow       .s:bg_none          .s:fmt_none
+exe "hi! rubyRegexpDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
+exe "hi! rubyEscape"                    .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! rubyControl"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyClassVariable"             .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyException"                 .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyPseudoVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsARAssociationMethod"  .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsARMethod"             .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsRenderMethod"         .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! rubyRailsMethod"               .s:fg_aqua         .s:bg_none          .s:fmt_none
+
+" eruby
+exe "hi! erubyDelimiter"                .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! erubyComment"                  .s:fg_comment      .s:bg_none          .s:fmt_none
+exe "hi! erubyRailsMethod"              .s:fg_aqua         .s:bg_none          .s:fmt_none
