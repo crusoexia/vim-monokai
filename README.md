@@ -21,6 +21,11 @@ Type below command in your vim or save it in your vimrc:
 
     colorscheme monokai
 
+Javascript
+----------
+
+Works better with [vim-javascript](https://github.com/pangloss/vim-javascript), which provide features such as param syntax highlight.
+
 Screenshots
 ===========
 
