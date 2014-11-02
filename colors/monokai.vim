@@ -211,7 +211,7 @@ exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
@@ -268,6 +268,8 @@ exe "hi! htmlEndTag"                .s:fg_foreground   .s:bg_none          .s:fm
 exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                    .s:fg_none         .s:bg_none          .s:fmt_none
 
 " Xml
 hi! link xmlTag     htmlTag
