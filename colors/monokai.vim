@@ -5,12 +5,22 @@
 "
 " The colour palette is from http://www.colourlovers.com/
 " The original code is from https://github.com/w0ng/vim-hybrid
+"
+" Configuration:
+"
+"   * Enable highlight function call:
+"
+"       let g:monokai_func_call = 1
 
 " Initialisation
 " --------------
 
 if !has("gui_running") && &t_Co < 256
   finish
+endif
+
+if ! exists("g:monokai_func_call")
+    let g:monokai_func_call = 0
 endif
 
 set background=dark
@@ -256,11 +266,15 @@ exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! vimCommand"                .s:fg_pink         .s:bg_none          .s:fmt_none
 
 " Javascript
-exe "hi! javaScriptFunction"        .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! javaScriptFuncName"        .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! javaScriptRailsFunction"   .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! javaScriptBraces"          .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! javaScriptArgument"        .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! jsFunction"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! jsFuncName"                    .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsFuncArgs"                    .s:fg_orange       .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                        .s:fg_none         .s:bg_none          .s:fmt_none
+if exists("g:monokai_func_call") && g:monokai_func_call
+    exe "hi! jsFuncCall"                .s:fg_green        .s:bg_none          .s:fmt_none
+else
+    exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
+endif
 
 " Html
 exe "hi! htmlTag"                   .s:fg_foreground   .s:bg_none          .s:fmt_none
@@ -268,8 +282,6 @@ exe "hi! htmlEndTag"                .s:fg_foreground   .s:bg_none          .s:fm
 exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! jsFuncArgs"                .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! jsThis"                    .s:fg_none         .s:bg_none          .s:fmt_none
 
 " Xml
 hi! link xmlTag     htmlTag
