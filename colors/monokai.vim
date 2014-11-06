@@ -158,16 +158,10 @@ exe "let s:fmt_revr      = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r    ."'
 exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
 
 " Highlighting 
-" ----------------
-
-" Use Xresources for background colour
-if has('gui_running')
-  exe "hi! Normal"        .s:fg_foreground  .s:bg_background  .s:fmt_none
-else
-  exe "hi! Normal"        .s:fg_foreground  .s:bg_none        .s:fmt_none
-endif
+" ------------
 
 " editor
+exe "hi! Normal"          .s:fg_foreground  .s:bg_background  .s:fmt_none
 exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
@@ -242,7 +236,7 @@ exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 "        Macro"
 "        PreCondit"
 
-exe "hi! Special"         .s:fg_none        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
 "        SpecialKey
 "        SpecialChar"
 "        Tag"
@@ -269,7 +263,7 @@ exe "hi! vimCommand"                .s:fg_pink         .s:bg_none          .s:fm
 exe "hi! jsFunction"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncName"                    .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! jsFuncArgs"                    .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! jsThis"                        .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                        .s:fg_foreground   .s:bg_none          .s:fmt_none
 if exists("g:monokai_func_call") && g:monokai_func_call
     exe "hi! jsFuncCall"                .s:fg_green        .s:bg_none          .s:fmt_none
 else
