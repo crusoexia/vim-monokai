@@ -311,7 +311,6 @@ exe "hi! rubyFunction"                  .s:fg_green        .s:bg_none          .
 exe "hi! rubyInterpolationDelimiter"    .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubySymbol"                    .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! rubyStringDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
-exe "hi! rubyBlockParameter"            .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyInstanceVariable"          .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyInclude"                   .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! rubyGlobalVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
@@ -327,6 +326,12 @@ exe "hi! rubyRailsARAssociationMethod"  .s:fg_aqua         .s:bg_none          .
 exe "hi! rubyRailsARMethod"             .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsRenderMethod"         .s:fg_aqua         .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsMethod"               .s:fg_aqua         .s:bg_none          .s:fmt_none
+
+if g:monokai_italic == 1
+    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_ital
+else
+    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
+endif
 
 " eruby
 exe "hi! erubyDelimiter"                .s:fg_none         .s:bg_none          .s:fmt_none
