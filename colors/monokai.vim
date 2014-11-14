@@ -243,7 +243,7 @@ exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 "        Macro"
 "        PreCondit"
 
-exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        SpecialKey
 "        SpecialChar"
 "        Tag"
