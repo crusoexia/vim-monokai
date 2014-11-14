@@ -217,18 +217,6 @@ exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
-if g:monokai_italic == 1
-    exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_ital
-    "        Structure"
-    "        StorageClass"
-    "        Typedef"
-else
-    exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
-    "        Structure"
-    "        StorageClass"
-    "        Typedef"
-endif
-
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
@@ -252,10 +240,27 @@ exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        Debug"
 
 exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
-exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_undr
+
+if g:monokai_italic == 1
+    exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_ital
+    "        Structure"
+    "        StorageClass"
+    "        Typedef"
+    
+    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_ital
+    exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_ital
+else
+    exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
+    "        Structure"
+    "        StorageClass"
+    "        Typedef"
+    
+    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
+    exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
+endif
+
 
 " Quickfix window highlighting
 exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
