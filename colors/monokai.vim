@@ -147,7 +147,7 @@ exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
 
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
-exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
+exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.s:i.  " term=NONE".s:b.s:i."'"
 exe "let s:fmt_undr      = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u    ."'"
 exe "let s:fmt_undb      = ' ".s:vmode."=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
 exe "let s:fmt_undi      = ' ".s:vmode."=NONE".s:u.s:i.  " term=NONE".s:u.s:i."'"
@@ -207,13 +207,23 @@ exe "hi! PmenuSel"        .s:fg_foreground  .s:bg_selection   .s:fmt_revr
 " Generic Syntax Highlighting
 " ---------------------------
 
-exe "hi! Constant"        .s:fg_purple      .s:bg_none        .s:fmt_none
+if g:monokai_italic == 1
+    exe "hi! Constant"    .s:fg_purple      .s:bg_none        .s:fmt_ital
+else
+    exe "hi! Constant"    .s:fg_purple      .s:bg_none        .s:fmt_none
+endif
+
 exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Boolean"         .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
+exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
+"        Structure"
+"        StorageClass"
+"        Typedef"
+    
 exe "hi! Identifier"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
@@ -244,19 +254,9 @@ exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_undr
 
 if g:monokai_italic == 1
-    exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_ital
-    "        Structure"
-    "        StorageClass"
-    "        Typedef"
-    
     exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_ital
     exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_ital
 else
-    exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
-    "        Structure"
-    "        StorageClass"
-    "        Typedef"
-    
     exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
     exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 endif
