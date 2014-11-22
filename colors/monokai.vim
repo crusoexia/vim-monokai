@@ -61,11 +61,11 @@ if has("gui_running")
   let s:changebg   = "#5f5f87"
 else
   let s:vmode      = "cterm"
-  let s:background = "235"
+  let s:background = "234"
   let s:foreground = "251"
   let s:window     = "238"
   let s:line       = "236"
-  let s:darkcolumn = "234"
+  let s:darkcolumn = "233"
   let s:selection  = "238"
   let s:comment    = "243"
   let s:error      = "52"
@@ -254,16 +254,18 @@ exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_undr
 
 if g:monokai_italic == 1
-    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_ital
+    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bldi
     exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_ital
 else
-    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_none
+    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bold
     exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 endif
 
+" Syntastic
+" ---------
 
-" Quickfix window highlighting
-exe "hi! qfLineNr"        .s:fg_yellow      .s:bg_none        .s:fmt_none
+hi! link SyntasticErrorSign Error
+exe "hi! SyntasticWarningSign"      .s:fg_orange      .s:bg_darkcolumn  .s:fmt_none
 
 " Language highlight
 " ------------------
