@@ -66,7 +66,7 @@ else
   let s:window     = "238"
   let s:line       = "236"
   let s:darkcolumn = "233"
-  let s:selection  = "238"
+  let s:selection  = "237"
   let s:comment    = "243"
   let s:error      = "52"
   
