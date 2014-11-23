@@ -229,7 +229,7 @@ exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! Label"           .s:fg_orange      .s:bg_none        .s:fmt_none
 "        Conditional"
 "        Repeat"
 "        Keyword"
