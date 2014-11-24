@@ -187,7 +187,7 @@ exe "hi! StatusLineNC"    .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"         .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
 exe "hi! Visual"          .s:fg_none        .s:bg_selection   .s:fmt_none
 exe "hi! Search"          .s:fg_background  .s:bg_yellow      .s:fmt_none
-exe "hi! MatchParen"      .s:fg_background  .s:bg_pink        .s:fmt_none
+exe "hi! MatchParen"      .s:fg_background  .s:bg_purple      .s:fmt_none
 exe "hi! Question"        .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! ModeMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
@@ -210,7 +210,7 @@ endif
 " misc
 exe "hi! SpecialKey"      .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! Title"           .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Directory"       .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Directory"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " diff
 exe "hi! DiffAdd"         .s:fg_addfg       .s:bg_addbg       .s:fmt_none
@@ -285,6 +285,20 @@ else
     exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bold
     exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 endif
+
+" NerdTree
+" --------
+
+exe "hi! NERDTreeOpenable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeClosable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeHelp"              .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarksLeader"   .s:fg_none        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarkName"      .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeUp"                .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDirSlash"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 " Syntastic
 " ---------
