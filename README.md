@@ -29,6 +29,12 @@ If you are using a font which support italic, you can use below config to enable
 
     let g:monokai_italic = 1
 
+* Thick window border
+
+The default window border is narrow dotted line, use below config to turn on the thick one:
+
+    let g:monokai_thick_border = 1
+
 Javascript enchancement
 -----------------------
 
