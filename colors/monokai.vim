@@ -11,6 +11,10 @@
 "   * Enable italic:
 "
 "       let g:monokai_italic = 1
+"
+"   * Use thick window border:
+"
+"       let g:monokai_thick_border = 1
 
 " Initialisation
 " --------------
@@ -21,6 +25,10 @@ endif
 
 if ! exists("g:monokai_italic")
     let g:monokai_italic = 0
+endif
+
+if ! exists("g:monokai_thick_border")
+    let g:monokai_thick_border = 0
 endif
 
 set background=dark
@@ -39,8 +47,10 @@ if has("gui_running")
   let s:vmode      = "gui"
   let s:background = "#272822"
   let s:foreground = "#d5d8d6"
-  let s:window     = "#505050"
+  let s:window     = "#64645e"
   let s:line       = "#383a3e"
+  let s:linenr     = "#90908a"
+  let s:lncolumn   = "#3c3d37"
   let s:darkcolumn = "#2c2c2c"
   let s:selection  = "#575b61"
   let s:comment    = "#808890"
@@ -63,9 +73,11 @@ else
   let s:vmode      = "cterm"
   let s:background = "234"
   let s:foreground = "251"
-  let s:window     = "238"
+  let s:window     = "239"
   let s:line       = "236"
-  let s:darkcolumn = "233"
+  let s:linenr     = "243"
+  let s:lncolumn   = "235"
+  let s:darkcolumn = "234"
   let s:selection  = "237"
   let s:comment    = "243"
   let s:error      = "52"
@@ -106,6 +118,8 @@ exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
 exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
 exe "let s:bg_selection  = ' ".s:vmode."bg=".s:selection ."'"
 exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
+exe "let s:bg_linenr     = ' ".s:vmode."bg=".s:linenr    ."'"
+exe "let s:bg_lncolumn   = ' ".s:vmode."bg=".s:lncolumn  ."'"
 exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
 exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
 exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
@@ -128,6 +142,8 @@ exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
 exe "let s:fg_background = ' ".s:vmode."fg=".s:background."'"
 exe "let s:fg_selection  = ' ".s:vmode."fg=".s:selection ."'"
 exe "let s:fg_line       = ' ".s:vmode."fg=".s:line      ."'"
+exe "let s:fg_linenr     = ' ".s:vmode."fg=".s:linenr    ."'"
+exe "let s:fg_lncolumn   = ' ".s:vmode."fg=".s:lncolumn  ."'"
 exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
 exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
 exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
@@ -165,11 +181,7 @@ exe "hi! Normal"          .s:fg_foreground  .s:bg_background  .s:fmt_none
 exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
-exe "hi! VertSplit"       .s:fg_window      .s:bg_none        .s:fmt_none
 exe "hi! NonText"         .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-exe "hi! LineNr"          .s:fg_selection   .s:bg_none        .s:fmt_none
 exe "hi! StatusLine"      .s:fg_comment     .s:bg_background  .s:fmt_revr
 exe "hi! StatusLineNC"    .s:fg_window      .s:bg_comment     .s:fmt_revr
 exe "hi! TabLine"         .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
@@ -181,6 +193,19 @@ exe "hi! ModeMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! ErrorMsg"        .s:fg_background  .s:bg_red         .s:fmt_stnd
 exe "hi! WarningMsg"      .s:fg_red         .s:bg_none        .s:fmt_none
+
+if g:monokai_thick_border == 1
+    exe "hi! VertSplit"       .s:fg_window      .s:bg_window      .s:fmt_none
+    exe "hi! LineNr"          .s:fg_linenr      .s:bg_lncolumn    .s:fmt_none
+    exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_lncolumn    .s:fmt_none
+    exe "hi! SignColumn"      .s:fg_none        .s:bg_lncolumn    .s:fmt_none
+else
+    exe "hi! VertSplit"       .s:fg_window      .s:bg_none        .s:fmt_none
+    exe "hi! LineNr"          .s:fg_window      .s:bg_none        .s:fmt_none
+    exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
+    exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+endif
+    
 
 " misc
 exe "hi! SpecialKey"      .s:fg_selection   .s:bg_none        .s:fmt_none
@@ -265,7 +290,11 @@ endif
 " ---------
 
 hi! link SyntasticErrorSign Error
-exe "hi! SyntasticWarningSign"      .s:fg_orange      .s:bg_darkcolumn  .s:fmt_none
+if g:monokai_thick_border == 1
+    exe "hi! SyntasticWarningSign"  .s:fg_orange      .s:bg_lncolumn  .s:fmt_none
+else
+    exe "hi! SyntasticWarningSign"  .s:fg_orange      .s:bg_darkcolumn  .s:fmt_none
+endif
 
 " Language highlight
 " ------------------
