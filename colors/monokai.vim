@@ -201,7 +201,7 @@ if g:monokai_thick_border == 1
     exe "hi! SignColumn"      .s:fg_none        .s:bg_lncolumn    .s:fmt_none
 else
     exe "hi! VertSplit"       .s:fg_window      .s:bg_none        .s:fmt_none
-    exe "hi! LineNr"          .s:fg_window      .s:bg_none        .s:fmt_none
+    exe "hi! LineNr"          .s:fg_linenr      .s:bg_none        .s:fmt_none
     exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
     exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 endif
