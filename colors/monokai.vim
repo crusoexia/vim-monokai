@@ -77,7 +77,7 @@ else
   let s:line       = "236"
   let s:linenr     = "243"
   let s:lncolumn   = "235"
-  let s:darkcolumn = "234"
+  let s:darkcolumn = "233"
   let s:selection  = "237"
   let s:comment    = "243"
   let s:error      = "52"
@@ -197,12 +197,12 @@ exe "hi! WarningMsg"      .s:fg_red         .s:bg_none        .s:fmt_none
 if g:monokai_thick_border == 1
     exe "hi! VertSplit"       .s:fg_window      .s:bg_darkcolumn  .s:fmt_none
     exe "hi! LineNr"          .s:fg_linenr      .s:bg_lncolumn    .s:fmt_none
-    exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_none
+    exe "hi! CursorLineNr"    .s:fg_orange      .s:bg_none        .s:fmt_none
     exe "hi! SignColumn"      .s:fg_none        .s:bg_lncolumn    .s:fmt_none
 else
     exe "hi! VertSplit"       .s:fg_window      .s:bg_none        .s:fmt_none
     exe "hi! LineNr"          .s:fg_linenr      .s:bg_none        .s:fmt_none
-    exe "hi! CursorLineNr"    .s:fg_yellow      .s:bg_none        .s:fmt_bold
+    exe "hi! CursorLineNr"    .s:fg_orange      .s:bg_none        .s:fmt_bold
     exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 endif
     
@@ -289,16 +289,16 @@ endif
 " NerdTree
 " --------
 
-exe "hi! NERDTreeOpenable"          .s:fg_foreground  .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeClosable"          .s:fg_foreground  .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeOpenable"          .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeClosable"          .s:fg_orange      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeHelp"              .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarksLeader"   .s:fg_linenr      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarksLeader"   .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarkName"      .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeUp"                .s:fg_aqua        .s:bg_none        .s:fmt_bold
-exe "hi! NERDTreeDirSlash"          .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeUp"                .s:fg_green       .s:bg_none        .s:fmt_bold
+exe "hi! NERDTreeDirSlash"          .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " Syntastic
 " ---------
