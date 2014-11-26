@@ -294,7 +294,7 @@ exe "hi! NERDTreeClosable"          .s:fg_orange      .s:bg_none        .s:fmt_n
 exe "hi! NERDTreeHelp"              .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarksLeader"   .s:fg_orange      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarkName"      .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarkName"      .s:fg_orange      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeUp"                .s:fg_green       .s:bg_none        .s:fmt_bold
