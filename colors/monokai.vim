@@ -302,7 +302,7 @@ exe "hi! NERDTreeBookmarksLeader"   .s:fg_orange      .s:bg_none        .s:fmt_n
 exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeUp"                .s:fg_none        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeUp"                .s:fg_foreground  .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDirSlash"          .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " Syntastic
