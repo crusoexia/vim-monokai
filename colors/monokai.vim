@@ -46,21 +46,21 @@ let colors_name = "monokai"
 if has("gui_running")
   let s:vmode      = "gui"
   let s:background = "#272822"
-  let s:foreground = "#d5d8d6"
+  let s:foreground = "#F8F8F2"
   let s:window     = "#64645e"
   let s:line       = "#383a3e"
-  let s:linenr     = "#90908a"
+  let s:linenr     = "#8F908A"
   let s:lncolumn   = "#2C2F29"
   let s:darkcolumn = "#211F1C"
   let s:selection  = "#575b61"
-  let s:comment    = "#808890"
+  let s:comment    = "#75715E"
   let s:error      = "#5f0000"
   
-  let s:pink       = "#f92672"
-  let s:green      = "#a6e22e"
+  let s:pink       = "#F92772"
+  let s:green      = "#A6E22D"
   let s:aqua       = "#66d9ef"
-  let s:yellow     = "#e6db74"
-  let s:orange     = "#fd971f"
+  let s:yellow     = "#E6DB74"
+  let s:orange     = "#FD9720"
   let s:purple     = "#ae81ff"
   let s:red        = "#e73c50"
 
@@ -244,12 +244,16 @@ exe "hi! Boolean"         .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
-exe "hi! Type"            .s:fg_aqua        .s:bg_none        .s:fmt_none
+if g:monokai_italic == 1
+    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_ital
+else
+    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
+endif
 "        Structure"
 "        StorageClass"
 "        Typedef"
     
-exe "hi! Identifier"      .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Identifier"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
@@ -260,11 +264,12 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 "        Keyword"
 "        Exception"
 
+" TODO: onec vim-javascript support var define highlight, change to none.
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
-"        Include"
-"        Define"
-"        Macro"
-"        PreCondit"
+exe "hi! Include"         .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Define"          .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        SpecialKey
@@ -289,15 +294,15 @@ endif
 " NerdTree
 " --------
 
-exe "hi! NERDTreeOpenable"          .s:fg_orange      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeClosable"          .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeOpenable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeClosable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeHelp"              .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarksLeader"   .s:fg_orange      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarkName"      .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeUp"                .s:fg_green       .s:bg_none        .s:fmt_bold
+exe "hi! NERDTreeUp"                .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDirSlash"          .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 " Syntastic
@@ -318,8 +323,11 @@ exe "hi! vimCommand"                .s:fg_pink         .s:bg_none          .s:fm
 
 " Javascript
 exe "hi! jsFuncName"                .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! jsThis"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                    .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! jsObjectKey"               .s:fg_none         .s:bg_none          .s:fmt_none
+" TODO: onec vim-javascript support var define highlight, change to green.
+exe "hi! jsFunctionKey"             .s:fg_none         .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_ital
