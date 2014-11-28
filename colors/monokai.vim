@@ -265,7 +265,7 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 "        Exception"
 
 " TODO: onec vim-javascript support var define highlight, change to none.
-exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_none        .s:bg_none        .s:fmt_none
 exe "hi! Include"         .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Define"          .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
@@ -327,7 +327,8 @@ exe "hi! jsThis"                    .s:fg_pink         .s:bg_none          .s:fm
 exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! jsObjectKey"               .s:fg_none         .s:bg_none          .s:fmt_none
 " TODO: onec vim-javascript support var define highlight, change to green.
-exe "hi! jsFunctionKey"             .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! jsFunctionKey"             .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsFuncDef"                 .s:fg_green        .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_ital
