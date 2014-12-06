@@ -327,7 +327,7 @@ exe "hi! jsThis"                    .s:fg_pink         .s:bg_none          .s:fm
 exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! jsObjectKey"               .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! jsFunctionKey"             .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! jsFuncAssignIdenti"        .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsFuncAssignIdent"         .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! jsFuncAssignObjChain"      .s:fg_aqua         .s:bg_none          .s:fmt_ital
 
 if g:monokai_italic == 1
