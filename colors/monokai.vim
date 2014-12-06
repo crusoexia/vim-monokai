@@ -72,14 +72,14 @@ if has("gui_running")
 else
   let s:vmode      = "cterm"
   let s:background = "234"
-  let s:foreground = "251"
+  let s:foreground = "252"
   let s:window     = "239"
   let s:line       = "236"
   let s:linenr     = "243"
   let s:lncolumn   = "235"
   let s:darkcolumn = "233"
   let s:selection  = "237"
-  let s:comment    = "101"
+  let s:comment    = "59"
   let s:error      = "52"
   
   let s:pink       = "197"
