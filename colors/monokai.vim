@@ -327,6 +327,7 @@ exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fm
 exe "hi! jsObjectKey"               .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! jsFunctionKey"             .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! jsFuncAssignIdent"         .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsJQDelimiter"             .s:fg_pink         .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_ital
