@@ -264,12 +264,11 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 "        Keyword"
 "        Exception"
 
-" TODO: onec vim-javascript support var define highlight, change to none.
-exe "hi! PreProc"         .s:fg_none        .s:bg_none        .s:fmt_none
-exe "hi! Include"         .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Define"          .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Include"         .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Macro"           .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! PreCondit"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        SpecialKey
