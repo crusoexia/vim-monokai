@@ -318,6 +318,9 @@ endif
 " Language highlight
 " ------------------
 
+" Java properties
+exe "hi! jpropertiesIdentifier"     .s:fg_pink         .s:bg_none          .s:fmt_none
+
 " Vim command
 exe "hi! vimCommand"                .s:fg_pink         .s:bg_none          .s:fmt_none
 
