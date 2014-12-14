@@ -72,14 +72,14 @@ if has("gui_running")
 else
   let s:vmode      = "cterm"
   let s:background = "234"
-  let s:foreground = "251"
+  let s:foreground = "252"
   let s:window     = "239"
   let s:line       = "236"
   let s:linenr     = "243"
   let s:lncolumn   = "235"
   let s:darkcolumn = "233"
   let s:selection  = "237"
-  let s:comment    = "101"
+  let s:comment    = "59"
   let s:error      = "52"
   
   let s:pink       = "197"
@@ -264,12 +264,11 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 "        Keyword"
 "        Exception"
 
-" TODO: onec vim-javascript support var define highlight, change to none.
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Include"         .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Define"          .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! Include"         .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Macro"           .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! PreCondit"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 
 exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        SpecialKey
@@ -329,13 +328,19 @@ exe "hi! jsFuncName"                .s:fg_green        .s:bg_none          .s:fm
 exe "hi! jsThis"                    .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! jsObjectKey"               .s:fg_none         .s:bg_none          .s:fmt_none
-" TODO: onec vim-javascript support var define highlight, change to green.
-exe "hi! jsFunctionKey"             .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! jsFunctionKey"             .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsFuncAssignIdent"         .s:fg_green        .s:bg_none          .s:fmt_none
+exe "hi! jsJQDelimiter"             .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! jsLabel"                   .s:fg_pink         .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_ital
+    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua         .s:bg_none          .s:fmt_ital
+    exe "hi! jsLibrary"             .s:fg_pink         .s:bg_none          .s:fmt_ital
 else
     exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_none
+    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua         .s:bg_none          .s:fmt_none
+    exe "hi! jsLibrary"             .s:fg_pink         .s:bg_none          .s:fmt_none
 endif
 
 " Html
