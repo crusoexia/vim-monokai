@@ -24,17 +24,23 @@ Type below command in your vim or save it in your vimrc:
 Configuration
 -------------
 
-* Italic
+### Italic
     
 If you are using a font which support italic, you can use below config to enable the italic form:
 
     let g:monokai_italic = 1
 
-* Thick window border
+### Thick window border
 
 The default window border is narrow dotted line, use below config to turn on the thick one:
 
     let g:monokai_thick_border = 1
+
+### Zentree
+
+In case you want a less bright Nerdtree:
+
+    let g:monokai_zentree = 1
 
 Javascript
 ----------

@@ -15,6 +15,10 @@
 "   * Use thick window border:
 "
 "       let g:monokai_thick_border = 1
+"
+"   * Use zen tree:
+"
+"       let g:monokai_zentree = 1
 
 " Initialisation
 " --------------
@@ -29,6 +33,10 @@ endif
 
 if ! exists("g:monokai_thick_border")
     let g:monokai_thick_border = 0
+endif
+
+if ! exists("g:monokai_zentree")
+    let g:monokai_zentree = 0
 endif
 
 set background=dark
@@ -55,6 +63,7 @@ if has("gui_running")
   let s:selection  = "#575b61"
   let s:comment    = "#75715E"
   let s:error      = "#5f0000"
+  let s:zentree    = "#a2a2a2"
   
   let s:pink       = "#F92772"
   let s:green      = "#A6E22D"
@@ -81,6 +90,7 @@ else
   let s:selection  = "237"
   let s:comment    = "59"
   let s:error      = "52"
+  let s:zentree    = "242"
   
   let s:pink       = "197"
   let s:green      = "148"
@@ -136,6 +146,7 @@ exe "let s:bg_delbg      = ' ".s:vmode."bg=".s:delbg     ."'"
 exe "let s:bg_changebg   = ' ".s:vmode."bg=".s:changebg  ."'"
 exe "let s:bg_changefg   = ' ".s:vmode."bg=".s:changefg  ."'"
 exe "let s:bg_error      = ' ".s:vmode."bg=".s:error     ."'"
+exe "let s:bg_zentree    = ' ".s:vmode."bg=".s:zentree   ."'"
 
 exe "let s:fg_none       = ' ".s:vmode."fg=".s:none      ."'"
 exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
@@ -160,6 +171,7 @@ exe "let s:fg_delbg      = ' ".s:vmode."fg=".s:delbg     ."'"
 exe "let s:fg_changebg   = ' ".s:vmode."fg=".s:changebg  ."'"
 exe "let s:fg_changefg   = ' ".s:vmode."fg=".s:changefg  ."'"
 exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
+exe "let s:fg_zentree    = ' ".s:vmode."fg=".s:zentree   ."'"
 
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
@@ -249,9 +261,9 @@ if g:monokai_italic == 1
 else
     exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
 endif
-"        Structure"
-"        StorageClass"
-"        Typedef"
+exe     "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_none
+exe     "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_none
+exe     "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_none
     
 exe "hi! Identifier"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
@@ -267,10 +279,10 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Include"         .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Macro"           .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! PreCondit"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
-exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
 "        SpecialKey
 "        SpecialChar"
 "        Tag"
@@ -297,13 +309,17 @@ exe "hi! NERDTreeOpenable"          .s:fg_yellow      .s:bg_none        .s:fmt_n
 exe "hi! NERDTreeClosable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeHelp"              .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarksLeader"   .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeBookmarksLeader"   .s:fg_background  .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeUp"                .s:fg_foreground  .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDirSlash"          .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! NERDTreeDirSlash"          .s:fg_background  .s:bg_none        .s:fmt_none
 
+if g:monokai_zentree == 1
+    exe "hi! NERDTreeDir"               .s:fg_zentree     .s:bg_none        .s:fmt_none
+else
+    exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
+endif
 " Syntastic
 " ---------
 
@@ -357,13 +373,16 @@ hi! link xmlTagName htmlTagName
 hi! link xmlAttrib  htmlArg
 
 " CSS
-exe "hi! cssFunctionName"           .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! cssColor"                  .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssPseudoClassId"          .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssClassName"              .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! cssValueLength"            .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssCommonAttr"             .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! cssBraces"                 .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! cssProp"                   .s:fg_yellow        .s:bg_none       .s:fmt_none
+exe "hi! cssUIAttr"                 .s:fg_yellow        .s:bg_none       .s:fmt_none
+exe "hi! cssFunctionName"           .s:fg_aqua          .s:bg_none       .s:fmt_none
+exe "hi! cssColor"                  .s:fg_purple        .s:bg_none       .s:fmt_none
+exe "hi! cssPseudoClassId"          .s:fg_purple        .s:bg_none       .s:fmt_none
+exe "hi! cssClassName"              .s:fg_green         .s:bg_none       .s:fmt_none
+exe "hi! cssValueLength"            .s:fg_purple        .s:bg_none       .s:fmt_none
+exe "hi! cssCommonAttr"             .s:fg_pink          .s:bg_none       .s:fmt_none
+exe "hi! cssBraces"                 .s:fg_foreground    .s:bg_none       .s:fmt_none
+exe "hi! cssClassNameDot"           .s:fg_pink          .s:bg_none       .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! cssURL"                .s:fg_orange       .s:bg_none          .s:fmt_undi
@@ -377,33 +396,40 @@ exe "hi! rubyInstanceVariable"          .s:fg_none         .s:bg_none          .
 exe "hi! rubyGlobalVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyClassVariable"             .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyPseudoVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! rubyFunction"                  .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! rubyInclude"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! rubyStringDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubyRegexp"                    .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubyRegexpDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubySymbol"                    .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! rubyEscape"                    .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! rubyControl"                   .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyClass"                     .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyDefine"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyException"                 .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! rubyInclude"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyControl"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyClass"                     .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyDefine"                    .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyException"                 .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsARAssociationMethod"  .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsARMethod"             .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsRenderMethod"         .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsMethod"               .s:fg_orange       .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
+    exe "hi! rubyConstant"              .s:fg_aqua         .s:bg_none          .s:fmt_ital
+    exe "hi! rubyBlockArgument"         .s:fg_orange       .s:bg_none          .s:fmt_ital
     exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_ital
-    exe "hi! rubyConstant"              .s:fg_orange       .s:bg_none          .s:fmt_ital
-    exe "hi! rubyIdentifier"            .s:fg_orange       .s:bg_none          .s:fmt_ital
 else
-    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
     exe "hi! rubyConstant"              .s:fg_orange       .s:bg_none          .s:fmt_none
-    exe "hi! rubyIdentifier"            .s:fg_orange       .s:bg_none          .s:fmt_none
+    exe "hi! rubyBlockArgument"         .s:fg_orange       .s:bg_none          .s:fmt_none
+    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
 endif
 
 " eruby
 exe "hi! erubyDelimiter"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! erubyRailsMethod"              .s:fg_aqua         .s:bg_none          .s:fmt_none
+
+" c
+exe "hi! cLabel"                        .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! cStructure"                    .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! cStorageClass"                 .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! cInclude"                      .s:fg_green         .s:bg_none          .s:fmt_none
+exe "hi! cDefine"                       .s:fg_green         .s:bg_none          .s:fmt_none
