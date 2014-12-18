@@ -426,3 +426,10 @@ endif
 " eruby
 exe "hi! erubyDelimiter"                .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! erubyRailsMethod"              .s:fg_aqua         .s:bg_none          .s:fmt_none
+
+" c
+exe "hi! cLabel"                        .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! cStructure"                    .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! cStorageClass"                 .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! cInclude"                      .s:fg_green         .s:bg_none          .s:fmt_none
+exe "hi! cDefine"                       .s:fg_green         .s:bg_none          .s:fmt_none
