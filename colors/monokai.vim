@@ -261,9 +261,9 @@ if g:monokai_italic == 1
 else
     exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
 endif
-"        Structure"
-"        StorageClass"
-"        Typedef"
+exe     "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_none
+exe     "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_none
+exe     "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_none
     
 exe "hi! Identifier"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
@@ -279,8 +279,8 @@ exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Include"         .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Macro"           .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! PreCondit"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
+exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
 "        SpecialKey
