@@ -63,7 +63,7 @@ if has("gui_running")
   let s:selection  = "#575b61"
   let s:comment    = "#75715E"
   let s:error      = "#5f0000"
-  let s:zentree    = "#828D99"
+  let s:zentree    = "#a2a2a2"
   
   let s:pink       = "#F92772"
   let s:green      = "#A6E22D"
