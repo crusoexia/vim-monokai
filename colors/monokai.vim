@@ -282,7 +282,7 @@ exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Macro"           .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! PreCondit"       .s:fg_aqua        .s:bg_none        .s:fmt_none
 
-exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
 "        SpecialKey
 "        SpecialChar"
 "        Tag"
@@ -373,13 +373,16 @@ hi! link xmlTagName htmlTagName
 hi! link xmlAttrib  htmlArg
 
 " CSS
-exe "hi! cssFunctionName"           .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! cssColor"                  .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssPseudoClassId"          .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssClassName"              .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! cssValueLength"            .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! cssCommonAttr"             .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! cssBraces"                 .s:fg_none         .s:bg_none          .s:fmt_none
+exe "hi! cssProp"                   .s:fg_yellow        .s:bg_none       .s:fmt_none
+exe "hi! cssUIAttr"                 .s:fg_yellow        .s:bg_none       .s:fmt_none
+exe "hi! cssFunctionName"           .s:fg_aqua          .s:bg_none       .s:fmt_none
+exe "hi! cssColor"                  .s:fg_purple        .s:bg_none       .s:fmt_none
+exe "hi! cssPseudoClassId"          .s:fg_purple        .s:bg_none       .s:fmt_none
+exe "hi! cssClassName"              .s:fg_green         .s:bg_none       .s:fmt_none
+exe "hi! cssValueLength"            .s:fg_purple        .s:bg_none       .s:fmt_none
+exe "hi! cssCommonAttr"             .s:fg_pink          .s:bg_none       .s:fmt_none
+exe "hi! cssBraces"                 .s:fg_foreground    .s:bg_none       .s:fmt_none
+exe "hi! cssClassNameDot"           .s:fg_pink          .s:bg_none       .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! cssURL"                .s:fg_orange       .s:bg_none          .s:fmt_undi
