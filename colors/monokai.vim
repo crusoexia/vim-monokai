@@ -396,31 +396,31 @@ exe "hi! rubyInstanceVariable"          .s:fg_none         .s:bg_none          .
 exe "hi! rubyGlobalVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyClassVariable"             .s:fg_none         .s:bg_none          .s:fmt_none
 exe "hi! rubyPseudoVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! rubyFunction"                  .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! rubyInclude"                   .s:fg_green        .s:bg_none          .s:fmt_none
 exe "hi! rubyStringDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubyRegexp"                    .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubyRegexpDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
 exe "hi! rubySymbol"                    .s:fg_purple       .s:bg_none          .s:fmt_none
 exe "hi! rubyEscape"                    .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! rubyControl"                   .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyClass"                     .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyDefine"                    .s:fg_aqua         .s:bg_none          .s:fmt_none
-exe "hi! rubyException"                 .s:fg_aqua         .s:bg_none          .s:fmt_none
+exe "hi! rubyInclude"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyControl"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyClass"                     .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyDefine"                    .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! rubyException"                 .s:fg_pink         .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsARAssociationMethod"  .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsARMethod"             .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsRenderMethod"         .s:fg_orange       .s:bg_none          .s:fmt_none
 exe "hi! rubyRailsMethod"               .s:fg_orange       .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
+    exe "hi! rubyConstant"              .s:fg_aqua         .s:bg_none          .s:fmt_ital
+    exe "hi! rubyBlockArgument"         .s:fg_orange       .s:bg_none          .s:fmt_ital
     exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_ital
-    exe "hi! rubyConstant"              .s:fg_orange       .s:bg_none          .s:fmt_ital
-    exe "hi! rubyIdentifier"            .s:fg_orange       .s:bg_none          .s:fmt_ital
 else
-    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
     exe "hi! rubyConstant"              .s:fg_orange       .s:bg_none          .s:fmt_none
-    exe "hi! rubyIdentifier"            .s:fg_orange       .s:bg_none          .s:fmt_none
+    exe "hi! rubyBlockArgument"         .s:fg_orange       .s:bg_none          .s:fmt_none
+    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
 endif
 
 " eruby
