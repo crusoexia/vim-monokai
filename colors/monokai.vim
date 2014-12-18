@@ -15,6 +15,10 @@
 "   * Use thick window border:
 "
 "       let g:monokai_thick_border = 1
+"
+"   * Use zen tree:
+"
+"       let g:monokai_zentree = 1
 
 " Initialisation
 " --------------
@@ -29,6 +33,10 @@ endif
 
 if ! exists("g:monokai_thick_border")
     let g:monokai_thick_border = 0
+endif
+
+if ! exists("g:monokai_zentree")
+    let g:monokai_zentree = 0
 endif
 
 set background=dark
@@ -55,6 +63,7 @@ if has("gui_running")
   let s:selection  = "#575b61"
   let s:comment    = "#75715E"
   let s:error      = "#5f0000"
+  let s:zentree    = "#828D99"
   
   let s:pink       = "#F92772"
   let s:green      = "#A6E22D"
@@ -81,6 +90,7 @@ else
   let s:selection  = "237"
   let s:comment    = "59"
   let s:error      = "52"
+  let s:zentree    = "242"
   
   let s:pink       = "197"
   let s:green      = "148"
@@ -136,6 +146,7 @@ exe "let s:bg_delbg      = ' ".s:vmode."bg=".s:delbg     ."'"
 exe "let s:bg_changebg   = ' ".s:vmode."bg=".s:changebg  ."'"
 exe "let s:bg_changefg   = ' ".s:vmode."bg=".s:changefg  ."'"
 exe "let s:bg_error      = ' ".s:vmode."bg=".s:error     ."'"
+exe "let s:bg_zentree    = ' ".s:vmode."bg=".s:zentree   ."'"
 
 exe "let s:fg_none       = ' ".s:vmode."fg=".s:none      ."'"
 exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
@@ -160,6 +171,7 @@ exe "let s:fg_delbg      = ' ".s:vmode."fg=".s:delbg     ."'"
 exe "let s:fg_changebg   = ' ".s:vmode."fg=".s:changebg  ."'"
 exe "let s:fg_changefg   = ' ".s:vmode."fg=".s:changefg  ."'"
 exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
+exe "let s:fg_zentree    = ' ".s:vmode."fg=".s:zentree   ."'"
 
 exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
 exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
@@ -300,10 +312,14 @@ exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_n
 exe "hi! NERDTreeBookmarksLeader"   .s:fg_background  .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeUp"                .s:fg_foreground  .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDirSlash"          .s:fg_background  .s:bg_none        .s:fmt_none
 
+if g:monokai_zentree == 1
+    exe "hi! NERDTreeDir"               .s:fg_zentree     .s:bg_none        .s:fmt_none
+else
+    exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
+endif
 " Syntastic
 " ---------
 
