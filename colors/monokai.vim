@@ -236,8 +236,8 @@ exe "hi! FoldColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 "        Incsearch"
 
 " popup menu
-exe "hi! Pmenu"           .s:fg_foreground  .s:bg_selection   .s:fmt_none
-exe "hi! PmenuSel"        .s:fg_foreground  .s:bg_selection   .s:fmt_revr
+exe "hi! Pmenu"           .s:fg_linenr      .s:bg_lncolumn     .s:fmt_none
+exe "hi! PmenuSel"        .s:fg_aqua        .s:bg_background   .s:fmt_revb
 "        PmenuSbar"
 "        PmenuThumb"
 
