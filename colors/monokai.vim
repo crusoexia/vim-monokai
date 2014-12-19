@@ -334,37 +334,42 @@ endif
 " ------------------
 
 " Java properties
-exe "hi! jpropertiesIdentifier"     .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! jpropertiesIdentifier"     .s:fg_pink          .s:bg_none          .s:fmt_none
 
 " Vim command
-exe "hi! vimCommand"                .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! vimCommand"                .s:fg_pink          .s:bg_none          .s:fmt_none
 
 " Javascript
-exe "hi! jsFuncName"                .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! jsThis"                    .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! jsFuncCall"                .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! jsObjectKey"               .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! jsFunctionKey"             .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! jsFuncAssignIdent"         .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! jsJQDelimiter"             .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! jsLabel"                   .s:fg_pink         .s:bg_none          .s:fmt_none
+exe "hi! jsFuncName"                .s:fg_green         .s:bg_none          .s:fmt_none
+exe "hi! jsThis"                    .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! jsFuncCall"                .s:fg_none          .s:bg_none          .s:fmt_none
+exe "hi! jsObjectKey"               .s:fg_none          .s:bg_none          .s:fmt_none
+exe "hi! jsFunctionKey"             .s:fg_green         .s:bg_none          .s:fmt_none
+exe "hi! jsFuncAssignIdent"         .s:fg_green         .s:bg_none          .s:fmt_none
+exe "hi! jsJQDelimiter"             .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! jsLabel"                   .s:fg_pink          .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
-    exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_ital
-    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua         .s:bg_none          .s:fmt_ital
-    exe "hi! jsLibrary"             .s:fg_pink         .s:bg_none          .s:fmt_ital
+    exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_ital
+    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_ital
+    exe "hi! jsLibrary"             .s:fg_pink          .s:bg_none          .s:fmt_ital
 else
-    exe "hi! jsFuncArgs"            .s:fg_orange       .s:bg_none          .s:fmt_none
-    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua         .s:bg_none          .s:fmt_none
-    exe "hi! jsLibrary"             .s:fg_pink         .s:bg_none          .s:fmt_none
+    exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_none
+    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_none
+    exe "hi! jsLibrary"             .s:fg_pink          .s:bg_none          .s:fmt_none
 endif
 
+exe "hi! javaScriptFunction"        .s:fg_aqua          .s:bg_none          .s:fmt_none
+exe "hi! javaScriptIdentifier"      .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! javaScriptLabel"           .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! javaScriptBraces"          .s:fg_none          .s:bg_none          .s:fmt_none
+
 " Html
-exe "hi! htmlTag"                   .s:fg_foreground   .s:bg_none          .s:fmt_none
-exe "hi! htmlEndTag"                .s:fg_foreground   .s:bg_none          .s:fmt_none
-exe "hi! htmlTagName"               .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! htmlArg"                   .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! htmlSpecialChar"           .s:fg_purple       .s:bg_none          .s:fmt_none
+exe "hi! htmlTag"                   .s:fg_foreground    .s:bg_none          .s:fmt_none
+exe "hi! htmlEndTag"                .s:fg_foreground    .s:bg_none          .s:fmt_none
+exe "hi! htmlTagName"               .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! htmlArg"                   .s:fg_green         .s:bg_none          .s:fmt_none
+exe "hi! htmlSpecialChar"           .s:fg_purple        .s:bg_none          .s:fmt_none
 
 " Xml
 hi! link xmlTag     htmlTag
