@@ -8,11 +8,17 @@ Refined monokai color scheme for vim.
 Install
 -------
 
-It is recommend to use plugin manager such as [Vundle](https://github.com/gmarik/Vundle.vim) to install plugins: 
+### [Vundle](https://github.com/gmarik/Vundle.vim) (recommend)
 
     Plugin 'crusoexia/vim-monokai'
 
-In the case you don't use any plugin manager to manage your plugins, just download the syntax/monokai.vim file and copy it into your __~/.vim/syntax/__ folder.
+### No plugin manager way
+
+Download the syntax/monokai.vim file and copy it into your __~/.vim/syntax/__ folder.
+
+__Note:__
+
+If you previously use [sickill/vim-monokai](https://github.com/sickill/vim-monokai), you need to remove it first to install this one, because the two have the same name which could cause conflicts.
 
 Usage
 -----
