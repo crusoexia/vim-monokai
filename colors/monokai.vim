@@ -58,7 +58,7 @@ if has("gui_running")
   let s:window     = "#64645e"
   let s:line       = "#383a3e"
   let s:linenr     = "#8F908A"
-  let s:lncolumn   = "#2C2F29"
+  let s:lncolumn   = "#2F312B"
   let s:darkcolumn = "#211F1C"
   let s:selection  = "#575b61"
   let s:comment    = "#75715E"
@@ -236,10 +236,10 @@ exe "hi! FoldColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 "        Incsearch"
 
 " popup menu
-exe "hi! Pmenu"           .s:fg_linenr      .s:bg_lncolumn     .s:fmt_none
+exe "hi! Pmenu"           .s:fg_lncolumn    .s:bg_foreground   .s:fmt_none
 exe "hi! PmenuSel"        .s:fg_aqua        .s:bg_background   .s:fmt_revb
+exe "hi! PmenuThumb"      .s:fg_lncolumn    .s:bg_linenr       .s:fmt_none
 "        PmenuSbar"
-"        PmenuThumb"
 
 " Generic Syntax Highlighting
 " ---------------------------
@@ -348,15 +348,18 @@ exe "hi! jsFunctionKey"             .s:fg_green         .s:bg_none          .s:f
 exe "hi! jsFuncAssignIdent"         .s:fg_green         .s:bg_none          .s:fmt_none
 exe "hi! jsJQDelimiter"             .s:fg_pink          .s:bg_none          .s:fmt_none
 exe "hi! jsLabel"                   .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! jsPrototype"               .s:fg_aqua          .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_ital
     exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_ital
     exe "hi! jsLibrary"             .s:fg_pink          .s:bg_none          .s:fmt_ital
+    exe "hi! jsDocTags"             .s:fg_aqua          .s:bg_none          .s:fmt_ital
 else
     exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_none
     exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_none
     exe "hi! jsLibrary"             .s:fg_pink          .s:bg_none          .s:fmt_none
+    exe "hi! jsDocTags"             .s:fg_aqua          .s:bg_none          .s:fmt_none
 endif
 
 exe "hi! javaScriptFunction"        .s:fg_aqua          .s:bg_none          .s:fmt_none
