@@ -63,7 +63,7 @@ if has("gui_running")
   let s:selection  = "#575b61"
   let s:comment    = "#75715E"
   let s:error      = "#5f0000"
-  let s:zentree    = "#a2a2a2"
+  let s:zentree    = "#8f8f8f"
   
   let s:pink       = "#F92772"
   let s:green      = "#A6E22D"
@@ -258,22 +258,25 @@ exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_ital
+    exe "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_ital
+    exe "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_ital
+    exe "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_ital
 else
     exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
+    exe "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_none
+    exe "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_none
+    exe "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_none
 endif
-exe     "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_none
-exe     "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_none
-exe     "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_none
     
 exe "hi! Identifier"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Label"           .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! Label"           .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Keyword"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        Conditional"
 "        Repeat"
-"        Keyword"
 "        Exception"
 
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
@@ -283,16 +286,15 @@ exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
 exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
-"        SpecialKey
-"        SpecialChar"
-"        Tag"
-"        Delimiter"
-"        SpecialComment"
+exe "hi! SpecialChar"     .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Delimiter"       .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! SpecialComment"  .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Tag"             .s:fg_pink        .s:bg_none        .s:fmt_none
 "        Debug"
 
 exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_undr
+exe "hi! Error"           .s:fg_lncolumn    .s:bg_red         .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bldi
@@ -320,12 +322,13 @@ if g:monokai_zentree == 1
 else
     exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
 endif
+
 " Syntastic
 " ---------
 
 hi! link SyntasticErrorSign Error
 if g:monokai_thick_border == 1
-    exe "hi! SyntasticWarningSign"  .s:fg_orange      .s:bg_lncolumn  .s:fmt_none
+    exe "hi! SyntasticWarningSign"  .s:fg_lncolumn    .s:bg_orange      .s:fmt_none
 else
     exe "hi! SyntasticWarningSign"  .s:fg_orange      .s:bg_darkcolumn  .s:fmt_none
 endif
@@ -342,23 +345,23 @@ exe "hi! vimCommand"                .s:fg_pink          .s:bg_none          .s:f
 " Javascript
 exe "hi! jsFuncName"                .s:fg_green         .s:bg_none          .s:fmt_none
 exe "hi! jsThis"                    .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! jsFuncCall"                .s:fg_none          .s:bg_none          .s:fmt_none
-exe "hi! jsObjectKey"               .s:fg_none          .s:bg_none          .s:fmt_none
 exe "hi! jsFunctionKey"             .s:fg_green         .s:bg_none          .s:fmt_none
 exe "hi! jsFuncAssignIdent"         .s:fg_green         .s:bg_none          .s:fmt_none
-exe "hi! jsJQDelimiter"             .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! jsLabel"                   .s:fg_pink          .s:bg_none          .s:fmt_none
 exe "hi! jsPrototype"               .s:fg_aqua          .s:bg_none          .s:fmt_none
+exe "hi! jsGlobalObjects"           .s:fg_aqua          .s:bg_none          .s:fmt_none
+exe "hi! jsExceptions"              .s:fg_aqua          .s:bg_none          .s:fmt_none
+exe "hi! jsFutureKeys"              .s:fg_aqua          .s:bg_none          .s:fmt_none
+exe "hi! jsBuiltins"                .s:fg_aqua          .s:bg_none          .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_ital
     exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_ital
-    exe "hi! jsLibrary"             .s:fg_pink          .s:bg_none          .s:fmt_ital
+    exe "hi! jsStorageClass"        .s:fg_aqua          .s:bg_none          .s:fmt_ital
     exe "hi! jsDocTags"             .s:fg_aqua          .s:bg_none          .s:fmt_ital
 else
     exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_none
     exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_none
-    exe "hi! jsLibrary"             .s:fg_pink          .s:bg_none          .s:fmt_none
+    exe "hi! jsStorageClass"        .s:fg_aqua          .s:bg_none          .s:fmt_none
     exe "hi! jsDocTags"             .s:fg_aqua          .s:bg_none          .s:fmt_none
 endif
 
@@ -375,10 +378,10 @@ exe "hi! htmlArg"                   .s:fg_green         .s:bg_none          .s:f
 exe "hi! htmlSpecialChar"           .s:fg_purple        .s:bg_none          .s:fmt_none
 
 " Xml
-hi! link xmlTag     htmlTag
-hi! link xmlEndTag  htmlEndTag
-hi! link xmlTagName htmlTagName
-hi! link xmlAttrib  htmlArg
+exe "hi! xmlTag"                    .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! xmlEndTag"                 .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! xmlTagName"                .s:fg_orange        .s:bg_none          .s:fmt_none
+exe "hi! xmlAttrib"                 .s:fg_green         .s:bg_none          .s:fmt_none
 
 " CSS
 exe "hi! cssProp"                   .s:fg_yellow        .s:bg_none       .s:fmt_none
