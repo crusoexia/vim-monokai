@@ -378,10 +378,10 @@ exe "hi! htmlArg"                   .s:fg_green         .s:bg_none          .s:f
 exe "hi! htmlSpecialChar"           .s:fg_purple        .s:bg_none          .s:fmt_none
 
 " Xml
-hi! link xmlTag     htmlTag
-hi! link xmlEndTag  htmlEndTag
-hi! link xmlTagName htmlTagName
-hi! link xmlAttrib  htmlArg
+exe "hi! xmlTag"                    .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! xmlEndTag"                 .s:fg_pink          .s:bg_none          .s:fmt_none
+exe "hi! xmlTagName"                .s:fg_orange        .s:bg_none          .s:fmt_none
+exe "hi! xmlAttrib"                 .s:fg_green         .s:bg_none          .s:fmt_none
 
 " CSS
 exe "hi! cssProp"                   .s:fg_yellow        .s:bg_none       .s:fmt_none
