@@ -284,7 +284,7 @@ exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
-exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! SpecialChar"     .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Delimiter"       .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! SpecialComment"  .s:fg_aqua        .s:bg_none        .s:fmt_none
