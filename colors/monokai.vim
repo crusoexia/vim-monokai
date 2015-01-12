@@ -217,7 +217,6 @@ else
     exe "hi! CursorLineNr"    .s:fg_orange      .s:bg_none        .s:fmt_bold
     exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 endif
-    
 
 " misc
 exe "hi! SpecialKey"      .s:fg_selection   .s:bg_none        .s:fmt_none
@@ -285,7 +284,7 @@ exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
-exe "hi! Special"         .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! SpecialChar"     .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! Delimiter"       .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! SpecialComment"  .s:fg_aqua        .s:bg_none        .s:fmt_none
@@ -294,7 +293,7 @@ exe "hi! Tag"             .s:fg_pink        .s:bg_none        .s:fmt_none
 
 exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-exe "hi! Error"           .s:fg_lncolumn    .s:bg_red         .s:fmt_none
+exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_none
 
 if g:monokai_italic == 1
     exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bldi
