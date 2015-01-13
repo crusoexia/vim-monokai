@@ -57,13 +57,6 @@ For javascript development, it is recommend to install below plugins:
 
 2. [vim-javascript-lib](https://github.com/crusoexia/vim-javascript-lib), which is the companion of _vim-javascript_, provide the popular javascript libraries key word highlight, such as [underscore](http://underscorejs.org/) and [Backbone](http://backbonejs.org/).
 
-__Note:__
-
-The function identifier feature is just merged into [vim-javascript](https://github.com/pangloss/vim-javascript)'s _develop_ br, so if you want that feature you need to switch to that br:
-
-    cd ~/.vim/bundle/vim-javascript
-    git fetch origin && git co -b develop origin/develop
-
 Screenshots
 -----------
 
