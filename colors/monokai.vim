@@ -279,8 +279,8 @@ exe "hi! Keyword"         .s:fg_aqua        .s:bg_none        .s:fmt_none
 "        Exception"
 
 exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Include"         .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Define"          .s:fg_pink        .s:bg_none        .s:fmt_none
+exe "hi! Include"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Define"          .s:fg_aqua        .s:bg_none        .s:fmt_none
 exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
 
