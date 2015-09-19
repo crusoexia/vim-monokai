@@ -15,10 +15,6 @@
 "   * Use thick window border:
 "
 "       let g:monokai_thick_border = 1
-"
-"   * Use zen tree:
-"
-"       let g:monokai_zentree = 1
 
 " Initialisation
 " --------------
@@ -33,10 +29,6 @@ endif
 
 if ! exists("g:monokai_thick_border")
     let g:monokai_thick_border = 0
-endif
-
-if ! exists("g:monokai_zentree")
-    let g:monokai_zentree = 0
 endif
 
 set background=dark
@@ -315,12 +307,7 @@ exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_n
 exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeUp"                .s:fg_foreground  .s:bg_none        .s:fmt_none
 exe "hi! NERDTreeDirSlash"          .s:fg_background  .s:bg_none        .s:fmt_none
-
-if g:monokai_zentree == 1
-    exe "hi! NERDTreeDir"               .s:fg_zentree     .s:bg_none        .s:fmt_none
-else
-    exe "hi! NERDTreeDir"               .s:fg_aqua        .s:bg_none        .s:fmt_none
-endif
+exe "hi! NERDTreeDir"               .s:fg_zentree     .s:bg_none        .s:fmt_none
 
 " Syntastic
 " ---------

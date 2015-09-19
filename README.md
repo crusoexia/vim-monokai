@@ -42,12 +42,6 @@ The default window border is narrow dotted line, use below config to turn on the
 
     let g:monokai_thick_border = 1
 
-### Zentree
-
-In case you want a less bright Nerdtree:
-
-    let g:monokai_zentree = 1
-
 Javascript
 ----------
 
