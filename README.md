@@ -25,6 +25,7 @@ Usage
 
 Type below command in your vim or save it in your vimrc:
 
+    syntax on
     colorscheme monokai
 
 Configuration
