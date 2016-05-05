@@ -40,6 +40,29 @@ endif
 
 let colors_name = "monokai"
 
+" This function was borrowed from FlatColor: https://github.com/MaxSt/FlatColor/
+" It was based on one found in hemisu: https://github.com/noahfrederick/vim-hemisu/
+function! s:h(group, style)
+  if g:monokai_italic == 0 && has_key(a:style, "cterm") && a:style["cterm"] == "italic"
+    unlet a:style.cterm
+  endif
+  if g:onedark_termcolors == 16
+    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
+    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
+  else
+    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm : "NONE")
+    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm : "NONE")
+  end
+  execute "highlight" a:group
+    \ "guifg="   (has_key(a:style, "fg")    ? a:style.fg.gui   : "NONE")
+    \ "guibg="   (has_key(a:style, "bg")    ? a:style.bg.gui   : "NONE")
+    \ "guisp="   (has_key(a:style, "sp")    ? a:style.sp.gui   : "NONE")
+    \ "gui="     (has_key(a:style, "gui")   ? a:style.gui      : "NONE")
+    \ "ctermfg=" . l:ctermfg
+    \ "ctermbg=" . l:ctermbg
+    \ "cterm="   (has_key(a:style, "cterm") ? a:style.cterm    : "NONE")
+endfunction
+
 " Palettes
 " --------
 
@@ -181,7 +204,7 @@ exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'
 " ------------
 
 " editor
-exe "hi! Normal"          .s:fg_foreground  .s:bg_background  .s:fmt_none
+call s:h("Normal", { "fg": s:fg_foreground, "bg": s:bg_background })
 exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
 exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
