@@ -23,9 +23,7 @@ if ! exists("g:monokai_italic")
     let g:monokai_italic = 0
 endif
 
-if !exists("g:monokai_termcolors")
-  let g:monokai_termcolors = 256
-endif
+let g:monokai_termcolors = 256 " does not support 16 color term right now.
 
 set background=dark
 hi clear
@@ -88,19 +86,6 @@ let s:delbg      = { "gui": "#f75f5f", "cterm": "167" }
 let s:changefg   = { "gui": "#d7d7ff", "cterm": "189" }
 let s:changebg   = { "gui": "#5f5f87", "cterm": "60" }
 
-" Formatting Options
-" ------------------
-
-let s:none   = "NONE"
-let s:t_none = "NONE"
-let s:n      = "NONE"
-let s:c      = ",undercurl"
-let s:r      = ",reverse"
-let s:s      = ",standout"
-let s:b      = ",bold"
-let s:u      = ",underline"
-let s:i      = ",italic"
-
 " Highlighting 
 " ------------
 
@@ -151,17 +136,17 @@ call s:h("PmenuThumb",    { "fg": s:lncolumn,   "bg": s:linenr })
 " Generic Syntax Highlighting
 " ---------------------------
 
-call s:h("Constant",      { "fg": s:purple,                           "format": "italic" })
+call s:h("Constant",      { "fg": s:purple })
 call s:h("Number",        { "fg": s:purple })
 call s:h("Float",         { "fg": s:purple })
 call s:h("Boolean",       { "fg": s:purple })
 call s:h("Character",     { "fg": s:yellow })
 call s:h("String",        { "fg": s:yellow })
 
-call s:h("Type",          { "fg": s:aqua,                             "format": "italic" })
-call s:h("Structure",     { "fg": s:pink,                             "format": "italic" })
-call s:h("StorageClass",  { "fg": s:pink,                             "format": "italic" })
-call s:h("Typedef",       { "fg": s:pink,                             "format": "italic" })
+call s:h("Type",          { "fg": s:aqua })
+call s:h("Structure",     { "fg": s:pink })
+call s:h("StorageClass",  { "fg": s:pink })
+call s:h("Typedef",       { "fg": s:pink })
     
 call s:h("Identifier",    { "fg": s:green })
 call s:h("Function",      { "fg": s:green })
@@ -187,8 +172,8 @@ call s:h("SpecialComment",  { "fg": s:aqua })
 call s:h("Tag",           { "fg": s:pink })
 "        Debug"
 
-call s:h("Todo",          { "fg": s:orange,                           "format": "bold,italic" })
-call s:h("Comment",       { "fg": s:comment,                          "format": "italic" })
+call s:h("Todo",          { "fg": s:orange,   "format": "bold,italic" })
+call s:h("Comment",       { "fg": s:comment,  "format": "italic" })
                          
 call s:h("Underlined",    { "fg": s:green })
 call s:h("Ignore",        {})
@@ -227,23 +212,16 @@ call s:h("vimCommand",              { "fg": s:pink })
 call s:h("jsFuncName",          { "fg": s:green })
 call s:h("jsThis",              { "fg": s:pink })
 call s:h("jsFunctionKey",       { "fg": s:green })
-call s:h("jsFuncAssignIdent",   { "fg": s:green })
 call s:h("jsPrototype",         { "fg": s:aqua })
 call s:h("jsGlobalObjects",     { "fg": s:aqua })
 call s:h("jsExceptions",        { "fg": s:aqua })
 call s:h("jsFutureKeys",        { "fg": s:aqua })
 call s:h("jsBuiltins",          { "fg": s:aqua })
                                  
-call s:h("jsFuncArgs",          { "fg": s:orange, "format": "italic" })
-call s:h("jsFuncAssignObjChain",{ "fg": s:aqua,   "format": "italic" })
-call s:h("jsStorageClass",      { "fg": s:aqua,   "format": "italic" })
+call s:h("jsFuncArgs",          { "fg": s:orange })
+call s:h("jsStorageClass",      { "fg": s:aqua })
 call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
                                  
-call s:h("javaScriptFunction",  { "fg": s:aqua })
-call s:h("javaScriptIdentifier",{ "fg": s:pink })
-call s:h("javaScriptLabel",     { "fg": s:pink })
-call s:h("javaScriptBraces",    {})
-
 " Html
 call s:h("htmlTag",             { "fg": s:foreground })
 call s:h("htmlEndTag",          { "fg": s:foreground })
@@ -268,7 +246,7 @@ call s:h("cssValueLength",      { "fg": s:purple })
 call s:h("cssCommonAttr",       { "fg": s:pink })
 call s:h("cssBraces" ,          { "fg": s:foreground })
 call s:h("cssClassNameDot",     { "fg": s:pink })
-call s:h("cssURL",              { "fg": s:orange,   "format": "underline,italic" })
+call s:h("cssURL",              { "fg": s:orange,   "format": "underline" })
 
 " ruby
 call s:h("rubyInterpolationDelimiter",  {})
@@ -292,9 +270,9 @@ call s:h("rubyRailsARAssociationMethod",{ "fg": s:orange })
 call s:h("rubyRailsARMethod",           { "fg": s:orange })
 call s:h("rubyRailsRenderMethod",       { "fg": s:orange })
 call s:h("rubyRailsMethod",             { "fg": s:orange })
-call s:h("rubyConstant",                { "fg": s:aqua,   "format": "italic" })
-call s:h("rubyBlockArgument",           { "fg": s:orange, "format": "italic" })
-call s:h("rubyBlockParameter",          { "fg": s:orange, "format": "italic" })
+call s:h("rubyConstant",                { "fg": s:aqua })
+call s:h("rubyBlockArgument",           { "fg": s:orange })
+call s:h("rubyBlockParameter",          { "fg": s:orange })
 
 " eruby
 call s:h("erubyDelimiter",              {})
