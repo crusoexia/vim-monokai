@@ -12,13 +12,9 @@ Install
 
     Plugin 'crusoexia/vim-monokai'
 
-### No plugin manager way
+### Manually
 
 Download the syntax/monokai.vim file and copy it into your __~/.vim/syntax/__ folder.
-
-__Note:__
-
-If you previously use [sickill/vim-monokai](https://github.com/sickill/vim-monokai), you need to remove it first to install this one, because the two have the same name which could cause conflicts.
 
 Usage
 -----
@@ -36,12 +32,6 @@ Configuration
 If you are using a font which support italic, you can use below config to enable the italic form:
 
     let g:monokai_italic = 1
-
-### Thick window border
-
-The default window border is narrow dotted line, use below config to turn on the thick one:
-
-    let g:monokai_thick_border = 1
 
 Javascript
 ----------
