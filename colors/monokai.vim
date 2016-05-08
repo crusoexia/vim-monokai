@@ -60,18 +60,18 @@ endfunction
 " Palettes
 " --------
 
-let s:background = { "gui": "#272822", "cterm": "234" }
-let s:foreground = { "gui": "#E8E8E3", "cterm": "252" }
 let s:window     = { "gui": "#64645e", "cterm": "239" }
 let s:line       = { "gui": "#383a3e", "cterm": "236" }
 let s:linenr     = { "gui": "#8F908A", "cterm": "243" }
-let s:lncolumn   = { "gui": "#2F312B", "cterm": "235" }
-let s:darkcolumn = { "gui": "#211F1C", "cterm": "233" }
 let s:selection  = { "gui": "#575b61", "cterm": "237" }
 let s:comment    = { "gui": "#75715E", "cterm": "59" }
 let s:error      = { "gui": "#5f0000", "cterm": "52" }
 let s:zentree    = { "gui": "#8f8f8f", "cterm": "242" }
 
+let s:white      = { "gui": "#E8E8E3", "cterm": "252" }
+let s:black      = { "gui": "#272822", "cterm": "234" }
+let s:lightblack = { "gui": "#2D2E27", "cterm": "235" }
+let s:darkblack  = { "gui": "#211F1C", "cterm": "233" }
 let s:pink       = { "gui": "#F92772", "cterm": "197" }
 let s:green      = { "gui": "#A6E22D", "cterm": "148" }
 let s:aqua       = { "gui": "#66d9ef", "cterm": "81" }
@@ -90,26 +90,26 @@ let s:changebg   = { "gui": "#5f5f87", "cterm": "60" }
 " ------------
 
 " editor
-call s:h("Normal",        { "fg": s:foreground, "bg": s:background })
-call s:h("ColorColumn",   {                     "bg": s:line })
+call s:h("Normal",        { "fg": s:white,      "bg": s:black })
+call s:h("ColorColumn",   {                     "bg": s:lightblack })
 call s:h("CursorColumn",  {                     "bg": s:line })
 call s:h("CursorLine",    {                     "bg": s:line })
 call s:h("NonText",       { "fg": s:selection })
-call s:h("StatusLine",    { "fg": s:comment,    "bg": s:background,   "format": "reverse" })
+call s:h("StatusLine",    { "fg": s:comment,    "bg": s:black,        "format": "reverse" })
 call s:h("StatusLineNC",  { "fg": s:window,     "bg": s:comment,      "format": "reverse" })
-call s:h("TabLine",       { "fg": s:foreground, "bg": s:darkcolumn,   "format": "reverse" })
+call s:h("TabLine",       { "fg": s:white,      "bg": s:darkblack,    "format": "reverse" })
 call s:h("Visual",        {                     "bg": s:selection })
-call s:h("Search",        { "fg": s:background, "bg": s:yellow })
-call s:h("MatchParen",    { "fg": s:background, "bg": s:purple })
+call s:h("Search",        { "fg": s:black,      "bg": s:yellow })
+call s:h("MatchParen",    { "fg": s:black,      "bg": s:purple })
 call s:h("Question",      { "fg": s:yellow })
 call s:h("ModeMsg",       { "fg": s:yellow })
 call s:h("MoreMsg",       { "fg": s:yellow })
-call s:h("ErrorMsg",      { "fg": s:background, "bg": s:red,          "format": "standout" })
+call s:h("ErrorMsg",      { "fg": s:black,      "bg": s:red,          "format": "standout" })
 call s:h("WarningMsg",    { "fg": s:red })
-call s:h("VertSplit",     { "fg": s:window,     "bg": s:darkcolumn })
-call s:h("LineNr",        { "fg": s:linenr,     "bg": s:lncolumn })
+call s:h("VertSplit",     { "fg": s:window,     "bg": s:darkblack })
+call s:h("LineNr",        { "fg": s:linenr,     "bg": s:lightblack })
 call s:h("CursorLineNr",  { "fg": s:orange })
-call s:h("SignColumn",    {                     "bg": s:lncolumn })
+call s:h("SignColumn",    {                     "bg": s:lightblack })
 
 " misc
 call s:h("SpecialKey",    { "fg": s:selection })
@@ -118,19 +118,19 @@ call s:h("Directory",     { "fg": s:aqua })
 
 " diff
 call s:h("DiffAdd",       { "fg": s:addfg,      "bg": s:addbg })
-call s:h("DiffDelete",    { "fg": s:background, "bg": s:delbg })
+call s:h("DiffDelete",    { "fg": s:black,      "bg": s:delbg })
 call s:h("DiffChange",    { "fg": s:changefg,   "bg": s:changebg })
-call s:h("DiffText",      { "fg": s:background, "bg": s:aqua })
+call s:h("DiffText",      { "fg": s:black,      "bg": s:aqua })
 
 " fold
-call s:h("Folded",        { "fg": s:comment,    "bg": s:darkcolumn })
-call s:h("FoldColumn",    { "bg": s:darkcolumn })
+call s:h("Folded",        { "fg": s:comment,    "bg": s:darkblack })
+call s:h("FoldColumn",    { "bg": s:darkblack })
 "        Incsearch"
 
 " popup menu
-call s:h("Pmenu",         { "fg": s:lncolumn,   "bg": s:foreground })
-call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:background,   "format": "reverse,bold" })
-call s:h("PmenuThumb",    { "fg": s:lncolumn,   "bg": s:linenr })
+call s:h("Pmenu",         { "fg": s:lightblack, "bg": s:white })
+call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:black,        "format": "reverse,bold" })
+call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:linenr })
 "        PmenuSbar"
 
 " Generic Syntax Highlighting
@@ -186,10 +186,10 @@ call s:h("NERDTreeOpenable",        { "fg": s:yellow })
 call s:h("NERDTreeClosable",        { "fg": s:yellow })
 call s:h("NERDTreeHelp",            { "fg": s:yellow })
 call s:h("NERDTreeBookmarksHeader", { "fg": s:pink })
-call s:h("NERDTreeBookmarksLeader", { "fg": s:background })
+call s:h("NERDTreeBookmarksLeader", { "fg": s:black })
 call s:h("NERDTreeBookmarkName",    { "fg": s:yellow })
 call s:h("NERDTreeCWD",             { "fg": s:pink })
-call s:h("NERDTreeUp",              { "fg": s:foreground })
+call s:h("NERDTreeUp",              { "fg": s:white })
 call s:h("NERDTreeDirSlash",        { "fg": s:zentree })
 call s:h("NERDTreeDir",             { "fg": s:zentree })
 
@@ -197,7 +197,7 @@ call s:h("NERDTreeDir",             { "fg": s:zentree })
 " ---------
 
 hi! link SyntasticErrorSign Error
-call s:h("SyntasticWarningSign",    { "fg": s:lncolumn, "bg": s:orange })
+call s:h("SyntasticWarningSign",    { "fg": s:lightblack, "bg": s:orange })
 
 " Language highlight
 " ------------------
@@ -223,8 +223,8 @@ call s:h("jsStorageClass",      { "fg": s:aqua })
 call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
                                  
 " Html
-call s:h("htmlTag",             { "fg": s:foreground })
-call s:h("htmlEndTag",          { "fg": s:foreground })
+call s:h("htmlTag",             { "fg": s:white })
+call s:h("htmlEndTag",          { "fg": s:white })
 call s:h("htmlTagName",         { "fg": s:pink })
 call s:h("htmlArg",             { "fg": s:green })
 call s:h("htmlSpecialChar",     { "fg": s:purple })
@@ -244,7 +244,7 @@ call s:h("cssPseudoClassId",    { "fg": s:purple })
 call s:h("cssClassName",        { "fg": s:green })
 call s:h("cssValueLength",      { "fg": s:purple })
 call s:h("cssCommonAttr",       { "fg": s:pink })
-call s:h("cssBraces" ,          { "fg": s:foreground })
+call s:h("cssBraces" ,          { "fg": s:white })
 call s:h("cssClassNameDot",     { "fg": s:pink })
 call s:h("cssURL",              { "fg": s:orange,   "format": "underline" })
 
