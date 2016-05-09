@@ -113,7 +113,7 @@ call s:h("CursorLineNr",  { "fg": s:orange })
 call s:h("SignColumn",    {                     "bg": s:lightblack })
 
 " misc
-call s:h("SpecialKey",    { "fg": s:lightgrey })
+call s:h("SpecialKey",    { "fg": s:pink })
 call s:h("Title",         { "fg": s:yellow })
 call s:h("Directory",     { "fg": s:aqua })
 
@@ -125,7 +125,7 @@ call s:h("DiffText",      { "fg": s:black,      "bg": s:aqua })
 
 " fold
 call s:h("Folded",        { "fg": s:warmgrey,   "bg": s:darkblack })
-call s:h("FoldColumn",    { "bg": s:darkblack })
+call s:h("FoldColumn",    {                     "bg": s:darkblack })
 "        Incsearch"
 
 " popup menu
@@ -145,9 +145,9 @@ call s:h("Character",     { "fg": s:yellow })
 call s:h("String",        { "fg": s:yellow })
 
 call s:h("Type",          { "fg": s:aqua })
-call s:h("Structure",     { "fg": s:pink })
-call s:h("StorageClass",  { "fg": s:pink })
-call s:h("Typedef",       { "fg": s:pink })
+call s:h("Structure",     { "fg": s:aqua })
+call s:h("StorageClass",  { "fg": s:aqua })
+call s:h("Typedef",       { "fg": s:aqua })
     
 call s:h("Identifier",    { "fg": s:green })
 call s:h("Function",      { "fg": s:green })
@@ -161,15 +161,15 @@ call s:h("Keyword",       { "fg": s:aqua })
 "        Exception"
 
 call s:h("PreProc",       { "fg": s:green })
-call s:h("Include",       { "fg": s:aqua })
-call s:h("Define",        { "fg": s:aqua })
+call s:h("Include",       { "fg": s:pink })
+call s:h("Define",        { "fg": s:pink })
 call s:h("Macro",         { "fg": s:green })
 call s:h("PreCondit",     { "fg": s:green })
                            
-call s:h("Special",       { "fg": s:aqua })
+call s:h("Special",       { "fg": s:purple })
 call s:h("SpecialChar",   { "fg": s:pink })
 call s:h("Delimiter",     { "fg": s:pink })
-call s:h("SpecialComment",  { "fg": s:aqua })
+call s:h("SpecialComment",{ "fg": s:aqua })
 call s:h("Tag",           { "fg": s:pink })
 "        Debug"
 
@@ -214,11 +214,13 @@ call s:h("jsFuncName",          { "fg": s:green })
 call s:h("jsThis",              { "fg": s:pink })
 call s:h("jsFunctionKey",       { "fg": s:green })
 call s:h("jsPrototype",         { "fg": s:aqua })
-call s:h("jsGlobalObjects",     { "fg": s:aqua })
 call s:h("jsExceptions",        { "fg": s:aqua })
 call s:h("jsFutureKeys",        { "fg": s:aqua })
 call s:h("jsBuiltins",          { "fg": s:aqua })
-                                 
+call s:h("jsArgsObj",           { "fg": s:aqua })
+call s:h("jsStatic",            { "fg": s:aqua })
+call s:h("jsSuper",             { "fg": s:aqua })
+call s:h("jsFuncArgRest",       { "fg": s:purple })                                 
 call s:h("jsFuncArgs",          { "fg": s:orange })
 call s:h("jsStorageClass",      { "fg": s:aqua })
 call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
