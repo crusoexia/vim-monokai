@@ -10,12 +10,8 @@
 "
 "   * Enable italic:
 "
-"       let g:monokai_italic = 1
+"       let g:monokai_term_italic = 1
 "
-"   * Use thick window border:
-"
-"       let g:monokai_thick_border = 1
-
 " Initialisation
 " --------------
 
@@ -23,13 +19,11 @@ if !has("gui_running") && &t_Co < 256
   finish
 endif
 
-if ! exists("g:monokai_italic")
-    let g:monokai_italic = 0
+if ! exists("g:monokai_term_italic")
+    let g:monokai_term_italic = 0
 endif
 
-if ! exists("g:monokai_thick_border")
-    let g:monokai_thick_border = 0
-endif
+let g:monokai_termcolors = 256 " does not support 16 color term right now.
 
 set background=dark
 hi clear
@@ -40,393 +34,254 @@ endif
 
 let colors_name = "monokai"
 
+function! s:h(group, style)
+  let s:ctermformat = "NONE"
+  if g:monokai_term_italic == 0 && has_key(a:style, "format")
+    let s:ctermformat = substitute(a:style.format, ",italic", "", "")
+    let s:ctermformat = substitute(s:ctermformat, "italic,", "", "")
+    let s:ctermformat = substitute(s:ctermformat, "italic", "", "")
+  endif
+  if g:monokai_termcolors == 16
+    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
+    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm16 : "NONE")
+  else
+    let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm : "NONE")
+    let l:ctermbg = (has_key(a:style, "bg") ? a:style.bg.cterm : "NONE")
+  end
+  execute "highlight" a:group
+    \ "guifg="   (has_key(a:style, "fg")      ? a:style.fg.gui   : "NONE")
+    \ "guibg="   (has_key(a:style, "bg")      ? a:style.bg.gui   : "NONE")
+    \ "guisp="   (has_key(a:style, "sp")      ? a:style.sp.gui   : "NONE")
+    \ "gui="     (has_key(a:style, "format") && !empty(a:style["format"]) ? "NONE,".a:style.format   : "NONE")
+    \ "ctermfg=" . l:ctermfg
+    \ "ctermbg=" . l:ctermbg
+    \ "cterm="   (!empty(s:ctermformat) ? s:ctermformat   : "NONE")
+endfunction
+
 " Palettes
 " --------
 
-if has("gui_running")
-  let s:vmode      = "gui"
-  let s:background = "#272822"
-  let s:foreground = "#E8E8E3"
-  let s:window     = "#64645e"
-  let s:line       = "#383a3e"
-  let s:linenr     = "#8F908A"
-  let s:lncolumn   = "#2F312B"
-  let s:darkcolumn = "#211F1C"
-  let s:selection  = "#575b61"
-  let s:comment    = "#75715E"
-  let s:error      = "#5f0000"
-  let s:zentree    = "#8f8f8f"
-  
-  let s:pink       = "#F92772"
-  let s:green      = "#A6E22D"
-  let s:aqua       = "#66d9ef"
-  let s:yellow     = "#E6DB74"
-  let s:orange     = "#FD9720"
-  let s:purple     = "#ae81ff"
-  let s:red        = "#e73c50"
 
-  let s:addfg      = "#d7ffaf"
-  let s:addbg      = "#5f875f"
-  let s:delbg      = "#f75f5f"
-  let s:changefg   = "#d7d7ff"
-  let s:changebg   = "#5f5f87"
-else
-  let s:vmode      = "cterm"
-  let s:background = "234"
-  let s:foreground = "252"
-  let s:window     = "239"
-  let s:line       = "236"
-  let s:linenr     = "243"
-  let s:lncolumn   = "235"
-  let s:darkcolumn = "233"
-  let s:selection  = "237"
-  let s:comment    = "59"
-  let s:error      = "52"
-  let s:zentree    = "242"
-  
-  let s:pink       = "197"
-  let s:green      = "148"
-  let s:aqua       = "81"
-  let s:yellow     = "186"
-  let s:orange     = "208"
-  let s:purple     = "141"
-  let s:red        = "196"
+let s:white       = { "gui": "#E8E8E3", "cterm": "252" }
+let s:black       = { "gui": "#272822", "cterm": "234" }
+let s:lightblack  = { "gui": "#2D2E27", "cterm": "235" }
+let s:lightblack2 = { "gui": "#383a3e", "cterm": "236" }
+let s:darkblack   = { "gui": "#211F1C", "cterm": "233" }
+let s:grey        = { "gui": "#8F908A", "cterm": "243" }
+let s:lightgrey   = { "gui": "#575b61", "cterm": "237" }
+let s:darkgrey    = { "gui": "#64645e", "cterm": "239" }
+let s:warmgrey    = { "gui": "#75715E", "cterm": "59" }
 
-  let s:addfg      = "193"
-  let s:addbg      = "65"
-  let s:delbg      = "167"
-  let s:changefg   = "189"
-  let s:changebg   = "60"
-endif
+let s:pink        = { "gui": "#F92772", "cterm": "197" }
+let s:green       = { "gui": "#A6E22D", "cterm": "148" }
+let s:aqua        = { "gui": "#66d9ef", "cterm": "81" }
+let s:yellow      = { "gui": "#E6DB74", "cterm": "186" }
+let s:orange      = { "gui": "#FD9720", "cterm": "208" }
+let s:purple      = { "gui": "#ae81ff", "cterm": "141" }
+let s:red         = { "gui": "#e73c50", "cterm": "196" }
+let s:darkred     = { "gui": "#5f0000", "cterm": "52" }
 
-" Formatting Options
-" ------------------
-
-let s:none   = "NONE"
-let s:t_none = "NONE"
-let s:n      = "NONE"
-let s:c      = ",undercurl"
-let s:r      = ",reverse"
-let s:s      = ",standout"
-let s:b      = ",bold"
-let s:u      = ",underline"
-let s:i      = ",italic"
-
-" Highlighting Primitives
-" -----------------------
-
-exe "let s:bg_none       = ' ".s:vmode."bg=".s:none      ."'"
-exe "let s:bg_foreground = ' ".s:vmode."bg=".s:foreground."'"
-exe "let s:bg_background = ' ".s:vmode."bg=".s:background."'"
-exe "let s:bg_selection  = ' ".s:vmode."bg=".s:selection ."'"
-exe "let s:bg_line       = ' ".s:vmode."bg=".s:line      ."'"
-exe "let s:bg_linenr     = ' ".s:vmode."bg=".s:linenr    ."'"
-exe "let s:bg_lncolumn   = ' ".s:vmode."bg=".s:lncolumn  ."'"
-exe "let s:bg_comment    = ' ".s:vmode."bg=".s:comment   ."'"
-exe "let s:bg_red        = ' ".s:vmode."bg=".s:red       ."'"
-exe "let s:bg_orange     = ' ".s:vmode."bg=".s:orange    ."'"
-exe "let s:bg_yellow     = ' ".s:vmode."bg=".s:yellow    ."'"
-exe "let s:bg_green      = ' ".s:vmode."bg=".s:green     ."'"
-exe "let s:bg_aqua       = ' ".s:vmode."bg=".s:aqua      ."'"
-exe "let s:bg_purple     = ' ".s:vmode."bg=".s:purple    ."'"
-exe "let s:bg_pink       = ' ".s:vmode."bg=".s:pink      ."'"
-exe "let s:bg_window     = ' ".s:vmode."bg=".s:window    ."'"
-exe "let s:bg_darkcolumn = ' ".s:vmode."bg=".s:darkcolumn."'"
-exe "let s:bg_addbg      = ' ".s:vmode."bg=".s:addbg     ."'"
-exe "let s:bg_addfg      = ' ".s:vmode."bg=".s:addfg     ."'"
-exe "let s:bg_delbg      = ' ".s:vmode."bg=".s:delbg     ."'"
-exe "let s:bg_changebg   = ' ".s:vmode."bg=".s:changebg  ."'"
-exe "let s:bg_changefg   = ' ".s:vmode."bg=".s:changefg  ."'"
-exe "let s:bg_error      = ' ".s:vmode."bg=".s:error     ."'"
-exe "let s:bg_zentree    = ' ".s:vmode."bg=".s:zentree   ."'"
-
-exe "let s:fg_none       = ' ".s:vmode."fg=".s:none      ."'"
-exe "let s:fg_foreground = ' ".s:vmode."fg=".s:foreground."'"
-exe "let s:fg_background = ' ".s:vmode."fg=".s:background."'"
-exe "let s:fg_selection  = ' ".s:vmode."fg=".s:selection ."'"
-exe "let s:fg_line       = ' ".s:vmode."fg=".s:line      ."'"
-exe "let s:fg_linenr     = ' ".s:vmode."fg=".s:linenr    ."'"
-exe "let s:fg_lncolumn   = ' ".s:vmode."fg=".s:lncolumn  ."'"
-exe "let s:fg_comment    = ' ".s:vmode."fg=".s:comment   ."'"
-exe "let s:fg_red        = ' ".s:vmode."fg=".s:red       ."'"
-exe "let s:fg_orange     = ' ".s:vmode."fg=".s:orange    ."'"
-exe "let s:fg_yellow     = ' ".s:vmode."fg=".s:yellow    ."'"
-exe "let s:fg_green      = ' ".s:vmode."fg=".s:green     ."'"
-exe "let s:fg_aqua       = ' ".s:vmode."fg=".s:aqua      ."'"
-exe "let s:fg_purple     = ' ".s:vmode."fg=".s:purple    ."'"
-exe "let s:fg_pink       = ' ".s:vmode."fg=".s:pink      ."'"
-exe "let s:fg_window     = ' ".s:vmode."fg=".s:window    ."'"
-exe "let s:fg_darkcolumn = ' ".s:vmode."fg=".s:darkcolumn."'"
-exe "let s:fg_addbg      = ' ".s:vmode."fg=".s:addbg     ."'"
-exe "let s:fg_addfg      = ' ".s:vmode."fg=".s:addfg     ."'"
-exe "let s:fg_delbg      = ' ".s:vmode."fg=".s:delbg     ."'"
-exe "let s:fg_changebg   = ' ".s:vmode."fg=".s:changebg  ."'"
-exe "let s:fg_changefg   = ' ".s:vmode."fg=".s:changefg  ."'"
-exe "let s:fg_error      = ' ".s:vmode."fg=".s:error     ."'"
-exe "let s:fg_zentree    = ' ".s:vmode."fg=".s:zentree   ."'"
-
-exe "let s:fmt_none      = ' ".s:vmode."=NONE".          " term=NONE"        ."'"
-exe "let s:fmt_bold      = ' ".s:vmode."=NONE".s:b.      " term=NONE".s:b    ."'"
-exe "let s:fmt_bldi      = ' ".s:vmode."=NONE".s:b.s:i.  " term=NONE".s:b.s:i."'"
-exe "let s:fmt_undr      = ' ".s:vmode."=NONE".s:u.      " term=NONE".s:u    ."'"
-exe "let s:fmt_undb      = ' ".s:vmode."=NONE".s:u.s:b.  " term=NONE".s:u.s:b."'"
-exe "let s:fmt_undi      = ' ".s:vmode."=NONE".s:u.s:i.  " term=NONE".s:u.s:i."'"
-exe "let s:fmt_curl      = ' ".s:vmode."=NONE".s:c.      " term=NONE".s:c    ."'"
-exe "let s:fmt_ital      = ' ".s:vmode."=NONE".s:i.      " term=NONE".s:i    ."'"
-exe "let s:fmt_stnd      = ' ".s:vmode."=NONE".s:s.      " term=NONE".s:s    ."'"
-exe "let s:fmt_revr      = ' ".s:vmode."=NONE".s:r.      " term=NONE".s:r    ."'"
-exe "let s:fmt_revb      = ' ".s:vmode."=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
+let s:addfg       = { "gui": "#d7ffaf", "cterm": "193" }
+let s:addbg       = { "gui": "#5f875f", "cterm": "65" }
+let s:delbg       = { "gui": "#f75f5f", "cterm": "167" }
+let s:changefg    = { "gui": "#d7d7ff", "cterm": "189" }
+let s:changebg    = { "gui": "#5f5f87", "cterm": "60" }
 
 " Highlighting 
 " ------------
 
 " editor
-exe "hi! Normal"          .s:fg_foreground  .s:bg_background  .s:fmt_none
-exe "hi! ColorColumn"     .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorColumn"    .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! CursorLine"      .s:fg_none        .s:bg_line        .s:fmt_none
-exe "hi! NonText"         .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! StatusLine"      .s:fg_comment     .s:bg_background  .s:fmt_revr
-exe "hi! StatusLineNC"    .s:fg_window      .s:bg_comment     .s:fmt_revr
-exe "hi! TabLine"         .s:fg_foreground  .s:bg_darkcolumn  .s:fmt_revr
-exe "hi! Visual"          .s:fg_none        .s:bg_selection   .s:fmt_none
-exe "hi! Search"          .s:fg_background  .s:bg_yellow      .s:fmt_none
-exe "hi! MatchParen"      .s:fg_background  .s:bg_purple      .s:fmt_none
-exe "hi! Question"        .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! ModeMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! MoreMsg"         .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! ErrorMsg"        .s:fg_background  .s:bg_red         .s:fmt_stnd
-exe "hi! WarningMsg"      .s:fg_red         .s:bg_none        .s:fmt_none
-
-if g:monokai_thick_border == 1
-    exe "hi! VertSplit"       .s:fg_window      .s:bg_darkcolumn  .s:fmt_none
-    exe "hi! LineNr"          .s:fg_linenr      .s:bg_lncolumn    .s:fmt_none
-    exe "hi! CursorLineNr"    .s:fg_orange      .s:bg_none        .s:fmt_none
-    exe "hi! SignColumn"      .s:fg_none        .s:bg_lncolumn    .s:fmt_none
-else
-    exe "hi! VertSplit"       .s:fg_window      .s:bg_none        .s:fmt_none
-    exe "hi! LineNr"          .s:fg_linenr      .s:bg_none        .s:fmt_none
-    exe "hi! CursorLineNr"    .s:fg_orange      .s:bg_none        .s:fmt_bold
-    exe "hi! SignColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
-endif
+call s:h("Normal",        { "fg": s:white,      "bg": s:black })
+call s:h("ColorColumn",   {                     "bg": s:lightblack })
+call s:h("CursorColumn",  {                     "bg": s:lightblack2 })
+call s:h("CursorLine",    {                     "bg": s:lightblack2 })
+call s:h("NonText",       { "fg": s:lightgrey })
+call s:h("StatusLine",    { "fg": s:warmgrey,   "bg": s:black,        "format": "reverse" })
+call s:h("StatusLineNC",  { "fg": s:darkgrey,   "bg": s:warmgrey,     "format": "reverse" })
+call s:h("TabLine",       { "fg": s:white,      "bg": s:darkblack,    "format": "reverse" })
+call s:h("Visual",        {                     "bg": s:lightgrey })
+call s:h("Search",        { "fg": s:black,      "bg": s:yellow })
+call s:h("MatchParen",    { "fg": s:black,      "bg": s:purple })
+call s:h("Question",      { "fg": s:yellow })
+call s:h("ModeMsg",       { "fg": s:yellow })
+call s:h("MoreMsg",       { "fg": s:yellow })
+call s:h("ErrorMsg",      { "fg": s:black,      "bg": s:red,          "format": "standout" })
+call s:h("WarningMsg",    { "fg": s:red })
+call s:h("VertSplit",     { "fg": s:darkgrey,   "bg": s:darkblack })
+call s:h("LineNr",        { "fg": s:grey,       "bg": s:lightblack })
+call s:h("CursorLineNr",  { "fg": s:orange })
+call s:h("SignColumn",    {                     "bg": s:lightblack })
 
 " misc
-exe "hi! SpecialKey"      .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! Title"           .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Directory"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+call s:h("SpecialKey",    { "fg": s:lightgrey })
+call s:h("Title",         { "fg": s:yellow })
+call s:h("Directory",     { "fg": s:aqua })
 
 " diff
-exe "hi! DiffAdd"         .s:fg_addfg       .s:bg_addbg       .s:fmt_none
-exe "hi! DiffDelete"      .s:fg_background  .s:bg_delbg       .s:fmt_none
-exe "hi! DiffChange"      .s:fg_changefg    .s:bg_changebg    .s:fmt_none
-exe "hi! DiffText"        .s:fg_background  .s:bg_aqua        .s:fmt_none
+call s:h("DiffAdd",       { "fg": s:addfg,      "bg": s:addbg })
+call s:h("DiffDelete",    { "fg": s:black,      "bg": s:delbg })
+call s:h("DiffChange",    { "fg": s:changefg,   "bg": s:changebg })
+call s:h("DiffText",      { "fg": s:black,      "bg": s:aqua })
 
 " fold
-exe "hi! Folded"          .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
-exe "hi! FoldColumn"      .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
+call s:h("Folded",        { "fg": s:warmgrey,   "bg": s:darkblack })
+call s:h("FoldColumn",    { "bg": s:darkblack })
 "        Incsearch"
 
 " popup menu
-exe "hi! Pmenu"           .s:fg_lncolumn    .s:bg_foreground   .s:fmt_none
-exe "hi! PmenuSel"        .s:fg_aqua        .s:bg_background   .s:fmt_revb
-exe "hi! PmenuThumb"      .s:fg_lncolumn    .s:bg_linenr       .s:fmt_none
+call s:h("Pmenu",         { "fg": s:lightblack, "bg": s:white })
+call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:black,        "format": "reverse,bold" })
+call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:grey })
 "        PmenuSbar"
 
 " Generic Syntax Highlighting
 " ---------------------------
 
-if g:monokai_italic == 1
-    exe "hi! Constant"    .s:fg_purple      .s:bg_none        .s:fmt_ital
-else
-    exe "hi! Constant"    .s:fg_purple      .s:bg_none        .s:fmt_none
-endif
+call s:h("Constant",      { "fg": s:purple })
+call s:h("Number",        { "fg": s:purple })
+call s:h("Float",         { "fg": s:purple })
+call s:h("Boolean",       { "fg": s:purple })
+call s:h("Character",     { "fg": s:yellow })
+call s:h("String",        { "fg": s:yellow })
 
-exe "hi! Number"          .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Float"           .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Boolean"         .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Character"       .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! String"          .s:fg_yellow      .s:bg_none        .s:fmt_none
-
-if g:monokai_italic == 1
-    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_ital
-    exe "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_ital
-    exe "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_ital
-    exe "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_ital
-else
-    exe "hi! Type"        .s:fg_aqua        .s:bg_none        .s:fmt_none
-    exe "hi! Structure"   .s:fg_pink        .s:bg_none        .s:fmt_none
-    exe "hi! StorageClass".s:fg_pink        .s:bg_none        .s:fmt_none
-    exe "hi! Typedef"     .s:fg_pink        .s:bg_none        .s:fmt_none
-endif
+call s:h("Type",          { "fg": s:aqua })
+call s:h("Structure",     { "fg": s:pink })
+call s:h("StorageClass",  { "fg": s:pink })
+call s:h("Typedef",       { "fg": s:pink })
     
-exe "hi! Identifier"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_green       .s:bg_none        .s:fmt_none
-
-exe "hi! Statement"       .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Operator"        .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Label"           .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Keyword"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+call s:h("Identifier",    { "fg": s:green })
+call s:h("Function",      { "fg": s:green })
+                         
+call s:h("Statement",     { "fg": s:pink })
+call s:h("Operator",      { "fg": s:pink })
+call s:h("Label",         { "fg": s:pink })
+call s:h("Keyword",       { "fg": s:aqua })
 "        Conditional"
 "        Repeat"
 "        Exception"
 
-exe "hi! PreProc"         .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Include"         .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Define"          .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Macro"           .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! PreCondit"       .s:fg_green       .s:bg_none        .s:fmt_none
-
-exe "hi! Special"         .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! SpecialChar"     .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! Delimiter"       .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! SpecialComment"  .s:fg_aqua        .s:bg_none        .s:fmt_none
-exe "hi! Tag"             .s:fg_pink        .s:bg_none        .s:fmt_none
+call s:h("PreProc",       { "fg": s:green })
+call s:h("Include",       { "fg": s:aqua })
+call s:h("Define",        { "fg": s:aqua })
+call s:h("Macro",         { "fg": s:green })
+call s:h("PreCondit",     { "fg": s:green })
+                           
+call s:h("Special",       { "fg": s:aqua })
+call s:h("SpecialChar",   { "fg": s:pink })
+call s:h("Delimiter",     { "fg": s:pink })
+call s:h("SpecialComment",  { "fg": s:aqua })
+call s:h("Tag",           { "fg": s:pink })
 "        Debug"
 
-exe "hi! Underlined"      .s:fg_green       .s:bg_none        .s:fmt_none
-exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
-exe "hi! Error"           .s:fg_red         .s:bg_error       .s:fmt_none
-
-if g:monokai_italic == 1
-    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bldi
-    exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_ital
-else
-    exe "hi! Todo"            .s:fg_orange      .s:bg_none        .s:fmt_bold
-    exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
-endif
+call s:h("Todo",          { "fg": s:orange,   "format": "bold,italic" })
+call s:h("Comment",       { "fg": s:warmgrey, "format": "italic" })
+                         
+call s:h("Underlined",    { "fg": s:green })
+call s:h("Ignore",        {})
+call s:h("Error",         { "fg": s:red, "bg": s:darkred })
 
 " NerdTree
 " --------
 
-exe "hi! NERDTreeOpenable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeClosable"          .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeHelp"              .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarksHeader"   .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarksLeader"   .s:fg_background  .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeBookmarkName"      .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeCWD"               .s:fg_pink        .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeUp"                .s:fg_foreground  .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDirSlash"          .s:fg_zentree     .s:bg_none        .s:fmt_none
-exe "hi! NERDTreeDir"               .s:fg_zentree     .s:bg_none        .s:fmt_none
+call s:h("NERDTreeOpenable",        { "fg": s:yellow })
+call s:h("NERDTreeClosable",        { "fg": s:yellow })
+call s:h("NERDTreeHelp",            { "fg": s:yellow })
+call s:h("NERDTreeBookmarksHeader", { "fg": s:pink })
+call s:h("NERDTreeBookmarksLeader", { "fg": s:black })
+call s:h("NERDTreeBookmarkName",    { "fg": s:yellow })
+call s:h("NERDTreeCWD",             { "fg": s:pink })
+call s:h("NERDTreeUp",              { "fg": s:white })
+call s:h("NERDTreeDirSlash",        { "fg": s:grey })
+call s:h("NERDTreeDir",             { "fg": s:grey })
 
 " Syntastic
 " ---------
 
 hi! link SyntasticErrorSign Error
-if g:monokai_thick_border == 1
-    exe "hi! SyntasticWarningSign"  .s:fg_lncolumn    .s:bg_orange      .s:fmt_none
-else
-    exe "hi! SyntasticWarningSign"  .s:fg_orange      .s:bg_darkcolumn  .s:fmt_none
-endif
+call s:h("SyntasticWarningSign",    { "fg": s:lightblack, "bg": s:orange })
 
 " Language highlight
 " ------------------
 
 " Java properties
-exe "hi! jpropertiesIdentifier"     .s:fg_pink          .s:bg_none          .s:fmt_none
+call s:h("jpropertiesIdentifier",   { "fg": s:pink })
 
 " Vim command
-exe "hi! vimCommand"                .s:fg_pink          .s:bg_none          .s:fmt_none
+call s:h("vimCommand",              { "fg": s:pink })
 
 " Javascript
-exe "hi! jsFuncName"                .s:fg_green         .s:bg_none          .s:fmt_none
-exe "hi! jsThis"                    .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! jsFunctionKey"             .s:fg_green         .s:bg_none          .s:fmt_none
-exe "hi! jsFuncAssignIdent"         .s:fg_green         .s:bg_none          .s:fmt_none
-exe "hi! jsPrototype"               .s:fg_aqua          .s:bg_none          .s:fmt_none
-exe "hi! jsGlobalObjects"           .s:fg_aqua          .s:bg_none          .s:fmt_none
-exe "hi! jsExceptions"              .s:fg_aqua          .s:bg_none          .s:fmt_none
-exe "hi! jsFutureKeys"              .s:fg_aqua          .s:bg_none          .s:fmt_none
-exe "hi! jsBuiltins"                .s:fg_aqua          .s:bg_none          .s:fmt_none
-
-if g:monokai_italic == 1
-    exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_ital
-    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_ital
-    exe "hi! jsStorageClass"        .s:fg_aqua          .s:bg_none          .s:fmt_ital
-    exe "hi! jsDocTags"             .s:fg_aqua          .s:bg_none          .s:fmt_ital
-else
-    exe "hi! jsFuncArgs"            .s:fg_orange        .s:bg_none          .s:fmt_none
-    exe "hi! jsFuncAssignObjChain"  .s:fg_aqua          .s:bg_none          .s:fmt_none
-    exe "hi! jsStorageClass"        .s:fg_aqua          .s:bg_none          .s:fmt_none
-    exe "hi! jsDocTags"             .s:fg_aqua          .s:bg_none          .s:fmt_none
-endif
-
-exe "hi! javaScriptFunction"        .s:fg_aqua          .s:bg_none          .s:fmt_none
-exe "hi! javaScriptIdentifier"      .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! javaScriptLabel"           .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! javaScriptBraces"          .s:fg_none          .s:bg_none          .s:fmt_none
-
+call s:h("jsFuncName",          { "fg": s:green })
+call s:h("jsThis",              { "fg": s:pink })
+call s:h("jsFunctionKey",       { "fg": s:green })
+call s:h("jsPrototype",         { "fg": s:aqua })
+call s:h("jsGlobalObjects",     { "fg": s:aqua })
+call s:h("jsExceptions",        { "fg": s:aqua })
+call s:h("jsFutureKeys",        { "fg": s:aqua })
+call s:h("jsBuiltins",          { "fg": s:aqua })
+                                 
+call s:h("jsFuncArgs",          { "fg": s:orange })
+call s:h("jsStorageClass",      { "fg": s:aqua })
+call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
+                                 
 " Html
-exe "hi! htmlTag"                   .s:fg_foreground    .s:bg_none          .s:fmt_none
-exe "hi! htmlEndTag"                .s:fg_foreground    .s:bg_none          .s:fmt_none
-exe "hi! htmlTagName"               .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! htmlArg"                   .s:fg_green         .s:bg_none          .s:fmt_none
-exe "hi! htmlSpecialChar"           .s:fg_purple        .s:bg_none          .s:fmt_none
+call s:h("htmlTag",             { "fg": s:white })
+call s:h("htmlEndTag",          { "fg": s:white })
+call s:h("htmlTagName",         { "fg": s:pink })
+call s:h("htmlArg",             { "fg": s:green })
+call s:h("htmlSpecialChar",     { "fg": s:purple })
 
 " Xml
-exe "hi! xmlTag"                    .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! xmlEndTag"                 .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! xmlTagName"                .s:fg_orange        .s:bg_none          .s:fmt_none
-exe "hi! xmlAttrib"                 .s:fg_green         .s:bg_none          .s:fmt_none
+call s:h("xmlTag",              { "fg": s:pink })
+call s:h("xmlEndTag",           { "fg": s:pink })
+call s:h("xmlTagName",          { "fg": s:orange })
+call s:h("xmlAttrib",           { "fg": s:green })
 
 " CSS
-exe "hi! cssProp"                   .s:fg_yellow        .s:bg_none       .s:fmt_none
-exe "hi! cssUIAttr"                 .s:fg_yellow        .s:bg_none       .s:fmt_none
-exe "hi! cssFunctionName"           .s:fg_aqua          .s:bg_none       .s:fmt_none
-exe "hi! cssColor"                  .s:fg_purple        .s:bg_none       .s:fmt_none
-exe "hi! cssPseudoClassId"          .s:fg_purple        .s:bg_none       .s:fmt_none
-exe "hi! cssClassName"              .s:fg_green         .s:bg_none       .s:fmt_none
-exe "hi! cssValueLength"            .s:fg_purple        .s:bg_none       .s:fmt_none
-exe "hi! cssCommonAttr"             .s:fg_pink          .s:bg_none       .s:fmt_none
-exe "hi! cssBraces"                 .s:fg_foreground    .s:bg_none       .s:fmt_none
-exe "hi! cssClassNameDot"           .s:fg_pink          .s:bg_none       .s:fmt_none
-
-if g:monokai_italic == 1
-    exe "hi! cssURL"                .s:fg_orange       .s:bg_none          .s:fmt_undi
-else
-    exe "hi! cssURL"                .s:fg_orange       .s:bg_none          .s:fmt_undr
-endif
+call s:h("cssProp",             { "fg": s:yellow })
+call s:h("cssUIAttr",           { "fg": s:yellow })
+call s:h("cssFunctionName",     { "fg": s:aqua })
+call s:h("cssColor",            { "fg": s:purple })
+call s:h("cssPseudoClassId",    { "fg": s:purple })
+call s:h("cssClassName",        { "fg": s:green })
+call s:h("cssValueLength",      { "fg": s:purple })
+call s:h("cssCommonAttr",       { "fg": s:pink })
+call s:h("cssBraces" ,          { "fg": s:white })
+call s:h("cssClassNameDot",     { "fg": s:pink })
+call s:h("cssURL",              { "fg": s:orange, "format": "underline" })
 
 " ruby
-exe "hi! rubyInterpolationDelimiter"    .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyInstanceVariable"          .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyGlobalVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyClassVariable"             .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyPseudoVariable"            .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! rubyFunction"                  .s:fg_green        .s:bg_none          .s:fmt_none
-exe "hi! rubyStringDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
-exe "hi! rubyRegexp"                    .s:fg_yellow       .s:bg_none          .s:fmt_none
-exe "hi! rubyRegexpDelimiter"           .s:fg_yellow       .s:bg_none          .s:fmt_none
-exe "hi! rubySymbol"                    .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! rubyEscape"                    .s:fg_purple       .s:bg_none          .s:fmt_none
-exe "hi! rubyInclude"                   .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyOperator"                  .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyControl"                   .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyClass"                     .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyDefine"                    .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyException"                 .s:fg_pink         .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsARAssociationMethod"  .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsARMethod"             .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsRenderMethod"         .s:fg_orange       .s:bg_none          .s:fmt_none
-exe "hi! rubyRailsMethod"               .s:fg_orange       .s:bg_none          .s:fmt_none
-
-if g:monokai_italic == 1
-    exe "hi! rubyConstant"              .s:fg_aqua         .s:bg_none          .s:fmt_ital
-    exe "hi! rubyBlockArgument"         .s:fg_orange       .s:bg_none          .s:fmt_ital
-    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_ital
-else
-    exe "hi! rubyConstant"              .s:fg_orange       .s:bg_none          .s:fmt_none
-    exe "hi! rubyBlockArgument"         .s:fg_orange       .s:bg_none          .s:fmt_none
-    exe "hi! rubyBlockParameter"        .s:fg_orange       .s:bg_none          .s:fmt_none
-endif
+call s:h("rubyInterpolationDelimiter",  {})
+call s:h("rubyInstanceVariable",        {})
+call s:h("rubyGlobalVariable",          {})
+call s:h("rubyClassVariable",           {})
+call s:h("rubyPseudoVariable",          {})
+call s:h("rubyFunction",                { "fg": s:green })
+call s:h("rubyStringDelimiter",         { "fg": s:yellow })
+call s:h("rubyRegexp",                  { "fg": s:yellow })
+call s:h("rubyRegexpDelimiter",         { "fg": s:yellow })
+call s:h("rubySymbol",                  { "fg": s:purple })
+call s:h("rubyEscape",                  { "fg": s:purple })
+call s:h("rubyInclude",                 { "fg": s:pink })
+call s:h("rubyOperator",                { "fg": s:pink })
+call s:h("rubyControl",                 { "fg": s:pink })
+call s:h("rubyClass",                   { "fg": s:pink })
+call s:h("rubyDefine",                  { "fg": s:pink })
+call s:h("rubyException",               { "fg": s:pink })
+call s:h("rubyRailsARAssociationMethod",{ "fg": s:orange })
+call s:h("rubyRailsARMethod",           { "fg": s:orange })
+call s:h("rubyRailsRenderMethod",       { "fg": s:orange })
+call s:h("rubyRailsMethod",             { "fg": s:orange })
+call s:h("rubyConstant",                { "fg": s:aqua })
+call s:h("rubyBlockArgument",           { "fg": s:orange })
+call s:h("rubyBlockParameter",          { "fg": s:orange })
 
 " eruby
-exe "hi! erubyDelimiter"                .s:fg_none         .s:bg_none          .s:fmt_none
-exe "hi! erubyRailsMethod"              .s:fg_aqua         .s:bg_none          .s:fmt_none
+call s:h("erubyDelimiter",              {})
+call s:h("erubyRailsMethod",            { "fg": s:aqua })
 
 " c
-exe "hi! cLabel"                        .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! cStructure"                    .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! cStorageClass"                 .s:fg_pink          .s:bg_none          .s:fmt_none
-exe "hi! cInclude"                      .s:fg_green         .s:bg_none          .s:fmt_none
-exe "hi! cDefine"                       .s:fg_green         .s:bg_none          .s:fmt_none
+call s:h("cLabel",                      { "fg": s:pink })
+call s:h("cStructure",                  { "fg": s:pink })
+call s:h("cStorageClass",               { "fg": s:pink })
+call s:h("cInclude",                    { "fg": s:green })
+call s:h("cDefine",                     { "fg": s:green })
