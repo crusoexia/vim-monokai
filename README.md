@@ -19,7 +19,7 @@ Download the syntax/monokai.vim file, move it into your __~/.vim/syntax/__ folde
 Usage
 -----
 
-Paste below command in your in your `~/.vimrc`:
+Paste below command in your `~/.vimrc`:
 
     syntax on
     colorscheme monokai
