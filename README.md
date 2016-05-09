@@ -27,11 +27,11 @@ Type below command in your vim or save it in your vimrc:
 Configuration
 -------------
 
-### Italic
+### Terminal Italic
     
-If you are using a font which support italic, you can use below config to enable the italic form:
+If you are using a font in terminal which support italic, use below configuration to turn on terminal italic:
 
-    let g:monokai_italic = 1
+    let g:monokai_term_italic = 1
 
 Javascript
 ----------

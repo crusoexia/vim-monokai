@@ -10,7 +10,7 @@
 "
 "   * Enable italic:
 "
-"       let g:monokai_italic = 1
+"       let g:monokai_term_italic = 1
 "
 " Initialisation
 " --------------
@@ -19,8 +19,8 @@ if !has("gui_running") && &t_Co < 256
   finish
 endif
 
-if ! exists("g:monokai_italic")
-    let g:monokai_italic = 0
+if ! exists("g:monokai_term_italic")
+    let g:monokai_term_italic = 0
 endif
 
 let g:monokai_termcolors = 256 " does not support 16 color term right now.
@@ -35,10 +35,11 @@ endif
 let colors_name = "monokai"
 
 function! s:h(group, style)
-  if g:monokai_italic == 0 && has_key(a:style, "format")
-    let a:style.format = substitute(a:style.format, ",italic", "", "")
-    let a:style.format = substitute(a:style.format, "italic,", "", "")
-    let a:style.format = substitute(a:style.format, "italic", "", "")
+  let s:ctermformat = "NONE"
+  if g:monokai_term_italic == 0 && has_key(a:style, "format")
+    let s:ctermformat = substitute(a:style.format, ",italic", "", "")
+    let s:ctermformat = substitute(s:ctermformat, "italic,", "", "")
+    let s:ctermformat = substitute(s:ctermformat, "italic", "", "")
   endif
   if g:monokai_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
@@ -51,10 +52,10 @@ function! s:h(group, style)
     \ "guifg="   (has_key(a:style, "fg")      ? a:style.fg.gui   : "NONE")
     \ "guibg="   (has_key(a:style, "bg")      ? a:style.bg.gui   : "NONE")
     \ "guisp="   (has_key(a:style, "sp")      ? a:style.sp.gui   : "NONE")
-    \ "gui="     (has_key(a:style, "format") && !empty(a:style["format"]) ? "NONE".a:style.format   : "NONE")
+    \ "gui="     (has_key(a:style, "format") && !empty(a:style["format"]) ? "NONE,".a:style.format   : "NONE")
     \ "ctermfg=" . l:ctermfg
     \ "ctermbg=" . l:ctermbg
-    \ "cterm="   (has_key(a:style, "format") && !empty(a:style["format"]) ? "NONE".a:style.format   : "NONE")
+    \ "cterm="   (!empty(s:ctermformat) ? s:ctermformat   : "NONE")
 endfunction
 
 " Palettes
@@ -65,7 +66,6 @@ let s:line       = { "gui": "#383a3e", "cterm": "236" }
 let s:linenr     = { "gui": "#8F908A", "cterm": "243" }
 let s:selection  = { "gui": "#575b61", "cterm": "237" }
 let s:comment    = { "gui": "#75715E", "cterm": "59" }
-let s:error      = { "gui": "#5f0000", "cterm": "52" }
 let s:zentree    = { "gui": "#8f8f8f", "cterm": "242" }
 
 let s:white      = { "gui": "#E8E8E3", "cterm": "252" }
@@ -79,6 +79,7 @@ let s:yellow     = { "gui": "#E6DB74", "cterm": "186" }
 let s:orange     = { "gui": "#FD9720", "cterm": "208" }
 let s:purple     = { "gui": "#ae81ff", "cterm": "141" }
 let s:red        = { "gui": "#e73c50", "cterm": "196" }
+let s:darkred    = { "gui": "#5f0000", "cterm": "52" }
 
 let s:addfg      = { "gui": "#d7ffaf", "cterm": "193" }
 let s:addbg      = { "gui": "#5f875f", "cterm": "65" }
@@ -177,7 +178,7 @@ call s:h("Comment",       { "fg": s:comment,  "format": "italic" })
                          
 call s:h("Underlined",    { "fg": s:green })
 call s:h("Ignore",        {})
-call s:h("Error",         { "fg": s:red, "bg": s:error })
+call s:h("Error",         { "fg": s:red, "bg": s:darkred })
 
 " NerdTree
 " --------
