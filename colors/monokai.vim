@@ -251,6 +251,9 @@ call s:h("cssBraces" ,          { "fg": s:white })
 call s:h("cssClassNameDot",     { "fg": s:pink })
 call s:h("cssURL",              { "fg": s:orange, "format": "underline" })
 
+" LESS
+call s:h("lessVariable",        { "fg": s:green })
+
 " ruby
 call s:h("rubyInterpolationDelimiter",  {})
 call s:h("rubyInstanceVariable",        {})
