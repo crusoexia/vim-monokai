@@ -5,18 +5,16 @@
 "
 " The colour palette is from http://www.colourlovers.com/
 " The original code is from https://github.com/w0ng/vim-hybrid
-"
-" Configuration:
-"
-"   * Enable italic:
-"
-"       let g:monokai_term_italic = 1
-"
+
 " Initialisation
 " --------------
 
 if !has("gui_running") && &t_Co < 256
   finish
+endif
+
+if ! exists("g:monokai_gui_italic")
+    let g:monokai_gui_italic = 1
 endif
 
 if ! exists("g:monokai_term_italic")
@@ -36,10 +34,20 @@ let colors_name = "monokai"
 
 function! s:h(group, style)
   let s:ctermformat = "NONE"
-  if g:monokai_term_italic == 0 && has_key(a:style, "format")
-    let s:ctermformat = substitute(a:style.format, ",italic", "", "")
+  let s:guiformat = "NONE"
+  if has_key(a:style, "format")
+    let s:ctermformat = a:style.format
+    let s:guiformat = a:style.format
+  endif
+  if g:monokai_term_italic == 0
+    let s:ctermformat = substitute(s:ctermformat, ",italic", "", "")
     let s:ctermformat = substitute(s:ctermformat, "italic,", "", "")
     let s:ctermformat = substitute(s:ctermformat, "italic", "", "")
+  endif
+  if g:monokai_gui_italic == 0
+    let s:guiformat = substitute(s:guiformat, ",italic", "", "")
+    let s:guiformat = substitute(s:guiformat, "italic,", "", "")
+    let s:guiformat = substitute(s:guiformat, "italic", "", "")
   endif
   if g:monokai_termcolors == 16
     let l:ctermfg = (has_key(a:style, "fg") ? a:style.fg.cterm16 : "NONE")
@@ -52,7 +60,7 @@ function! s:h(group, style)
     \ "guifg="   (has_key(a:style, "fg")      ? a:style.fg.gui   : "NONE")
     \ "guibg="   (has_key(a:style, "bg")      ? a:style.bg.gui   : "NONE")
     \ "guisp="   (has_key(a:style, "sp")      ? a:style.sp.gui   : "NONE")
-    \ "gui="     (has_key(a:style, "format") && !empty(a:style["format"]) ? "NONE,".a:style.format   : "NONE")
+    \ "gui="     (!empty(s:guiformat) ? s:guiformat   : "NONE")
     \ "ctermfg=" . l:ctermfg
     \ "ctermbg=" . l:ctermbg
     \ "cterm="   (!empty(s:ctermformat) ? s:ctermformat   : "NONE")
@@ -220,8 +228,8 @@ call s:h("jsBuiltins",          { "fg": s:aqua })
 call s:h("jsArgsObj",           { "fg": s:aqua })
 call s:h("jsStatic",            { "fg": s:aqua })
 call s:h("jsSuper",             { "fg": s:aqua })
-call s:h("jsFuncArgRest",       { "fg": s:purple })                                 
-call s:h("jsFuncArgs",          { "fg": s:orange })
+call s:h("jsFuncArgRest",       { "fg": s:purple, "format": "italic" })                                 
+call s:h("jsFuncArgs",          { "fg": s:orange, "format": "italic" })
 call s:h("jsStorageClass",      { "fg": s:aqua })
 call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
                                  
@@ -249,7 +257,7 @@ call s:h("cssValueLength",      { "fg": s:purple })
 call s:h("cssCommonAttr",       { "fg": s:pink })
 call s:h("cssBraces" ,          { "fg": s:white })
 call s:h("cssClassNameDot",     { "fg": s:pink })
-call s:h("cssURL",              { "fg": s:orange, "format": "underline" })
+call s:h("cssURL",              { "fg": s:orange, "format": "underline,italic" })
 
 " LESS
 call s:h("lessVariable",        { "fg": s:green })

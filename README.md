@@ -27,11 +27,14 @@ Paste below command in your `~/.vimrc`:
 Configuration
 -------------
 
-### Terminal Italic
+### Italic
+
+By default the gui enables italic but terminal. They both can be configured.
     
-If you are using a font in terminal which support italic, paste below command in `.vimrc` to turn on terminal italic:
+If you are using a font support italic, paste below command in `.vimrc` to turn on terminal italic:
 
     let g:monokai_term_italic = 1
+    let g:monokai_gui_italic = 1
 
 Javascript
 ----------
