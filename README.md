@@ -8,9 +8,9 @@ Refined monokai color scheme for vim.
 Install
 -------
 
-### [Vundle](https://github.com/gmarik/Vundle.vim) (recommend)
+### [vim-plug](https://github.com/junegunn/vim-plug) (recommend)
 
-    Plugin 'crusoexia/vim-monokai'
+    Plug 'crusoexia/vim-monokai'
 
 ### Manually
 
