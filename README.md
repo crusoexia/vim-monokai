@@ -24,6 +24,10 @@ Paste below command in your `~/.vimrc`:
     syntax on
     colorscheme monokai
 
+vim-monokai requires 256 colors. You may need to add this before `syntax on` to enable the scheme:
+
+	set t_Co=256
+
 Configuration
 -------------
 
