@@ -19,14 +19,13 @@ Download the syntax/monokai.vim file, move it into your __~/.vim/syntax/__ folde
 Usage
 -----
 
-Paste below command in your `~/.vimrc`:
+Copy below command to your `~/.vimrc`:
 
-    syntax on
-    colorscheme monokai
-
-vim-monokai requires 256 colors. You may need to add this before `syntax on` to enable the scheme:
-
-	set t_Co=256
+```VimL
+syntax on
+colorscheme monokai
+set t_Co=256  " vim-monokai now only support 256 colours in terminal.
+```
 
 Configuration
 -------------
