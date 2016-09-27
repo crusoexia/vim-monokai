@@ -14,7 +14,7 @@ Install
 
 ### Manually
 
-Download the syntax/monokai.vim file, move it into your __~/.vim/syntax/__ folder.
+Download the [colors/monokai.vim](https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim) file, move it into your __~/.vim/syntax/__ folder.
 
 Usage
 -----
