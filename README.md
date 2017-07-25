@@ -8,13 +8,9 @@ Refined monokai color scheme for vim.
 Install
 -------
 
-### [vim-plug](https://github.com/junegunn/vim-plug) (recommend)
+### [vim-plug](https://github.com/junegunn/vim-plug)
 
     Plug 'crusoexia/vim-monokai'
-
-### Manually
-
-Download the [colors/monokai.vim](https://raw.githubusercontent.com/crusoexia/vim-monokai/master/colors/monokai.vim) file, move it into your __~/.vim/syntax/__ folder.
 
 Usage
 -----
@@ -24,6 +20,20 @@ Copy below command to your `~/.vimrc`:
 ```VimL
 syntax on
 colorscheme monokai
+```
+
+Terminal support
+----------------
+
+If you are using a terminal which support truecolor like **iterm2**, enable the gui color by adding below setting in `~/.vimrc` or `~/.vim/init.vim`
+
+```VimL
+set termguicolors
+```
+
+Otherwise, use below setting to activate the 256 color in terminal
+
+```VimL
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 ```
 
