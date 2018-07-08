@@ -238,11 +238,13 @@ call s:h("jsDocTags",           { "fg": s:aqua,   "format": "italic" })
 call s:h("typescriptArrowFuncArg",    { "fg": s:orange, "format": "italic" })
 call s:h("typescriptFuncType",        { "fg": s:orange, "format": "italic" })
 call s:h("typescriptCall",            { "fg": s:orange, "format": "italic" })
+call s:h("typescriptVariable",        { "fg": s:aqua })
 call s:h("typescriptPredefinedType",  { "fg": s:aqua })
 call s:h("typescriptFuncTypeArrow",   { "fg": s:aqua })
 call s:h("typescriptImport",          { "fg": s:pink })
 call s:h("typescriptExport",          { "fg": s:pink })
 call s:h("typescriptCastKeyword",     { "fg": s:pink })
+call s:h("typescriptOperator",        { "fg": s:pink })
 call s:h("typescriptEndColons",       { "fg": s:white })
                                  
 " Html
