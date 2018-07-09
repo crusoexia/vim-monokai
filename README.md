@@ -61,7 +61,7 @@ function assignment identifier highlight ( just as the screenshots ).
 provide the popular javascript libraries key word highlight, such as [underscore](http://underscorejs.org/) and 
 [Backbone](http://backbonejs.org/).
 
-Typescript
+Typescript (WIP)
 ----------
 
 For better typescript highlight, please install the [yats](https://github.com/HerringtonDarkholme/yats.vim) syntax plugin.
