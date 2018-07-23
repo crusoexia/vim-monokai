@@ -12,6 +12,14 @@ Install
 
     Plug 'crusoexia/vim-monokai'
 
+### vim
+
+```bash
+mkdir -p ~/.vim/colors
+```
+    
+Download the `colors/monokai.vim` file from the repo to `~/.vim/colors`
+
 Usage
 -----
 
