@@ -72,7 +72,7 @@ provide the popular javascript libraries key word highlight, such as [underscore
 Typescript
 ----------
 
-For better typescript highlight, please install the [yats.vim](https://github.com/HerringtonDarkholme/yats.vim/blob/master/syntax/basic/function.vim) syntax plugin.
+For better typescript highlight, please install the [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) syntax plugin.
 
 Screenshots
 -----------
