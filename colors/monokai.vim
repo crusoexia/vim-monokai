@@ -69,7 +69,6 @@ endfunction
 " Palettes
 " --------
 
-
 let s:white       = { "gui": "#E8E8E3", "cterm": "252" }
 let s:black       = { "gui": "#272822", "cterm": "234" }
 let s:lightblack  = { "gui": "#2D2E27", "cterm": "235" }
@@ -120,6 +119,12 @@ call s:h("VertSplit",     { "fg": s:darkgrey,   "bg": s:darkblack })
 call s:h("LineNr",        { "fg": s:grey,       "bg": s:lightblack })
 call s:h("CursorLineNr",  { "fg": s:orange,     "bg": s:lightblack })
 call s:h("SignColumn",    {                     "bg": s:lightblack })
+
+" spell
+call s:h("SpellBad",      { "fg": s:red,                              "format": "underline" })
+call s:h("SpellCap",      { "fg": s:purple,                           "format": "underline" })
+call s:h("SpellRare",     { "fg": s:aqua,                             "format": "underline" })
+call s:h("SpellLocal",    { "fg": s:pink,                             "format": "underline" })
 
 " misc
 call s:h("SpecialKey",    { "fg": s:pink })
