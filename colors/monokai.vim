@@ -254,6 +254,7 @@ call s:h("typescriptOperator",            { "fg": s:pink })
 call s:h("typescriptEndColons",           { "fg": s:white })
 call s:h("typescriptObjectLabel",         { "fg": s:green })
 call s:h("typescriptAmbientDeclaration",  { "fg": s:pink })
+call s:h("typescriptTestGlobal",          { "fg": s:pink })
                                  
 " Html
 call s:h("htmlTag",             { "fg": s:white })
