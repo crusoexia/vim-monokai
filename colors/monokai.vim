@@ -94,6 +94,14 @@ let s:delbg       = { "gui": "#f75f5f", "cterm": "167" }
 let s:changefg    = { "gui": "#d7d7ff", "cterm": "189" }
 let s:changebg    = { "gui": "#5f5f87", "cterm": "60" }
 
+let s:cyan        = { "gui": "#A1EFE4" }
+let s:br_green    = { "gui": "#9EC400" }
+let s:br_yellow   = { "gui": "#E7C547" }
+let s:br_blue     = { "gui": "#7AA6DA" }
+let s:br_purple   = { "gui": "#B77EE0" }
+let s:br_cyan     = { "gui": "#54CED6" }
+let s:br_white    = { "gui": "#FFFFFF" }
+
 " Highlighting 
 " ------------
 
@@ -147,6 +155,45 @@ call s:h("Pmenu",         { "fg": s:lightblack, "bg": s:white })
 call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:black,        "format": "reverse,bold" })
 call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:grey })
 "        PmenuSbar"
+
+" Terminal Colors
+" --------
+if has('nvim')
+  let g:terminal_color_0  = s:black.gui
+  let g:terminal_color_1  = s:pink.gui
+  let g:terminal_color_2  = s:green.gui
+  let g:terminal_color_3  = s:yellow.gui
+  let g:terminal_color_4  = s:aqua.gui
+  let g:terminal_color_5  = s:purple.gui
+  let g:terminal_color_6  = s:cyan.gui
+  let g:terminal_color_7  = s:white.gui
+  let g:terminal_color_8  = s:darkgrey.gui
+  let g:terminal_color_9  = s:red.gui
+  let g:terminal_color_10 = s:br_green.gui
+  let g:terminal_color_11 = s:br_yellow.gui
+  let g:terminal_color_12 = s:br_blue.gui
+  let g:terminal_color_13 = s:br_purple.gui
+  let g:terminal_color_14 = s:br_cyan.gui
+  let g:terminal_color_15 = s:br_white.gui
+else
+  let g:terminal_ansi_colors = [
+        \ s:black.gui,
+        \ s:pink.gui,
+        \ s:green.gui,
+        \ s:yellow.gui,
+        \ s:aqua.gui,
+        \ s:purple.gui,
+        \ s:cyan.gui,
+        \ s:white.gui,
+        \ s:darkgrey.gui,
+        \ s:red.gui,
+        \ s:br_green.gui,
+        \ s:br_yellow.gui,
+        \ s:br_blue.gui,
+        \ s:br_purple.gui,
+        \ s:br_cyan.gui,
+        \ s:br_white.gui]
+endif
 
 " Generic Syntax Highlighting
 " ---------------------------
