@@ -160,7 +160,7 @@ call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:grey })
 " --------
 if has('nvim')
   let g:terminal_color_0  = s:black.gui
-  let g:terminal_color_1  = s:pink.gui
+  let g:terminal_color_1  = s:red.gui
   let g:terminal_color_2  = s:green.gui
   let g:terminal_color_3  = s:yellow.gui
   let g:terminal_color_4  = s:aqua.gui
@@ -168,7 +168,7 @@ if has('nvim')
   let g:terminal_color_6  = s:cyan.gui
   let g:terminal_color_7  = s:white.gui
   let g:terminal_color_8  = s:darkgrey.gui
-  let g:terminal_color_9  = s:red.gui
+  let g:terminal_color_9  = s:pink.gui
   let g:terminal_color_10 = s:br_green.gui
   let g:terminal_color_11 = s:br_yellow.gui
   let g:terminal_color_12 = s:br_blue.gui
@@ -178,7 +178,7 @@ if has('nvim')
 else
   let g:terminal_ansi_colors = [
         \ s:black.gui,
-        \ s:pink.gui,
+        \ s:red.gui,
         \ s:green.gui,
         \ s:yellow.gui,
         \ s:aqua.gui,
@@ -186,7 +186,7 @@ else
         \ s:cyan.gui,
         \ s:white.gui,
         \ s:darkgrey.gui,
-        \ s:red.gui,
+        \ s:pink.gui,
         \ s:br_green.gui,
         \ s:br_yellow.gui,
         \ s:br_blue.gui,
