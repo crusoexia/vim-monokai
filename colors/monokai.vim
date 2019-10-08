@@ -70,9 +70,11 @@ endfunction
 " --------
 
 let s:white       = { "gui": "#E8E8E3", "cterm": "252" }
+let s:white2      = { "gui": "#d8d8d3", "cterm": "250" }
 let s:black       = { "gui": "#272822", "cterm": "234" }
 let s:lightblack  = { "gui": "#2D2E27", "cterm": "235" }
 let s:lightblack2 = { "gui": "#383a3e", "cterm": "236" }
+let s:lightblack3 = { "gui": "#3f4145", "cterm": "237" }
 let s:darkblack   = { "gui": "#211F1C", "cterm": "233" }
 let s:grey        = { "gui": "#8F908A", "cterm": "243" }
 let s:lightgrey   = { "gui": "#575b61", "cterm": "237" }
@@ -151,8 +153,8 @@ call s:h("FoldColumn",    {                     "bg": s:darkblack })
 "        Incsearch"
 
 " popup menu
-call s:h("Pmenu",         { "fg": s:lightblack, "bg": s:white })
-call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:black,        "format": "reverse,bold" })
+call s:h("Pmenu",         { "fg": s:white2,     "bg": s:lightblack3 })
+call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:lightblack3,        "format": "reverse,bold" })
 call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:grey })
 "        PmenuSbar"
 
