@@ -230,8 +230,9 @@ call s:h("SyntasticWarningSign",    { "fg": s:lightblack, "bg": s:orange })
 hi! link CocErrorSign Error
 call s:h("CocErrorHighlight",       { "fg": s:red, "format": "underline" })
 
-hi! link CocWarningSign SyntasticWarningSign
+call s:h("CocWarningSign",          { "fg": s:orange, "bg": s:lightblack })
 call s:h("CocWarningHighlight",     { "format": "underline" })
+call s:h("CocWarningFloat",         { "fg": s:orange, "bg": s:lightblack3 })
 
 call s:h("CocInfoSign",             { "fg": s:yellow, "bg": s:lightblack3 })
 call s:h("CocInfoHighlight",        { "format": "underline" })
