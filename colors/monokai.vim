@@ -158,45 +158,6 @@ call s:h("PmenuSel",      { "fg": s:aqua,       "bg": s:lightblack3,        "for
 call s:h("PmenuThumb",    { "fg": s:lightblack, "bg": s:grey })
 "        PmenuSbar"
 
-" Terminal Colors
-" --------
-if has('nvim')
-  let g:terminal_color_0  = s:black.gui
-  let g:terminal_color_1  = s:red.gui
-  let g:terminal_color_2  = s:green.gui
-  let g:terminal_color_3  = s:yellow.gui
-  let g:terminal_color_4  = s:aqua.gui
-  let g:terminal_color_5  = s:purple.gui
-  let g:terminal_color_6  = s:cyan.gui
-  let g:terminal_color_7  = s:white.gui
-  let g:terminal_color_8  = s:darkgrey.gui
-  let g:terminal_color_9  = s:pink.gui
-  let g:terminal_color_10 = s:br_green.gui
-  let g:terminal_color_11 = s:br_yellow.gui
-  let g:terminal_color_12 = s:br_blue.gui
-  let g:terminal_color_13 = s:br_purple.gui
-  let g:terminal_color_14 = s:br_cyan.gui
-  let g:terminal_color_15 = s:br_white.gui
-else
-  let g:terminal_ansi_colors = [
-        \ s:black.gui,
-        \ s:red.gui,
-        \ s:green.gui,
-        \ s:yellow.gui,
-        \ s:aqua.gui,
-        \ s:purple.gui,
-        \ s:cyan.gui,
-        \ s:white.gui,
-        \ s:darkgrey.gui,
-        \ s:pink.gui,
-        \ s:br_green.gui,
-        \ s:br_yellow.gui,
-        \ s:br_blue.gui,
-        \ s:br_purple.gui,
-        \ s:br_cyan.gui,
-        \ s:br_white.gui]
-endif
-
 " Generic Syntax Highlighting
 " ---------------------------
 
@@ -262,6 +223,21 @@ call s:h("NERDTreeDir",             { "fg": s:grey })
 
 hi! link SyntasticErrorSign Error
 call s:h("SyntasticWarningSign",    { "fg": s:lightblack, "bg": s:orange })
+
+" coc
+" ---
+
+hi! link CocErrorSign Error
+call s:h("CocErrorHighlight",       { "fg": s:red, "format": "underline" })
+
+hi! link CocWarningSign SyntasticWarningSign
+call s:h("CocWarningHighlight",     { "format": "underline" })
+
+call s:h("CocInfoSign",             { "fg": s:yellow, "bg": s:lightblack3 })
+call s:h("CocInfoHighlight",        { "format": "underline" })
+
+call s:h("CocHintSign",             { "fg": s:white, "bg": s:lightblack3 })
+call s:h("CocHintHighlight",        { "format": "underline" })
 
 " Language highlight
 " ------------------
@@ -370,3 +346,42 @@ call s:h("cStructure",                  { "fg": s:pink })
 call s:h("cStorageClass",               { "fg": s:pink })
 call s:h("cInclude",                    { "fg": s:green })
 call s:h("cDefine",                     { "fg": s:green })
+
+" Terminal Colors
+" ---------------
+if has('nvim')
+  let g:terminal_color_0  = s:black.gui
+  let g:terminal_color_1  = s:red.gui
+  let g:terminal_color_2  = s:green.gui
+  let g:terminal_color_3  = s:yellow.gui
+  let g:terminal_color_4  = s:aqua.gui
+  let g:terminal_color_5  = s:purple.gui
+  let g:terminal_color_6  = s:cyan.gui
+  let g:terminal_color_7  = s:white.gui
+  let g:terminal_color_8  = s:darkgrey.gui
+  let g:terminal_color_9  = s:pink.gui
+  let g:terminal_color_10 = s:br_green.gui
+  let g:terminal_color_11 = s:br_yellow.gui
+  let g:terminal_color_12 = s:br_blue.gui
+  let g:terminal_color_13 = s:br_purple.gui
+  let g:terminal_color_14 = s:br_cyan.gui
+  let g:terminal_color_15 = s:br_white.gui
+else
+  let g:terminal_ansi_colors = [
+        \ s:black.gui,
+        \ s:red.gui,
+        \ s:green.gui,
+        \ s:yellow.gui,
+        \ s:aqua.gui,
+        \ s:purple.gui,
+        \ s:cyan.gui,
+        \ s:white.gui,
+        \ s:darkgrey.gui,
+        \ s:pink.gui,
+        \ s:br_green.gui,
+        \ s:br_yellow.gui,
+        \ s:br_blue.gui,
+        \ s:br_purple.gui,
+        \ s:br_cyan.gui,
+        \ s:br_white.gui]
+endif
