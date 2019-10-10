@@ -74,6 +74,11 @@ Typescript
 
 For better typescript highlight, it is recommend to install the [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) syntax plugin.
 
+[coc.nvim]
+----------
+
+*coc.nvim* is a powerful completion engine, it brings *vs-code*'s experience into vim. *vim-monokai* fits *coc.nvim* well.
+
 Screenshots
 -----------
 
