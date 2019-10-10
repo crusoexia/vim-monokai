@@ -45,10 +45,10 @@ Otherwise, use below setting to activate the 256 color in terminal
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 ```
 
-[coc.nvim](https://github.com/neoclide/coc.nvim) support
+coc.nvim support
 --------------------
 
-*coc.nvim* is a powerful completion engine, it brings *vs-code*'s experience into vim. *vim-monokai* fits it well.
+[coc.nvim](https://github.com/neoclide/coc.nvim) is a powerful completion engine, it brings *vs-code*'s experience into vim. *vim-monokai* fits it well.
 
 Configuration
 -------------
