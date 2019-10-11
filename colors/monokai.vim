@@ -88,6 +88,7 @@ let s:yellow      = { "gui": "#E6DB74", "cterm": "186" }
 let s:orange      = { "gui": "#FD9720", "cterm": "208" }
 let s:purple      = { "gui": "#ae81ff", "cterm": "141" }
 let s:red         = { "gui": "#e73c50", "cterm": "196" }
+let s:purered     = { "gui": "#ff0000", "cterm": "52" }
 let s:darkred     = { "gui": "#5f0000", "cterm": "52" }
 
 let s:addfg       = { "gui": "#d7ffaf", "cterm": "193" }
@@ -229,6 +230,7 @@ call s:h("SyntasticWarningSign",    { "fg": s:lightblack, "bg": s:orange })
 
 hi! link CocErrorSign Error
 call s:h("CocErrorHighlight",       { "fg": s:red, "format": "underline" })
+call s:h("CocErrorFloat",           { "fg": s:purered, "bg": s:lightblack3 })
 
 call s:h("CocWarningSign",          { "fg": s:orange, "bg": s:lightblack })
 call s:h("CocWarningHighlight",     { "format": "underline" })
