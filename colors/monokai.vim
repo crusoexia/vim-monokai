@@ -345,10 +345,11 @@ call s:h("erubyRailsMethod",            { "fg": s:aqua })
 
 " c
 call s:h("cLabel",                      { "fg": s:pink })
-call s:h("cStructure",                  { "fg": s:pink })
+call s:h("cStructure",                  { "fg": s:aqua })
 call s:h("cStorageClass",               { "fg": s:pink })
-call s:h("cInclude",                    { "fg": s:green })
-call s:h("cDefine",                     { "fg": s:green })
+call s:h("cInclude",                    { "fg": s:pink })
+call s:h("cDefine",                     { "fg": s:pink })
+call s:h("cSpecial",                    { "fg": s:purple })
 
 " Terminal Colors
 " ---------------
