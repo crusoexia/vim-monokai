@@ -4,7 +4,6 @@
 " License:    MIT
 "
 " The colour palette is from http://www.colourlovers.com/
-" The original code is from https://github.com/w0ng/vim-hybrid
 
 " Initialisation
 " --------------
