@@ -301,7 +301,19 @@ call s:h("typescriptTypeParameter",       { "fg": s:purple, "format": "italic" }
 call s:h("typescriptOptionalMark",        { "fg": s:pink })
 call s:h("tsxAttrib",                     { "fg": s:green })
 call s:h("tsxTagName",                    { "fg": s:pink })
-                                 
+
+" Dart
+call s:h("dartStorageClass",    { "fg": s:pink })
+call s:h("dartExceptions",      { "fg": s:pink })
+call s:h("dartConditional",     { "fg": s:pink })
+call s:h("dartRepeat",          { "fg": s:pink })
+call s:h("dartTypedef",         { "fg": s:pink })
+call s:h("dartKeyword",         { "fg": s:pink })
+call s:h("dartConstant",        { "fg": s:purple })
+call s:h("dartBoolean",         { "fg": s:purple })
+call s:h("dartCoreType",        { "fg": s:aqua })
+call s:h("dartType",            { "fg": s:aqua })      
+
 " Html
 call s:h("htmlTag",             { "fg": s:white })
 call s:h("htmlEndTag",          { "fg": s:white })
