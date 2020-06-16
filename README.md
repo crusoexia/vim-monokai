@@ -79,6 +79,11 @@ Typescript
 
 For better typescript highlight, it is recommend to install the [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) syntax plugin.
 
+JSX/TSX
+-------
+
+[vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty) is recommend.
+
 Screenshots
 -----------
 

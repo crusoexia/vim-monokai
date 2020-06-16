@@ -302,18 +302,30 @@ call s:h("typescriptOptionalMark",        { "fg": s:pink })
 call s:h("tsxAttrib",                     { "fg": s:green })
 call s:h("tsxTagName",                    { "fg": s:pink })
                                  
-" Html
+" HTML
 call s:h("htmlTag",             { "fg": s:white })
 call s:h("htmlEndTag",          { "fg": s:white })
 call s:h("htmlTagName",         { "fg": s:pink })
 call s:h("htmlArg",             { "fg": s:green })
 call s:h("htmlSpecialChar",     { "fg": s:purple })
 
-" Xml
+" XML
 call s:h("xmlTag",              { "fg": s:pink })
 call s:h("xmlEndTag",           { "fg": s:pink })
 call s:h("xmlTagName",          { "fg": s:orange })
 call s:h("xmlAttrib",           { "fg": s:green })
+
+" JSX
+call s:h("jsxTag",              { "fg": s:white })
+call s:h("jsxCloseTag",         { "fg": s:white })
+call s:h("jsxCloseString",      { "fg": s:white })
+call s:h("jsxPunct",            { "fg": s:white })
+call s:h("jsxClosePunct",       { "fg": s:white })
+call s:h("jsxTagName",          { "fg": s:pink })
+call s:h("jsxComponentName",    { "fg": s:pink })
+call s:h("jsxAttrib",           { "fg": s:green })
+call s:h("jsxEqual",            { "fg": s:white })
+call s:h("jsxBraces",           { "fg": s:white })
 
 " CSS
 call s:h("cssProp",             { "fg": s:yellow })
