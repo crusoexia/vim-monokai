@@ -62,10 +62,10 @@ If you are using a font support italic, paste below command in `.vimrc` to turn 
     let g:monokai_term_italic = 1
     let g:monokai_gui_italic = 1
 
-Recommend vim syntax plugins
-----------------------------
+Recommend syntax plugins
+------------------------
 
-Below plugins would give you better experience when using with *vim-monokai*:
+Below plugins would give you better experience when using *vim-monokai*:
 
 | Language   | Plugins                              |
 |------------|--------------------------------------|
