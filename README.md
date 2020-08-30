@@ -3,8 +3,6 @@ vim-monokai
 
 Refined monokai color scheme for vim. 
 
-* The colour palette from [sickill/vim-monokai](https://github.com/sickill/vim-monokai). 
-
 Install
 -------
 
