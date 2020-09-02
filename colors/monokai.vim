@@ -395,6 +395,10 @@ call s:h("cInclude",                    { "fg": s:pink })
 call s:h("cDefine",                     { "fg": s:pink })
 call s:h("cSpecial",                    { "fg": s:purple })
 
+" Markdown
+call s:h("markdownCode",       { "fg": s:purple, "format": "italic" } )
+call s:h("markdownListMarker", { "fg": s:purple                     } )
+
 " Terminal Colors
 " ---------------
 if has('nvim')

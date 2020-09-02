@@ -65,12 +65,13 @@ Recommend syntax plugins
 
 Below plugins would give you better experience when using *vim-monokai*:
 
-| Language   | Plugins                              |
-|------------|--------------------------------------|
-| Javascript | [vim-javascript](https://github.com/pangloss/vim-javascript)<br>[vim-javascript-lib](https://github.com/crusoexia/vim-javascript-lib) |
-| Typescript | [yats.vim](https://github.com/HerringtonDarkholme/yats.vim) |
-| Dart       | [dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin) |
-| JSX        | [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty) |
+| Language     | Plugins                                                                                                                               |
+| ------------ | --------------------------------------                                                                                                |
+| Javascript   | [vim-javascript](https://github.com/pangloss/vim-javascript)<br>[vim-javascript-lib](https://github.com/crusoexia/vim-javascript-lib) |
+| Typescript   | [yats.vim](https://github.com/HerringtonDarkholme/yats.vim)                                                                           |
+| Dart         | [dart-vim-plugin](https://github.com/dart-lang/dart-vim-plugin)                                                                       |
+| JSX          | [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)                                                                         |
+| Markdown     | [vim-markdown](https://github.com/tpope/vim-markdown)                                                                                 |
 
 Screenshots
 -----------
