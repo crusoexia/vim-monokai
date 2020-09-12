@@ -400,12 +400,13 @@ call s:h("markdownCode",       { "fg": s:purple, "format": "italic" } )
 call s:h("markdownListMarker", { "fg": s:purple                     } )
 
 " vim-notes
-call s:h("notesTitle",       { "fg": s:aqua,        "format": "bold"   } )
-call s:h("notesAtxMarker",   { "fg": s:pink                            } )
-call s:h("notesListBullet",  { "fg": s:purple                          } )
-call s:h("notesListNumber",  { "fg": s:purple,      "format": "italic" } )
-call s:h("notesBold",        { "format": "bold"                        } )
-call s:h("notesDoneMarker",  { "fg": s:green                           } )
+call s:h("notesTitle",        { "fg": s:aqua,        "format": "bold"        } )
+call s:h("notesAtxMarker",    { "fg": s:pink,        "format": "italic,bold" } )
+call s:h("notesShortHeading", { "fg": s:white,       "format": "bold"        } )
+call s:h("notesListBullet",   { "fg": s:purple                               } )
+call s:h("notesListNumber",   { "fg": s:purple,      "format": "italic"      } )
+call s:h("notesBold",         {                      "format": "bold"        } )
+call s:h("notesDoneMarker",   { "fg": s:green                                } )
 
 " Terminal Colors
 " ---------------
