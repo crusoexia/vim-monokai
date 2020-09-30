@@ -357,6 +357,17 @@ call s:h("cssURL",              { "fg": s:orange, "format": "underline,italic" }
 " LESS
 call s:h("lessVariable",        { "fg": s:green })
 
+" SASS
+call s:h("sassMixing",          { "fg": s:aqua })
+call s:h("sassMixin",           { "fg": s:aqua })
+call s:h("sassFunctionDecl",    { "fg": s:aqua })
+call s:h("sassReturn",          { "fg": s:aqua })
+call s:h("sassClass",           { "fg": s:green })
+call s:h("sassClassChar",       { "fg": s:pink })
+call s:h("sassIdChar",          { "fg": s:pink })
+call s:h("sassControl",         { "fg": s:aqua })
+call s:h("sassFor",             { "fg": s:aqua })
+
 " ruby
 call s:h("rubyInterpolationDelimiter",  {})
 call s:h("rubyInstanceVariable",        {})
