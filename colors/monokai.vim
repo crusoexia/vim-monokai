@@ -13,7 +13,7 @@ if !has("gui_running") && &t_Co < 256
 endif
 
 if ! exists("g:monokai_gui_italic")
-    let g:monokai_gui_italic = 1
+    let g:monokai_gui_italic = 0
 endif
 
 if ! exists("g:monokai_term_italic")

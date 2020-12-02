@@ -53,14 +53,12 @@ Configuration
 
 ### Italic
 
-By default the gui enables italic but terminal. They both can be configured.
-    
-If you are using a font support italic, paste below command in `.vimrc` to turn on terminal italic:
+If you are using a font which support italic, paste below command in `.vimrc` to turn on gui/terminal italic effect:
 
     let g:monokai_term_italic = 1
     let g:monokai_gui_italic = 1
 
-> Note: If you are using vim with [tmux](https://github.com/tmux/tmux/wiki), you need to turn-off the italic. __tmux__ doesn't support italic, all _italic_ effect will become _"reverse"_.
+> Note: If you are using vim with [tmux](https://github.com/tmux/tmux/wiki), you need to turn-off the italic. __tmux__ doesn't support italic font, all _italic_ effect will become _"reverse"_.
 
 Recommend syntax plugins
 ------------------------
