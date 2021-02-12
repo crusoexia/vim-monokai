@@ -250,6 +250,10 @@ call s:h("CocInfoHighlight",        { "format": "underline" })
 call s:h("CocHintSign",             { "fg": s:white, "bg": s:lightblack3 })
 call s:h("CocHintHighlight",        { "format": "underline" })
 
+call s:h("CocHighlightText",        { "fg": s:aqua })
+" document.renameCurrentWord cursor word highlight
+call s:h("CocCursorRange",          { "fg": s:warmgrey, "bg": s:yellow })
+
 " Language highlight
 " ------------------
 
