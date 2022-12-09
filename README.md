@@ -73,6 +73,37 @@ Below plugins would give you better experience when using *vim-monokai*:
 | JSX          | [vim-jsx-pretty](https://github.com/MaxMEllon/vim-jsx-pretty)                                                                         |
 | Markdown     | [vim-markdown](https://github.com/tpope/vim-markdown)                                                                                 |
 
+Windows terminal
+----------------
+
+Matched __Windows Terminal__ color scheme:
+
+```json
+{
+  "background": "#272822",
+  "black": "#272822",
+  "blue": "#AE81FF",
+  "brightBlack": "#383A3E",
+  "brightBlue": "#AE81FF",
+  "brightCyan": "#66D9EF",
+  "brightGreen": "#A6E22D",
+  "brightPurple": "#F92772",
+  "brightRed": "#F92772",
+  "brightWhite": "#E8E8E3",
+  "brightYellow": "#E6DB74",
+  "cursorColor": "#E8E8E3",
+  "cyan": "#66D9EF",
+  "foreground": "#E8E8E3",
+  "green": "#A6E22D",
+  "name": "Monokai",
+  "purple": "#F92772",
+  "red": "#E73C50",
+  "selectionBackground": "#FFFFFF",
+  "white": "#D8D8D3",
+  "yellow": "#FD9720"
+}
+```
+
 Screenshots
 -----------
 
