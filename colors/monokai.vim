@@ -111,6 +111,7 @@ let s:br_white    = { "gui": "#FFFFFF" }
 " editor
 call s:h("Normal",        { "fg": s:white,      "bg": s:black })
 call s:h("ColorColumn",   {                     "bg": s:lightblack })
+call s:h("Conceal",       { "fg": s:grey })
 call s:h("Cursor",        { "fg": s:black,      "bg": s:white })
 call s:h("CursorColumn",  {                     "bg": s:lightblack2 })
 call s:h("CursorLine",    {                     "bg": s:lightblack2 })
