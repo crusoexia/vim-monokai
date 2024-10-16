@@ -142,7 +142,7 @@ call s:h("User3",         { "fg": s:purple,     "bg": s:lightgrey,    "format": 
 call s:h("User4",         { "fg": s:aqua,       "bg": s:lightgrey,    "format": "bold" })
 
 " spell
-call s:h("SpellBad",      { "fg": s:red,                              "format": "underline" })
+call s:h("SpellBad",      { "fg": s:red,                              "format": "undercurl" })
 call s:h("SpellCap",      { "fg": s:purple,                           "format": "underline" })
 call s:h("SpellRare",     { "fg": s:aqua,                             "format": "underline" })
 call s:h("SpellLocal",    { "fg": s:pink,                             "format": "underline" })
@@ -216,7 +216,7 @@ call s:h("Comment",       { "fg": s:warmgrey, "format": "italic" })
                          
 call s:h("Underlined",    { "fg": s:green })
 call s:h("Ignore",        {})
-call s:h("Error",         { "fg": s:red, "bg": s:darkred })
+call s:h("Error",         { "fg": s:purered, "bg": s:lightblack3 })
 
 " NerdTree
 " --------
@@ -242,18 +242,20 @@ call s:h("SyntasticWarningSign",    { "fg": s:lightblack, "bg": s:orange })
 " ---
 
 hi! link CocErrorSign Error
-call s:h("CocErrorHighlight",       { "fg": s:red, "format": "underline" })
+call s:h("CocErrorHighlight",       { "fg": s:red, "format": "undercurl" })
 call s:h("CocErrorFloat",           { "fg": s:purered, "bg": s:lightblack3 })
 
 call s:h("CocWarningSign",          { "fg": s:orange, "bg": s:lightblack })
-call s:h("CocWarningHighlight",     { "format": "underline" })
+call s:h("CocWarningHighlight",     { "fg": s:orange, "format": "undercurl" })
 call s:h("CocWarningFloat",         { "fg": s:orange, "bg": s:lightblack3 })
 
 call s:h("CocInfoSign",             { "fg": s:yellow, "bg": s:lightblack3 })
-call s:h("CocInfoHighlight",        { "format": "underline" })
+call s:h("CocInfoHighlight",        { "fg": s:yellow, "format": "undercurl" })
+call s:h("CocInfoFloat",            { "fg": s:aqua, "bg": s:lightblack3 })
 
-call s:h("CocHintSign",             { "fg": s:white, "bg": s:lightblack3 })
-call s:h("CocHintHighlight",        { "format": "underline" })
+call s:h("CocHintSign",             { "fg": s:orange, "bg": s:lightblack3 })
+call s:h("CocHintHighlight",        { "fg": s:orange, "format": "undercurl" })
+call s:h("CocHintFloat",            { "fg": s:aqua, "bg": s:lightblack3 })
 
 " Language highlight
 " ------------------
