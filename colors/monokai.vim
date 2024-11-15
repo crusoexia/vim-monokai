@@ -223,6 +223,7 @@ call s:h("Error",         { "fg": s:purered, "bg": s:lightblack3 })
 " Refer to `:h treesitter-highlight-groups`
 " ----------
 
+if has('nvim')
 call s:h("@variable.builtin",             { "fg": s:purple })
 call s:h("@variable.parameter",           { "fg": s:orange })
 call s:h("@variable.parameter.builtin",   { "fg": s:orange })
@@ -252,6 +253,7 @@ call s:h("@keyword",                { "fg": s:pink })
 call s:h("@punctuation.delimiter",  { "fg": s:white })
 call s:h("@punctuation.bracket",    { "fg": s:white })
 call s:h("@punctuation.special",    { "fg": s:purple })
+endif
 
 " NerdTree
 " --------
