@@ -63,6 +63,32 @@ If you are using a font which support italic, paste below command in `.vimrc` to
 Recommend syntax plugins
 ------------------------
 
+### nvim-treesitter
+
+It is recommend to use [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+for general language syntax mapping. **vim-monokai** tweaked to fit _treesitter_'s 
+highlight groups.
+
+> Currently `nvim-treesitter` only support `neovim`.
+
+#### treesitter configuration
+
+To enable treesitter's highlight group, add below configuration to your `init.vim`:
+
+```VimScript
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  highlight = {
+    enable = true,
+  },
+}
+EOF
+```
+
+Refer to [treesitter highlight](https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file#highlight).
+
+### Other syntax plugins
+
 Below plugins would give you better experience when using *vim-monokai*:
 
 | Language     | Plugins                                                                                                                               |
@@ -106,6 +132,12 @@ Matched __Windows Terminal__ color scheme:
 
 Screenshots
 -----------
+
+_With treesitter_
+
+![with treesitter](screenshots/with-treesitter.png)
+
+_With other syntax plugins_
 
 ![typescript](screenshots/typescript.png)
 
