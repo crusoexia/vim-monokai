@@ -253,6 +253,11 @@ call s:h("@keyword",                { "fg": s:pink })
 call s:h("@punctuation.delimiter",  { "fg": s:white })
 call s:h("@punctuation.bracket",    { "fg": s:white })
 call s:h("@punctuation.special",    { "fg": s:purple })
+
+call s:h("@tag",                    { "fg": s:aqua })
+call s:h("@tag.builtin",            { "fg": s:pink })
+call s:h("@tag.attribute",          { "fg": s:green })
+call s:h("@tag.delimiter",          { "fg": s:white })
 endif
 
 " NerdTree
